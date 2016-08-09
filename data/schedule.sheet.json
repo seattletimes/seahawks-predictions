@@ -1,0 +1,82 @@
+[
+  {
+    "date": "9/11",
+    "time": "1:05 PM",
+    "opponent": "Dolphins"
+  },
+  {
+    "date": "9/18",
+    "time": "1:05 PM",
+    "opponent": "Rams"
+  },
+  {
+    "date": "9/25",
+    "time": "1:05 PM",
+    "opponent": "49ers"
+  },
+  {
+    "date": "10/2",
+    "time": "10:00",
+    "opponent": "Jets"
+  },
+  {
+    "date": "10/16",
+    "time": "13:25",
+    "opponent": "Falcons"
+  },
+  {
+    "date": "10/23",
+    "time": "17:30",
+    "opponent": "Cardinals"
+  },
+  {
+    "date": "10/30",
+    "time": "10:00 AM",
+    "opponent": "Saints"
+  },
+  {
+    "date": "11/07",
+    "time": "17:30",
+    "opponent": "Bills"
+  },
+  {
+    "date": "11/13",
+    "time": "17:30",
+    "opponent": "Patriots"
+  },
+  {
+    "date": "11/20",
+    "time": "13:25",
+    "opponent": "Eagles"
+  },
+  {
+    "date": "11/27",
+    "time": "13:05",
+    "opponent": "Buccaneers"
+  },
+  {
+    "date": "12/4",
+    "time": "17:30",
+    "opponent": "Panthers"
+  },
+  {
+    "date": "12/11",
+    "time": "13:25",
+    "opponent": "Packers"
+  },
+  {
+    "date": "12/15",
+    "time": "17:25",
+    "opponent": "Rams"
+  },
+  {
+    "date": "12/24",
+    "time": "13:25",
+    "opponent": "Cardinals"
+  },
+  {
+    "date": "1/1",
+    "time": "13:25",
+    "opponent": "49ers"
+  }
+]

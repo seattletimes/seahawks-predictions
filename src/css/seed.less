@@ -1,0 +1,132 @@
+@import "seattletimes";
+
+header {
+  font-family: @cool;
+  font-size: 50px;
+  margin: 0 auto;
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+  transition: background 0.2s linear;
+  width: 100%;
+}
+
+.buttons {
+  text-align: center;
+  button {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    font-family: @df-sans;
+    font-size: 15px;
+    width: 100px;
+    margin: 5%;
+    padding: 4px;
+    cursor: pointer;
+    &:hover {
+      background-color: fade(@df-blue, 50%);
+    }
+  }
+  
+}
+
+
+.schedule {
+  float: right;
+  width: 60%;
+  .display-flex();
+  .flex-direction(column);
+  background-color: @st-dark-green;
+  margin: 0 auto;
+  color: white;
+  font-family: @df-sans; 
+
+  .headers {
+    .display-flex();
+
+    .header {
+      .flex(1);
+      padding: 3%;
+      &.event {
+        .flex(0 0 300px);
+      }
+    }
+  }
+  .game {
+    .display-flex();
+    padding: 3%;
+
+
+    .details {
+      .flex(0 0 300px);
+      padding-right: 5%;
+      .opponent {
+        font-size: 25px;
+        font-family: @cool;
+      }
+      .date {
+        font-size: 15px;
+        .time {
+          font-style: italic;
+          display: inline-block;
+        }
+      }
+
+
+    }
+    .score {
+      .flex(1);
+      width: 40%;
+    }
+    .prediction {
+      .flex(1);
+
+      text-align: center;
+      input {
+        width: 50px;
+        height: 50px;
+        margin: 3px;
+
+      }
+    }
+
+  }
+
+}
+
+
+
+
+
+
+nav.top-bar {
+  border-bottom: 1px solid @df-border-gray;
+  margin-bottom: 20px;
+  margin-top: -20px;
+
+  @media @mobile {
+    height: 40px;
+    width: 100%;
+  }
+
+  .logo {
+    position: relative;
+    top: 30px;
+    text-align: center;
+    display: block;
+
+    @media @mobile {
+      top: 20px;
+    }
+
+    img {
+      box-sizing: content-box;
+      height: 30px;
+      background: white;
+      padding: 10px;
+
+      @media @mobile {
+        padding: 5px;
+      }
+    }
+  }
+}
