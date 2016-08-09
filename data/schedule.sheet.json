@@ -2,81 +2,97 @@
   {
     "date": "9/11",
     "time": "1:05 PM",
-    "opponent": "Dolphins"
+    "opponent": "Dolphins",
+    "home": "v.s."
   },
   {
     "date": "9/18",
     "time": "1:05 PM",
-    "opponent": "Rams"
+    "opponent": "Rams",
+    "home": "@"
   },
   {
     "date": "9/25",
     "time": "1:05 PM",
-    "opponent": "49ers"
+    "opponent": "49ers",
+    "home": "v.s."
   },
   {
     "date": "10/2",
     "time": "10:00",
-    "opponent": "Jets"
+    "opponent": "Jets",
+    "home": "@"
   },
   {
     "date": "10/16",
     "time": "13:25",
-    "opponent": "Falcons"
+    "opponent": "Falcons",
+    "home": "v.s."
   },
   {
     "date": "10/23",
     "time": "17:30",
-    "opponent": "Cardinals"
+    "opponent": "Cardinals",
+    "home": "@"
   },
   {
     "date": "10/30",
     "time": "10:00 AM",
-    "opponent": "Saints"
+    "opponent": "Saints",
+    "home": "@"
   },
   {
     "date": "11/07",
     "time": "17:30",
-    "opponent": "Bills"
+    "opponent": "Bills",
+    "home": "v.s."
   },
   {
     "date": "11/13",
     "time": "17:30",
-    "opponent": "Patriots"
+    "opponent": "Patriots",
+    "home": "@"
   },
   {
     "date": "11/20",
     "time": "13:25",
-    "opponent": "Eagles"
+    "opponent": "Eagles",
+    "home": "v.s."
   },
   {
     "date": "11/27",
     "time": "13:05",
-    "opponent": "Buccaneers"
+    "opponent": "Buccaneers",
+    "home": "@"
   },
   {
     "date": "12/4",
     "time": "17:30",
-    "opponent": "Panthers"
+    "opponent": "Panthers",
+    "home": "v.s."
   },
   {
     "date": "12/11",
     "time": "13:25",
-    "opponent": "Packers"
+    "opponent": "Packers",
+    "home": "@"
   },
   {
     "date": "12/15",
     "time": "17:25",
-    "opponent": "Rams"
+    "opponent": "Rams",
+    "home": "v.s."
   },
   {
     "date": "12/24",
     "time": "13:25",
-    "opponent": "Cardinals"
+    "opponent": "Cardinals",
+    "home": "v.s."
   },
   {
     "date": "1/1",
     "time": "13:25",
-    "opponent": "49ers"
+    "opponent": "49ers",
+    "home": "@"
   }
 ]

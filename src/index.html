@@ -12,46 +12,40 @@
   <body>
 
     <%= t.include("./partials/_ad.html", { type: "banner" }) %>
-    <nav class="top-bar">
-      <a class="logo" href="http://seattletimes.com">
-        <img src="./assets/seattletimes.svg">
-      </a>
-    </nav>
+    <%= t.include("partials/_nav.html") %>
 
     <header>
       Seahawks Season Predictor 
     </header>
-    
-    <section class="buttons">
-      <button><i class="fa fa-print" aria-hidden="true"></i> PRINT</button>
-      <button><i class="fa fa-share-alt" aria-hidden="true"></i> SHARE</button>
-    </section>
+
+
     <div class="schedule">
-      
+
       <section class="headers">
         <div class="header event"></div>
         <div class="header prediction">Your Prediction</div>
         <div class="header score">Final Score</div>
       </section>
-      
+
 
       <% var games = {};
       json.schedule.forEach(function(item) {
         if (!games[item.date]) games[item.date] = [];
         games[item.date].push(item);
-
       });
 
       for (var g in games) {
         var game = games[g];
 
-        game.forEach(function(item) { %>
+        game.forEach(function(item) { 
+
+          var image = item.opponent.toLowerCase() + ".jpg";%>
 
       <div class="game">
 
         <div class="details">
           <div class="opponent">
-            Seahawks v.s. <%=item.opponent%>
+            <%=item.home%> <%=item.opponent%>
           </div>
           <div class="date">
             <%=item.date%>
@@ -60,9 +54,18 @@
 
         </div>
 
-        <div>
-          <form class="prediction">        
-            <input type="prediction" name="seahawks-prediction"> - <input type="prediction" name="<%=item.opponent%>-prediction">
+        <div class="prediction">
+          <% if (item.home === "v.s.") { %>
+          <img src="assets/seahawks.png">
+          <img src="assets/<%=image%>">
+          <% } else { %>
+          <img src="assets/<%=image%>">
+          <img src="assets/seahawks.png">
+          <% } %>
+
+          <form class="prediction"> 
+
+            <input type="predict" name="seahawks-prediction"> - <input type="prediction" name="<%=item.opponent%>-prediction">
           </form>
         </div>        
 
@@ -73,7 +76,7 @@
       </div>
 
       <% }); } %>
-
+      <button>SUBMIT</button>
     </div>
 
 
