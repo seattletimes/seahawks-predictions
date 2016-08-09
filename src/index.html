@@ -76,7 +76,6 @@
       </div>
 
       <% }); } %>
-      <button>SUBMIT</button>
     </div>
 
 
@@ -85,5 +84,9 @@
     <%= !json.project.embedded ? t.include("partials/_foot.html") : "" %>
     <%= t.include("partials/_workHere.html") %>
     <% } %>
+        <%= t.include("partials/_navBottom.html") %>
+
   </body>
+  
+  
 </html>
