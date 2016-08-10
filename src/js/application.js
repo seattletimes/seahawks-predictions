@@ -1,3 +1,3 @@
 require("angular");
 
-module.exports = angular.module("brackets", []);
+module.exports = angular.module("predictions", []);

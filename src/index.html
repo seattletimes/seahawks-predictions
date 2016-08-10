@@ -9,7 +9,7 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <%= t.include("partials/_head.html") %>
   </head>
-  <body>
+  <body ng-app="predictions">
 
     <%= t.include("./partials/_ad.html", { type: "banner" }) %>
     <%= t.include("partials/_nav.html") %>
@@ -17,7 +17,6 @@
     <header>
       Seahawks Season Predictor 
     </header>
-
 
     <div class="schedule">
 
@@ -54,7 +53,7 @@
 
         </div>
 
-        <div class="prediction">
+        <div class="prediction" ng-controller="prediction">
           <% if (item.home === "v.s.") { %>
           <img src="assets/seahawks.png">
           <img src="assets/<%=image%>">
@@ -65,10 +64,12 @@
 
           <form class="prediction"> 
 
-            <input type="predict" name="seahawks-prediction"> - <input type="prediction" name="<%=item.opponent%>-prediction">
+            <input ng-model="score1" type="predict" name="seahawks-prediction" > - <input ng-model="score2" type="prediction" name="<%=item.opponent%>-prediction">
           </form>
+          {{score1}}
         </div>        
-
+          {{score1}}
+        
         <div class="score">
 
         </div>
