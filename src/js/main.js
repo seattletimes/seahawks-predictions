@@ -1,4 +1,4 @@
-require("./lib/social");
+var social = require("./lib/social");
 // require("./lib/ads");
 // var track = require("./lib/tracking");
 
@@ -7,6 +7,7 @@ var app = require("./application");
 var ascii = require("./arrayCode");
 var aKeys = "winner h a".split(" ");
 
+// set up the preset configs
 var presets = window.games.pundits;
 window.games.presets.forEach(function(row) {
   var pundit = presets[row.author];
@@ -14,6 +15,7 @@ window.games.presets.forEach(function(row) {
   pundit.games.push(row);
 });
 
+//zero out the scores
 window.games.schedule.forEach(function(row) {
   row.h = 0;
   row.a = 0;
@@ -25,6 +27,7 @@ var prediction = function($scope) {
   var person = "user";
   var saved = null;
 
+  //called to clear out data when swapping presets
   var reset = function() {
     $scope.games.forEach(function(g) {
       g.winner = null;
@@ -33,6 +36,7 @@ var prediction = function($scope) {
     });
   }
 
+  //assigns data on top of existing data
   var restore = function(source) {
     source.forEach(function(g, i) {
       var game = $scope.games[i];
@@ -68,12 +72,16 @@ var prediction = function($scope) {
     person = name;
   }
   
+  // on startup, check the window hash for a games parameter
   var hash = window.location.hash.replace(/^#/, "");
   var query = qs.decode(hash);
   if (query.games) {
+    //hashes are encoded, you must provide the object keys you want to be restored
     var fromURL = ascii.unpack(aKeys, query.games);
     if (fromURL) restore(fromURL);
   } else {
+    //if there's no hash, check localStorage
+    //this is just saved as JSON
     var fromLocal = localStorage.getItem("hawks-prediction");
     if (fromLocal) {
       fromLocal = JSON.parse(fromLocal);
@@ -81,8 +89,12 @@ var prediction = function($scope) {
     }
   }
   
+  // When any data changes (or for each digest cycle), run this function
   $scope.$watch(function() {
+    //only persist user data, ignore the presets
     if (person != "user") return;
+
+    //create a coded version of the scores
     var filtered = $scope.games.map(function(entry) {
       return {
         id: entry.id,
@@ -102,11 +114,15 @@ var prediction = function($scope) {
       }
     }
 
+    //encode this into a URL hash and set it
     var encoded = "#" + qs.encode({
       games: ascii.pack(aKeys, filtered),
       timestamp: Date.now()
     });
     history.replaceState(encoded, encoded, encoded);
+    //update the social buttons on the page
+    social.update(social.buttons, window.location.href);
+    //store in localStorage, no encoding needed
     localStorage.setItem("hawks-prediction", JSON.stringify(filtered));
   });
 
