@@ -41,15 +41,15 @@
           <p>Week {{game.id}}</p>
 
             <!--Home Team-->
-            <img src="assets/logos/seahawks.jpg" ng-if="game.home" ng-click="winStyle={border: '15px solid #7FFF00'}" ng-style="winStyle">
-            <img src="assets/logos/{{game.opponent | lowercase}}.jpg" ng-if="!game.home"ng-click="winStyle={border: '15px solid #7FFF00'}" ng-style="winStyle">
-            <input ng-model="game.spread" name="predict">
+            <img src="assets/logos/{{game.home}}.jpg" ng-click="homeWin={border: '15px solid #7FFF00'}" ng-style="homeWin">
+            <input ng-model="game.h" name="{{game.home}}Score">
+            
             <i class="fa fa-at fa-3x" aria-hidden="true"></i>
             
             <!--Away Team-->
-            <input ng-model="game.spread" name="predict">
-            <img src="assets/logos/{{game.opponent | lowercase}}.jpg" ng-if="game.home"ng-click="winStyle={border: '15px solid #7FFF00'}" ng-style="winStyle">
-            <img src="assets/logos/seahawks.jpg" ng-if="!game.home"ng-click="winStyle={border: '15px solid #7FFF00'}" ng-style="winStyle">
+            <input ng-model="game.a" name="{{game.away}}Score">
+            <img src="assets/logos/{{game.away}}.jpg" ng-click="awayWin={border: '15px solid #7FFF00'}" ng-style="awayWin">
+
 
      
           </div>        

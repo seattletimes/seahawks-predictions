@@ -16,7 +16,8 @@ var prediction = function($scope) {
         if (f.id == g.id) {
           console.log("yes");
           g.win = f.win;
-          g.spread = f.spread;
+          g.h = f.h;
+          g.a = f.a;
         }
       });
     });
@@ -27,9 +28,11 @@ var prediction = function($scope) {
   var save = function() {
     saved = $scope.games.map(function(g) {
       return {
+        id: g.id,
         win: g.win,
-        spread: g.spread,
-        id: g.id
+        //home score and away score
+        h: g.h,
+        a: g.a
       }
     })
   };
@@ -70,19 +73,19 @@ var prediction = function($scope) {
   }
   
   $scope.$watch(function() {
-    //if (person != "user") return;
     var filtered = $scope.games.map(function(entry) {
       return {
         id: entry.id,
         win: entry.win,
-        spread: entry.spread * 1
+        //home score and away score
+        h: entry.h,
+        a: entry.a
       }
     });
     
     var json = JSON.stringify({ games: filtered });
     var encoded = "#" + encodeURIComponent(json);
     history.replaceState(encoded, encoded, encoded);
-    //I think the problem is here at local storage. It thinks 0 is valid. Would a submit button solve this?
     localStorage.setItem("hawks-prediction", encoded);
   });
 
