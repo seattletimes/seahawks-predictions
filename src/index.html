@@ -28,30 +28,38 @@
 
         <div class="game" ng-repeat="game in games">
 
-<!--          <div class="details">
-            <div class="opponent">
-            </div>
-            <div class="date">
-              {{game.date}}
-              <p class="time">{{game.time}}</p>
-            </div>
+          <!--          <div class="details">
+<div class="opponent">
+</div>
+<div class="date">
+{{game.date}}
+<p class="time">{{game.time}}</p>
+</div>
 
-          </div>-->
+</div>-->
           <div class="prediction">
-          <p>Week {{game.id}}</p>
+            <p>Week {{game.id}}</p>
 
             <!--Home Team-->
-            <img src="assets/logos/{{game.home}}.jpg" ng-click="homeWin={border: '15px solid #7FFF00'}" ng-style="homeWin">
+            <label>
+              <input type="radio" name="winner"/>
+              <img src="assets/logos/{{game.home}}.jpg" ng-click="homeWin={border: '15px solid #7FFF00'}">
+            </label>
+
             <input ng-model="game.h" name="{{game.home}}Score">
-            
+
             <i class="fa fa-at fa-3x" aria-hidden="true"></i>
-            
+
             <!--Away Team-->
             <input ng-model="game.a" name="{{game.away}}Score">
-            <img src="assets/logos/{{game.away}}.jpg" ng-click="awayWin={border: '15px solid #7FFF00'}" ng-style="awayWin">
+            <label>
+              <input type="radio" name="winner"/>
+              <img src="assets/logos/{{game.away}}.jpg" ng-click="awayWin={border: '15px solid #7FFF00'}">
+            </label>
 
 
-     
+
+
           </div>        
 
           <div class="score">

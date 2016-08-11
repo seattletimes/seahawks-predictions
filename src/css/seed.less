@@ -32,10 +32,10 @@ header {
     padding: 3%;
     p {
       transform: rotate(270deg);
-        
+
     }
     .prediction {
-      
+
       .flex(1);
       .display-flex();
       .align-items(center);
@@ -43,6 +43,17 @@ header {
       background-color: @st-dark-blue;
       border-radius: 20px;
       text-align: center;
+
+      label > input{ /* HIDE RADIO */
+        display:none;
+      }
+      label > input + img{ /* IMAGE STYLES */
+        cursor:pointer;
+        border:10px solid transparent;
+      }
+      label > input:checked + img{ /* (CHECKED) IMAGE STYLES */
+        border:10px solid #7FFF00;
+      }
       img {
         width: 200px;
         height: 200px;
@@ -64,7 +75,7 @@ header {
         border: 5px solid @st-dark-blue;
         display: absolute;
       }
-      
+
       i {
         width: 200px;
       }
