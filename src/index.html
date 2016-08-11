@@ -19,10 +19,9 @@
       Seahawks Season Predictor 
     </header>
     <div class="container"  ng-controller="prediction" ng-cloak>
-      <div class="profile you-icon" ng-click="switchView('user')"></div>
-      <div class="profile bob-icon" ng-click="switchView('bob')"></div>
-      <div class="profile bob-icon" ng-click="switchView"></div>
-      <div class="profile bob-icon" ng-click="switchView"></div>
+      <div class="profile you-icon" ng-click="switchView('user')">You</div>
+      <div class="profile bob-icon" ng-click="switchView('bob')">Bob</div>
+      <div class="profile jayson-icon" ng-click="switchView">Jayson</div>
 
       <div class="schedule">
 
@@ -42,8 +41,9 @@
 
             <!--Home Team-->
             <label>
-              <input type="radio" name="winner"/>
-              <img src="assets/logos/{{game.home}}.jpg" ng-click="homeWin={border: '15px solid #7FFF00'}">
+              <input type="radio" name="winner {{game.id}}"/>
+              <img src="assets/logos/{{game.home}}.jpg" ng-click="homeWin={border: '15px solid #7FFF00'}" >
+              {{game.home}}
             </label>
 
             <input ng-model="game.h" name="{{game.home}}Score">
@@ -53,7 +53,7 @@
             <!--Away Team-->
             <input ng-model="game.a" name="{{game.away}}Score">
             <label>
-              <input type="radio" name="winner"/>
+              <input type="radio" name="winner {{game.id}}"/>
               <img src="assets/logos/{{game.away}}.jpg" ng-click="awayWin={border: '15px solid #7FFF00'}">
             </label>
 

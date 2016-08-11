@@ -44,15 +44,16 @@ header {
       border-radius: 20px;
       text-align: center;
 
-      label > input{ /* HIDE RADIO */
+      label > input{
         display:none;
       }
-      label > input + img{ /* IMAGE STYLES */
+      label > input + img{
         cursor:pointer;
         border:10px solid transparent;
       }
-      label > input:checked + img{ /* (CHECKED) IMAGE STYLES */
+      label > input:checked + img{ 
         border:10px solid #7FFF00;
+        transform: scale(.9);
       }
       img {
         width: 200px;
