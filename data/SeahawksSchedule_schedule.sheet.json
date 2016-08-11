@@ -3,96 +3,88 @@
     "date": "9/11",
     "time": "1:05 PM",
     "opponent": "Dolphins",
-    "home": "v.s."
+    "gameid": "dolphins0911"
   },
   {
     "date": "9/18",
     "time": "1:05 PM",
     "opponent": "Rams",
-    "home": "@"
   },
   {
     "date": "9/25",
     "time": "1:05 PM",
     "opponent": "49ers",
-    "home": "v.s."
+    "gameid": "fortyniners0925"
   },
   {
     "date": "10/2",
     "time": "10:00",
     "opponent": "Jets",
-    "home": "@"
   },
   {
     "date": "10/16",
     "time": "13:25",
     "opponent": "Falcons",
-    "home": "v.s."
+    "gameid": "falcons1016"
   },
   {
     "date": "10/23",
     "time": "17:30",
     "opponent": "Cardinals",
-    "home": "@"
   },
   {
     "date": "10/30",
     "time": "10:00 AM",
     "opponent": "Saints",
-    "home": "@"
   },
   {
     "date": "11/07",
     "time": "17:30",
     "opponent": "Bills",
-    "home": "v.s."
+    "gameid": "bills1107"
   },
   {
     "date": "11/13",
     "time": "17:30",
     "opponent": "Patriots",
-    "home": "@"
   },
   {
     "date": "11/20",
     "time": "13:25",
     "opponent": "Eagles",
-    "home": "v.s."
+    "gameid": "eagles1120"
   },
   {
     "date": "11/27",
     "time": "13:05",
     "opponent": "Buccaneers",
-    "home": "@"
   },
   {
     "date": "12/4",
     "time": "17:30",
     "opponent": "Panthers",
-    "home": "v.s."
+    "gameid": "panthers1204"
   },
   {
     "date": "12/11",
     "time": "13:25",
     "opponent": "Packers",
-    "home": "@"
   },
   {
     "date": "12/15",
     "time": "17:25",
     "opponent": "Rams",
-    "home": "v.s."
+    "gameid": "rams1215"
   },
   {
     "date": "12/24",
     "time": "13:25",
     "opponent": "Cardinals",
-    "home": "v.s."
+    "gameid": "cardinals1224"
   },
   {
     "date": "1/1",
     "time": "13:25",
     "opponent": "49ers",
-    "home": "@"
   }
 ]

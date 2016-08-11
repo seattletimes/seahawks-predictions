@@ -1,11 +1,11 @@
 {
   "s3": {
     "stage": {
-      "bucket": "",
-      "path": ""
+      "bucket": "projects-staging.seattletimes.com",
+      "path": "stinky-farming"
     },
     "live": {
-      "bucket": "",
+      "bucket": "projects.seattletimes.com",
       "path": ""
     }
   },
@@ -15,7 +15,7 @@
   "slug": "",
   "tags": [],
   "image": "assets/social.jpg",
-  "sheets": [],
+  "sheets": ["1vrn76yUva2dDgfs0bEvRKmDJDYISVDLVVa5S0X94N2Y"],
   "production": false,
   "embedded": true
 }
