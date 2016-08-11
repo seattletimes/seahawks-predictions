@@ -43,9 +43,23 @@ var makeShare = function(selector, position, url) {
 var top = makeShare(".share.top");
 var bottom = makeShare(".share.bottom", "top left");
 
+var update = function(buttons, url) {
+  buttons.forEach(function(b) {
+    var n = b.config.networks;
+    n.google_plus.url = addQuery(url, utm("google+"));
+    n.twitter.url = addQuery(url, utm("twitter"));
+    n.facebook.url = addQuery(url, utm("facebook"));
+    n.pinterest.url = addQuery(url, utm("pinterest"));
+  });
+};
+
+console.log(top);
+
 module.exports = {
   Share,
   makeShare,
+  addQuery,
   utm,
+  update,
   buttons: [top, bottom]
 }
