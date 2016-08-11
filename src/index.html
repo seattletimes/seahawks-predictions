@@ -8,6 +8,7 @@
     <link href='http://fonts.googleapis.com/css?family=Paytone+One|Oswald:700,400,300' rel='stylesheet' type='text/css'>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <%= t.include("partials/_head.html") %>
+    <style>[ng-cloak] { display: none; }</style>
   </head>
   <body ng-app="predictions">
 
@@ -17,80 +18,60 @@
     <header>
       Seahawks Season Predictor 
     </header>
+    <div class="container"  ng-controller="prediction" ng-cloak>
+      <div class="profile you-icon" ng-click="switchView('user')"></div>
+      <div class="profile bob-icon" ng-click="switchView('bob')"></div>
+      <div class="profile bob-icon" ng-click="switchView"></div>
+      <div class="profile bob-icon" ng-click="switchView"></div>
 
-    <div class="schedule">
+      <div class="schedule">
 
-      <section class="headers">
-        <div class="header event"></div>
-        <div class="header prediction">Your Prediction</div>
-        <div class="header score">Final Score</div>
-      </section>
+        <div class="game" ng-repeat="game in games">
 
+<!--          <div class="details">
+            <div class="opponent">
+            </div>
+            <div class="date">
+              {{game.date}}
+              <p class="time">{{game.time}}</p>
+            </div>
 
-      <% var games = {};
-      json.schedule.forEach(function(item) {
-        if (!games[item.date]) games[item.date] = [];
-        games[item.date].push(item);
-      });
+          </div>-->
+          <div class="prediction">
+          <p>Week {{game.id}}</p>
 
-      for (var g in games) {
-        var game = games[g];
+            <!--Home Team-->
+            <img src="assets/logos/seahawks.jpg" ng-if="game.home" ng-click="winStyle={border: '15px solid #7FFF00'}" ng-style="winStyle">
+            <img src="assets/logos/{{game.opponent | lowercase}}.jpg" ng-if="!game.home"ng-click="winStyle={border: '15px solid #7FFF00'}" ng-style="winStyle">
+            <input ng-model="game.spread" name="predict">
+            <i class="fa fa-at fa-3x" aria-hidden="true"></i>
+            
+            <!--Away Team-->
+            <input ng-model="game.spread" name="predict">
+            <img src="assets/logos/{{game.opponent | lowercase}}.jpg" ng-if="game.home"ng-click="winStyle={border: '15px solid #7FFF00'}" ng-style="winStyle">
+            <img src="assets/logos/seahawks.jpg" ng-if="!game.home"ng-click="winStyle={border: '15px solid #7FFF00'}" ng-style="winStyle">
 
-        game.forEach(function(item) { 
+     
+          </div>        
 
-          var image = item.opponent.toLowerCase() + ".jpg";%>
+          <div class="score">
 
-      <div class="game">
-
-        <div class="details">
-          <div class="opponent">
-            <%=item.home%> <%=item.opponent%>
-          </div>
-          <div class="date">
-            <%=item.date%>
-            <p class="time"><%=item.time%></p>
           </div>
 
         </div>
-
-        <div class="prediction" ng-controller="prediction">
-          <% if (item.home === "v.s.") { %>
-          <img src="assets/seahawks.png">
-          <img src="assets/<%=image%>">
-          <% } else { %>
-          <img src="assets/<%=image%>">
-          <img src="assets/seahawks.png">
-          <% } %>
-
-          <form class="prediction"> 
-
-            <input ng-model="score1" type="predict" name="seahawks-prediction" > - <input ng-model="score2" type="prediction" name="<%=item.opponent%>-prediction">
-          </form>
-          {{score1}}
-        </div>        
-          {{score1}}
-        
-        <div class="score">
-
-        </div>
-
       </div>
-
-      <% }); } %>
     </div>
-
-    <responsive-child>
-      <!-- content goes here -->
-    </responsive-child>
-
+    <script>
+      window.games = <%= JSON.stringify(json.SeahawksSchedule_schedule) %>;
+    </script>
     <script src="app.js" async></script>
     <% if (json.project.production) { %>
     <%= !json.project.embedded ? t.include("partials/_foot.html") : "" %>
     <%= t.include("partials/_workHere.html") %>
     <% } %>
-        <%= t.include("partials/_navBottom.html") %>
+    <%= t.include("partials/_navBottom.html") %>
 
   </body>
-  
-  
+
+
 </html>
