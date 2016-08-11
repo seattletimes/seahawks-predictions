@@ -3,6 +3,8 @@ require("./lib/social");
 // var track = require("./lib/tracking");
 
 var app = require("./application");
+var ascii = require("./arrayCode");
+var aKeys = "win h a".split(" ");
 
                
 var prediction = function($scope) {
@@ -11,15 +13,10 @@ var prediction = function($scope) {
   var person = "user";
 
   var restore = function(source) {
-    source.games.forEach(function(f) {
-      $scope.games.forEach(function(g) {
-        if (f.id == g.id) {
-          console.log("yes");
-          g.win = f.win;
-          g.h = f.h;
-          g.a = f.a;
-        }
-      });
+    source.forEach(function(g, i) {
+      for (var k in g) {
+        $scope.games[i][k] = g[k];
+      }
     });
   }
   
@@ -39,7 +36,7 @@ var prediction = function($scope) {
   
   $scope.switchView = function(name) {
   
-        $scope.msg = 'clicked';
+    $scope.msg = 'clicked';
 
     if (person == "user") {
       save();
@@ -58,16 +55,12 @@ var prediction = function($scope) {
   
   var hash = window.location.hash.replace(/^#/, "");
   if (hash) {
-        console.log("yes hash");
-
-    var fromURL = JSON.parse(decodeURIComponent(hash));
-    if (fromURL.games) restore(fromURL);
+    var fromURL = ascii.unpack(aKeys, hash);
+    if (fromURL) restore(fromURL);
   } else {
-    console.log("no hash");
     var fromLocal = localStorage.getItem("hawks-prediction");
     if (fromLocal) {
-      fromLocal = fromLocal.replace(/^#/, "");
-      fromLocal = JSON.parse(decodeURIComponent(fromLocal));
+      fromLocal = JSON.parse(fromLocal);
       restore(fromLocal);
     }
   }
@@ -83,10 +76,10 @@ var prediction = function($scope) {
       }
     });
     
-    var json = JSON.stringify({ games: filtered });
-    var encoded = "#" + encodeURIComponent(json);
+
+    var encoded = "#" + ascii.pack(aKeys, filtered);
     history.replaceState(encoded, encoded, encoded);
-    localStorage.setItem("hawks-prediction", encoded);
+    localStorage.setItem("hawks-prediction", JSON.stringify(filtered));
   });
 
 }
