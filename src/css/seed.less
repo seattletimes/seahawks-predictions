@@ -10,75 +10,57 @@ header {
 }
 
 .profile {
-  width: 75px;
-  height: 75px;
   display: inline-block;
-  border-radius: 50%;
-  border: 5px solid blueviolet;
   cursor: pointer;
 }
+
 .schedule {
-  .display-flex();
-  .flex-direction(column);
-
-  background-color: @st-dark-green;
-  margin: 0 auto;
-  color: white;
-  font-family: @df-sans; 
-
-
-
+  font-family: @df-sans;
+  
   .game {
-    padding: 3%;
-    p {
-      transform: rotate(270deg);
-
-    }
+    padding: 10px;
+    background: @df-light-gray;
+    
     .prediction {
-
-      .flex(1);
+      background: white;
       .display-flex();
       .align-items(center);
-      .justify-content(center);
-      background-color: @st-dark-blue;
-      border-radius: 20px;
+      .justify-content(space-around);
+      padding: 10px;
       text-align: center;
 
-      label > input{
-        display:none;
+      input.team-radio {
+        display: none;
       }
-      label > input + img{
-        cursor:pointer;
-        border:10px solid transparent;
-      }
-      label > input:checked + img{ 
-        border:10px solid #7FFF00;
-        transform: scale(.9);
-      }
-      img {
-        width: 200px;
-        height: 200px;
-        margin: 3px;
-        padding: 5px;
-        display: inline-block;
-        transform: scale(.7);
-        transition: all .2s ease-in-out;
-        &:hover {
-          transform: scale(.9);
+
+      input.team-radio + label {
+        text-transform: uppercase;
+        
+        img {
+          width: 200px;
+          margin: 3px;
+          padding: 5px;
+          display: block;
+          transform: scale(.7);
+          transition: all .2s ease-in-out;
+          &:hover {
+            transform: scale(.9);
+          }
         }
       }
-
-      input {
-        width: 50px;
-        height: 50px;
+      
+      input.team-radio:checked + label {
+        img {
+          border: 1px solid green;
+        }
+      }
+      
+      
+      input.score-input {
         margin: 3px;
         padding: 5px;
-        border: 5px solid @st-dark-blue;
-        display: absolute;
-      }
-
-      i {
-        width: 200px;
+        width: 60px;
+        text-align: center;
       }
     }
   }
@@ -97,4 +79,4 @@ button {
   &:hover {
     background-color: fade(@df-blue, 80%);
   }
-} 
+}

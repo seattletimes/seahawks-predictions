@@ -67,6 +67,9 @@ var prediction = function($scope) {
   
   $scope.$watch(function() {
     var filtered = $scope.games.map(function(entry) {
+      //limit scores to 99 at highest
+      if (entry.a > 99) entry.a = 99;
+      if (entry.h > 99) entry.h = 99;
       return {
         id: entry.id,
         win: entry.win,
@@ -75,7 +78,6 @@ var prediction = function($scope) {
         a: entry.a
       }
     });
-    
 
     var encoded = "#" + ascii.pack(aKeys, filtered);
     history.replaceState(encoded, encoded, encoded);
