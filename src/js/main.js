@@ -32,9 +32,19 @@ var prediction = function($scope) {
 
   var restore = function(source) {
     source.forEach(function(g, i) {
-      for (var k in g) {
-        $scope.games[i][k] = g[k];
+      var game = $scope.games[i];
+      var winner = null;
+      if (g.win > 0) {
+        if (g.win == 1) {
+          winner = "seahawks";
+        } else {
+          winner = game.away == "seahawks" ? game.home : game.away;
+        }
       }
+      
+      game.a = g.a;
+      game.h = g.h;
+      game.winner = winner;
     });
   }
   
@@ -91,7 +101,8 @@ var prediction = function($scope) {
       if (entry.h > 99) entry.h = 99;
       return {
         id: entry.id,
-        win: entry.win,
+        // SEA is 1, opponent is 2, tie is 0
+        win: entry.winner ? entry.winner == "seahawks" ? 1 : 2 : 0,
         //home score and away score
         h: entry.h,
         a: entry.a

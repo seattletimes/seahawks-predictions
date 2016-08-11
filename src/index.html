@@ -30,8 +30,15 @@
             <p class="date">Week {{game.id}}</p>
 
             <!--Home Team-->
-            <input class="team-radio" type="radio" name="winner{{game.id}}" id="team{{game.id}}sea">
-            <label for="team{{game.id}}sea">
+            <input
+              class="team-radio"
+              type="radio"
+              value="{{game.home}}"
+              name="winner{{game.id}}"
+              id="team{{game.id}}{{game.home}}"
+              ng-model="game.winner"
+            >
+            <label for="team{{game.id}}{{game.home}}">
               <img src="assets/logos/{{game.home}}.jpg" ng-click="homeWin={border: '15px solid #7FFF00'}" >
               {{game.home}}
             </label>
@@ -43,7 +50,14 @@
             <!--Away Team-->
             <input ng-model="game.a" class="score-input">
             
-            <input class="team-radio" type="radio" name="winner{{game.id}}" id="team{{game.id}}{{game.away}}">
+            <input
+              class="team-radio"
+              type="radio"
+              value="{{game.away}}"
+              name="winner{{game.id}}"
+              id="team{{game.id}}{{game.away}}"
+              ng-model="game.winner"
+            >
             <label for="team{{game.id}}{{game.away}}">
               <img src="assets/logos/{{game.away}}.jpg" ng-click="awayWin={border: '15px solid #7FFF00'}">
               {{game.away}}
