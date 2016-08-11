@@ -1,3 +1,26 @@
+/*
+
+This module packs an array of objects into a string of text. In order to
+achieve very small packed data sizes, all the objects must only contain
+numeric values, and the keys must be provided during both packing and
+unpacking. Packed strings are forward compatible, as long as you only add keys
+onto the end of the list when packing/unpacking.
+
+A packed string always starts with two numbers. The first number tells the
+decoder how many keys are encoded per object (the stride). The second number
+indicates the width of each value. The remaining text is the actual data from
+the array items.
+
+Because this coding can only encode arrays containing objects with numerical
+values, it can't be used to save metadata, such as the user's name or the
+timestamp of the data's creation. However, it uses only characters that are in
+the URI Component range, meaning that you can use it as a single item in a
+query string. The current implementation of the page does this, placing the
+games into a "games" query param, while other query params specify the
+timestamp when it was updated.
+
+*/
+
 var cipher = "-_.~abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 
 var pack = function(keys, data) {

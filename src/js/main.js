@@ -6,6 +6,24 @@ var app = require("./application");
 var ascii = require("./arrayCode");
 var aKeys = "win h a".split(" ");
 
+var parseQuery = function(qs) {
+  var out = {};
+  var parts = qs.split("&");
+  parts.forEach(function(p) {
+    var [key, value] = p.split("=");
+    out[key] = value;
+  });
+  return out;
+}
+
+var encodeQuery = function(data) {
+  var qs = [];
+  for (var k in data) {
+    qs.push(k + "=" + data[k]);
+  }
+  return qs.join("&");
+}
+
                
 var prediction = function($scope) {
   
@@ -54,8 +72,9 @@ var prediction = function($scope) {
   }
   
   var hash = window.location.hash.replace(/^#/, "");
-  if (hash) {
-    var fromURL = ascii.unpack(aKeys, hash);
+  var query = parseQuery(hash);
+  if (query.games) {
+    var fromURL = ascii.unpack(aKeys, query.games);
     if (fromURL) restore(fromURL);
   } else {
     var fromLocal = localStorage.getItem("hawks-prediction");
@@ -79,7 +98,10 @@ var prediction = function($scope) {
       }
     });
 
-    var encoded = "#" + ascii.pack(aKeys, filtered);
+    var encoded = "#" + encodeQuery({
+      games: ascii.pack(aKeys, filtered),
+      timestamp: Date.now()
+    });
     history.replaceState(encoded, encoded, encoded);
     localStorage.setItem("hawks-prediction", JSON.stringify(filtered));
   });
