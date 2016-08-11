@@ -22,7 +22,7 @@ timestamp when it was updated.
 
 */
 
-var cipher = "-_.~abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+var cipher = "0123456789-_.~abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 var pack = function(keys, data) {
   var buffer = [];

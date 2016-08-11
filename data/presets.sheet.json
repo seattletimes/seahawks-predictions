@@ -1,0 +1,114 @@
+[
+  {
+    "author": "bob",
+    "game": 1,
+    "h": 16,
+    "a": 1,
+    "winner": "seahawks"
+  },
+  {
+    "author": "bob",
+    "game": 2,
+    "h": 15,
+    "a": 2,
+    "winner": "rams"
+  },
+  {
+    "author": "bob",
+    "game": 3,
+    "h": 14,
+    "a": 3,
+    "winner": "seahawks"
+  },
+  {
+    "author": "bob",
+    "game": 4,
+    "h": 13,
+    "a": 4,
+    "winner": "jets"
+  },
+  {
+    "author": "bob",
+    "game": 5,
+    "h": 12,
+    "a": 5,
+    "winner": "seahawks"
+  },
+  {
+    "author": "bob",
+    "game": 6,
+    "h": 11,
+    "a": 6,
+    "winner": "cardinals"
+  },
+  {
+    "author": "bob",
+    "game": 7,
+    "h": 10,
+    "a": 7,
+    "winner": "saints"
+  },
+  {
+    "author": "bob",
+    "game": 8,
+    "h": 9,
+    "a": 8,
+    "winner": "seahawks"
+  },
+  {
+    "author": "bob",
+    "game": 9,
+    "h": 8,
+    "a": 9,
+    "winner": "patriots"
+  },
+  {
+    "author": "bob",
+    "game": 10,
+    "h": 7,
+    "a": 10,
+    "winner": "seahawks"
+  },
+  {
+    "author": "bob",
+    "game": 11,
+    "h": 6,
+    "a": 11,
+    "winner": "buccaneers"
+  },
+  {
+    "author": "bob",
+    "game": 12,
+    "h": 5,
+    "a": 12,
+    "winner": "seahawks"
+  },
+  {
+    "author": "bob",
+    "game": 13,
+    "h": 4,
+    "a": 13,
+    "winner": "packers"
+  },
+  {
+    "author": "bob",
+    "game": 14,
+    "h": 3,
+    "a": 14,
+    "winner": "seahawks"
+  },
+  {
+    "author": "bob",
+    "game": 15,
+    "h": 2,
+    "a": 15,
+    "winner": "seahawks"
+  },
+  {
+    "author": "bob",
+    "game": 16,
+    "h": 1,
+    "a": 16,
+    "winner": "49ers"
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "bob": {
+    "name": "Bob Condotta",
+    "chatter": "This is Bob's chatter, where he talks about his reasoning for his picks"
+  },
+  "jayson": {
+    "name": "Jayson Jenks"
+  },
+  "matt": {
+    "name": "Matt Calkins"
+  },
+  "larry": {
+    "name": "Larry Stone"
+  }
+}

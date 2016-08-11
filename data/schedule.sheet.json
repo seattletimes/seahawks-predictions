@@ -1,129 +1,129 @@
 [
   {
+    "id": 1,
     "date": "9/11",
     "time": "1:05:00 PM",
     "opponent": "Dolphins",
-    "id": 1,
     "home": "seahawks",
     "away": "dolphins"
   },
   {
+    "id": 2,
     "date": "9/18",
     "time": "1:05:00 PM",
     "opponent": "Rams",
-    "id": 2,
     "home": "rams",
     "away": "seahawks"
   },
   {
+    "id": 3,
     "date": "9/25",
     "time": "1:05:00 PM",
     "opponent": "49ers",
-    "id": 3,
     "home": "seahawks",
     "away": "49ers"
   },
   {
+    "id": 4,
     "date": "10/2",
     "time": "10:00:00 AM",
     "opponent": "Jets",
-    "id": 4,
     "home": "jets",
     "away": "seahawks"
   },
   {
+    "id": 5,
     "date": "10/16",
     "time": "1:25:00 PM",
     "opponent": "Falcons",
-    "id": 5,
     "home": "seahawks",
     "away": "falcons"
   },
   {
+    "id": 6,
     "date": "10/23",
     "time": "5:30:00 PM",
     "opponent": "Cardinals",
-    "id": 6,
     "home": "cardinals",
     "away": "seahawks"
   },
   {
+    "id": 7,
     "date": "10/30",
     "time": "10:00:00 AM",
     "opponent": "Saints",
-    "id": 7,
     "home": "saints",
     "away": "seahawks"
   },
   {
+    "id": 8,
     "date": "11/07",
     "time": "5:30:00 PM",
     "opponent": "Bills",
-    "id": 8,
     "home": "seahawks",
     "away": "bills"
   },
   {
+    "id": 9,
     "date": "11/13",
     "time": "5:30:00 PM",
     "opponent": "Patriots",
-    "id": 9,
     "home": "patriots",
     "away": "seahawks"
   },
   {
+    "id": 10,
     "date": "11/20",
     "time": "1:25:00 PM",
     "opponent": "Eagles",
-    "id": 10,
     "home": "seahawks",
     "away": "eagles"
   },
   {
+    "id": 11,
     "date": "11/27",
     "time": "1:05:00 PM",
     "opponent": "Buccaneers",
-    "id": 11,
     "home": "buccaneers",
     "away": "seahawks"
   },
   {
+    "id": 12,
     "date": "12/4",
     "time": "5:30:00 PM",
     "opponent": "Panthers",
-    "id": 12,
     "home": "seahawks",
     "away": "panthers"
   },
   {
+    "id": 13,
     "date": "12/11",
     "time": "1:25:00 PM",
     "opponent": "Packers",
-    "id": 13,
     "home": "packers",
     "away": "seahawks"
   },
   {
+    "id": 14,
     "date": "12/15",
     "time": "5:25:00 PM",
     "opponent": "Rams",
-    "id": 14,
     "home": "seahawks",
     "away": "rams"
   },
   {
+    "id": 15,
     "date": "12/24",
     "time": "1:25:00 PM",
     "opponent": "Cardinals",
-    "id": 15,
     "home": "seahawks",
     "away": "cardinals"
   },
   {
+    "id": 16,
     "date": "1/1",
     "time": "1:25:00 PM",
     "opponent": "49ers",
-    "id": 16,
     "home": "49ers",
     "away": "seahawks"
   }

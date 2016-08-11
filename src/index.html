@@ -76,7 +76,11 @@
       </div>
     </div>
     <script>
-      window.games = <%= JSON.stringify(json.SeahawksSchedule_schedule) %>;
+      window.games = {
+        schedule: <%= JSON.stringify(json.schedule) %>,
+        pundits: <%= JSON.stringify(json.punditry) %>,
+        presets: <%= JSON.stringify(json.presets) %>
+      };
     </script>
     <script src="app.js" async></script>
     <% if (json.project.production) { %>
