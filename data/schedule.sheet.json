@@ -3,128 +3,176 @@
     "id": 1,
     "date": "9/11",
     "time": "1:05:00 PM",
-    "opponent": "Dolphins",
     "home": "seahawks",
-    "away": "dolphins"
+    "away": "dolphins",
+    "bobWinner": "seahawks",
+    "jaysonWinner": "seahawks",
+    "third-winner": "saints",
+    "fourth-winner": "seahawks"
   },
   {
     "id": 2,
     "date": "9/18",
     "time": "1:05:00 PM",
-    "opponent": "Rams",
     "home": "rams",
-    "away": "seahawks"
+    "away": "seahawks",
+    "bobWinner": "rams",
+    "jaysonWinner": "seahawks",
+    "third-winner": "seahawks",
+    "fourth-winner": "seahawks"
   },
   {
     "id": 3,
     "date": "9/25",
     "time": "1:05:00 PM",
-    "opponent": "49ers",
     "home": "seahawks",
-    "away": "49ers"
+    "away": "49ers",
+    "bobWinner": "seahawks",
+    "jaysonWinner": "bills",
+    "third-winner": "patriots",
+    "fourth-winner": "seahawks"
   },
   {
     "id": 4,
     "date": "10/2",
     "time": "10:00:00 AM",
-    "opponent": "Jets",
     "home": "jets",
-    "away": "seahawks"
+    "away": "seahawks",
+    "bobWinner": "jets",
+    "jaysonWinner": "seahawks",
+    "third-winner": "seahawks",
+    "fourth-winner": "seahawks"
   },
   {
     "id": 5,
     "date": "10/16",
     "time": "1:25:00 PM",
-    "opponent": "Falcons",
     "home": "seahawks",
-    "away": "falcons"
+    "away": "falcons",
+    "bobWinner": "seahawks",
+    "jaysonWinner": "eagles",
+    "third-winner": "buccaneers",
+    "fourth-winner": "49ers"
   },
   {
     "id": 6,
     "date": "10/23",
     "time": "5:30:00 PM",
-    "opponent": "Cardinals",
     "home": "cardinals",
-    "away": "seahawks"
+    "away": "seahawks",
+    "bobWinner": "cardinals",
+    "jaysonWinner": "seahawks",
+    "third-winner": "seahawks",
+    "fourth-winner": "seahawks"
   },
   {
     "id": 7,
     "date": "10/30",
     "time": "10:00:00 AM",
-    "opponent": "Saints",
     "home": "saints",
-    "away": "seahawks"
+    "away": "seahawks",
+    "bobWinner": "saints",
+    "jaysonWinner": "seahawks",
+    "third-winner": "seahawks",
+    "fourth-winner": "falcons"
   },
   {
     "id": 8,
     "date": "11/07",
     "time": "5:30:00 PM",
-    "opponent": "Bills",
     "home": "seahawks",
-    "away": "bills"
+    "away": "bills",
+    "bobWinner": "seahawks",
+    "jaysonWinner": "rams",
+    "third-winner": "seahawks",
+    "fourth-winner": "seahawks"
   },
   {
     "id": 9,
     "date": "11/13",
     "time": "5:30:00 PM",
-    "opponent": "Patriots",
     "home": "patriots",
-    "away": "seahawks"
+    "away": "seahawks",
+    "bobWinner": "patriots",
+    "jaysonWinner": "seahawks",
+    "third-winner": "bills",
+    "fourth-winner": "patriots"
   },
   {
     "id": 10,
     "date": "11/20",
     "time": "1:25:00 PM",
-    "opponent": "Eagles",
     "home": "seahawks",
-    "away": "eagles"
+    "away": "eagles",
+    "bobWinner": "seahawks",
+    "jaysonWinner": "jets",
+    "third-winner": "seahawks",
+    "fourth-winner": "seahawks"
   },
   {
     "id": 11,
     "date": "11/27",
     "time": "1:05:00 PM",
-    "opponent": "Buccaneers",
     "home": "buccaneers",
-    "away": "seahawks"
+    "away": "seahawks",
+    "bobWinner": "buccaneers",
+    "jaysonWinner": "seahawks",
+    "third-winner": "eagles",
+    "fourth-winner": "buccaneers"
   },
   {
     "id": 12,
     "date": "12/4",
     "time": "5:30:00 PM",
-    "opponent": "Panthers",
     "home": "seahawks",
-    "away": "panthers"
+    "away": "panthers",
+    "bobWinner": "seahawks",
+    "jaysonWinner": "saints",
+    "third-winner": "seahawks",
+    "fourth-winner": "seahawks"
   },
   {
     "id": 13,
     "date": "12/11",
     "time": "1:25:00 PM",
-    "opponent": "Packers",
     "home": "packers",
-    "away": "seahawks"
+    "away": "seahawks",
+    "bobWinner": "packers",
+    "jaysonWinner": "seahawks",
+    "third-winner": "seahawks",
+    "fourth-winner": "seahawks"
   },
   {
     "id": 14,
     "date": "12/15",
     "time": "5:25:00 PM",
-    "opponent": "Rams",
     "home": "seahawks",
-    "away": "rams"
+    "away": "rams",
+    "bobWinner": "seahawks",
+    "jaysonWinner": "patriots",
+    "third-winner": "49ers",
+    "fourth-winner": "seahawks"
   },
   {
     "id": 15,
     "date": "12/24",
     "time": "1:25:00 PM",
-    "opponent": "Cardinals",
     "home": "seahawks",
-    "away": "cardinals"
+    "away": "cardinals",
+    "bobWinner": "seahawks",
+    "jaysonWinner": "seahawks",
+    "third-winner": "seahawks",
+    "fourth-winner": "bills"
   },
   {
     "id": 16,
     "date": "1/1",
     "time": "1:25:00 PM",
-    "opponent": "49ers",
     "home": "49ers",
-    "away": "seahawks"
+    "away": "seahawks",
+    "bobWinner": "seahawks",
+    "jaysonWinner": "buccaneers",
+    "third-winner": "falcons",
+    "fourth-winner": "seahawks"
   }
 ]

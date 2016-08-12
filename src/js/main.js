@@ -10,19 +10,14 @@ var aKeys = "winner h a".split(" ");
 // set up the preset configs
 var presets = window.games.pundits;
 
-window.games.presets.forEach(function(row) {
-  var pundit = presets[row.author];
-  if (!pundit.games) pundit.games = [];
-  pundit.games.push(row);
-  console.log(pundit.chatter);
-});
 
 
-//zero out the scores
+
+/*//zero out the scores
 window.games.schedule.forEach(function(row) {
   row.h = 0;
   row.a = 0;
-});
+});*/
 
 var prediction = function($scope) {
 
@@ -30,6 +25,13 @@ var prediction = function($scope) {
   var person = "user";
   var saved = null;
 
+  window.games.presets.forEach(function(row) {
+  var pundit = presets[row.author];
+  if (!pundit.games) pundit.games = [];
+  pundit.games.push(row);
+  $scope.pundits = pundit.games; 
+});
+console.log($scope.pundits);
   $scope.chatter = "Here is some chatter";
 
   $scope.games.winner = "SELECT YOUR WINNER";
@@ -42,8 +44,8 @@ var prediction = function($scope) {
   var reset = function() {
     $scope.games.forEach(function(g) {
       g.winner = null;
-      g.a = 0;
-      g.h = 0;
+/*      g.a = 0;
+      g.h = 0;*/
     });
   }
 
@@ -57,13 +59,13 @@ var prediction = function($scope) {
       } else if (g.winner > 0) {
         game.winner = g.winner == 1 ? game.home : game.away;
       }
-
+/*
       game.a = g.a;
-      game.h = g.h;
+      game.h = g.h;*/
     });
   }
 
-  $scope.switchView = function(name) {  
+/*  $scope.switchView = function(name) {  
     $scope.msg = 'clicked';
     if (person == name) return;
 
@@ -79,10 +81,9 @@ var prediction = function($scope) {
       var p = presets[name];
       if (!p || !p.games) return;
       restore(p.games);
-      rest
     }
     person = name;
-  }
+  }*/
 
   // on startup, check the window hash for a games parameter
   var hash = window.location.hash.replace(/^#/, "");
@@ -112,16 +113,16 @@ var prediction = function($scope) {
         id: entry.id,
         // home is 1, away is 2, tie is 0
         winner: entry.winner ? entry.winner == entry.home ? 1 : 2 : 0,
-        //home score and away score
+/*        //home score and away score
         h: entry.h,
-        a: entry.a
+        a: entry.a*/
       }
     });
 
     // remove trailing items with no data
     for (var i = filtered.length - 1; i >= 0; i--) {
       var item = filtered[i];
-      if (!item.winner && !item.h && !item.a) {
+      if (!item.winner) {
         filtered.pop();
       }
     }

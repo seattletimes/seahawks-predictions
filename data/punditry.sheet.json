@@ -4,7 +4,8 @@
     "chatter": "This is Bob's chatter, where he talks about his reasoning for his picks"
   },
   "jayson": {
-    "name": "Jayson Jenks"
+    "name": "Jayson Jenks",
+    "chatter": "Jayson chatter"
   },
   "matt": {
     "name": "Matt Calkins"
