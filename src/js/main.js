@@ -20,12 +20,18 @@ window.games.schedule.forEach(function(row) {
   row.h = 0;
   row.a = 0;
 });
-               
+
 var prediction = function($scope) {
-  
+
   $scope.games = window.games.schedule;
   var person = "user";
   var saved = null;
+
+  $scope.games.winner = "SELECT YOUR WINNER";
+
+  $scope.selectTeam = function(team) {
+    $scope.winner = "YOU SELECTED THE " + team; 
+  }
 
   //called to clear out data when swapping presets
   var reset = function() {
@@ -46,12 +52,12 @@ var prediction = function($scope) {
       } else if (g.winner > 0) {
         game.winner = g.winner == 1 ? game.home : game.away;
       }
-      
+
       game.a = g.a;
       game.h = g.h;
     });
   }
-  
+
   $scope.switchView = function(name) {  
     $scope.msg = 'clicked';
     if (person == name) return;
@@ -71,7 +77,7 @@ var prediction = function($scope) {
     }
     person = name;
   }
-  
+
   // on startup, check the window hash for a games parameter
   var hash = window.location.hash.replace(/^#/, "");
   var query = qs.decode(hash);
@@ -88,7 +94,7 @@ var prediction = function($scope) {
       restore(fromLocal);
     }
   }
-  
+
   // When any data changes (or for each digest cycle), run this function
   $scope.$watch(function() {
     //only persist user data, ignore the presets

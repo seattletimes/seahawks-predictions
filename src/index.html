@@ -26,53 +26,53 @@
       <div class="schedule">
 
         <div class="game" ng-repeat="game in games">
+          <div class="prediction-chatter">
+            <p class="date">Week {{game.id}}</p> 
+            <p class="prompt">{{winner}}</p>
+          </div>
+
           <div class="prediction">
-            <p class="date">Week {{game.id}}</p>
 
             <!--Home Team-->
             <input
-              class="team-radio"
-              type="radio"
-              value="{{game.home}}"
-              name="winner{{game.id}}"
-              id="team{{game.id}}{{game.home}}"
-              ng-model="game.winner"
-            >
+                   class="team-radio"
+                   type="radio"
+                   value="{{game.home}}"
+                   name="winner{{game.id}}"
+                   id="team{{game.id}}{{game.home}}"
+                   ng-model="game.winner"
+                   ng-click="selectTeam(game.home | uppercase)"
+                   >
             <label for="team{{game.id}}{{game.home}}">
-              <img src="assets/logos/{{game.home}}.jpg" ng-click="homeWin={border: '15px solid #7FFF00'}" >
+              <img src="assets/logos/{{game.home}}.png" >
               {{game.home}}
             </label>
 
             <input ng-model="game.h" class="score-input" pattern="\d+">
 
-            <i class="fa fa-at fa-3x" aria-hidden="true"></i>
+            <p class="at">@</p>
 
             <!--Away Team-->
             <input ng-model="game.a" class="score-input">
-            
+
             <input
-              class="team-radio"
-              type="radio"
-              value="{{game.away}}"
-              name="winner{{game.id}}"
-              id="team{{game.id}}{{game.away}}"
-              ng-model="game.winner"
-            >
+                   class="team-radio"
+                   type="radio"
+                   value="{{game.away}}"
+                   name="winner{{game.id}}"
+                   id="team{{game.id}}{{game.away}}"
+                   ng-model="game.winner"
+
+                   >
             <label for="team{{game.id}}{{game.away}}">
-              <img src="assets/logos/{{game.away}}.jpg" ng-click="awayWin={border: '15px solid #7FFF00'}">
+              <img src="assets/logos/{{game.away}}.png" ng-click="$parent.winner = game.away" >
               {{game.away}}
             </label>
 
-
-
-
           </div>
-
-          <div class="score">
-
-          </div>
-
         </div>
+        
+        <button class="submit">SUBMIT</button>
       </div>
     </div>
     <script>

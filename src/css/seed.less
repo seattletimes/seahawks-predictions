@@ -16,18 +16,40 @@ header {
 
 .schedule {
   font-family: @df-sans;
-  
+  background: #002244;
+  padding: 10px;
+
   .game {
+    width: 75%;
+    margin: 20px auto;
     padding: 10px;
-    background: @df-light-gray;
-    
+    background:  #dbdddf;
+    border-radius: 20px;
+
+    .prediction-chatter {
+      font-weight: 800;
+
+      .date {
+        font-style: italic;
+        background-color: white;
+        display: inline-block;
+      }
+      
+      .prompt {
+        display: inline-block;
+        margin-left: 30%;
+      }
+    }
+
+
     .prediction {
-      background: white;
+
       .display-flex();
       .align-items(center);
       .justify-content(space-around);
-      padding: 10px;
       text-align: center;
+      font-family: @cool;
+
 
       input.team-radio {
         display: none;
@@ -35,27 +57,32 @@ header {
 
       input.team-radio + label {
         text-transform: uppercase;
-        
+
         img {
           width: 200px;
           margin: 3px;
           padding: 5px;
           display: block;
           transform: scale(.7);
+          border: 5px solid #dbdddf;
+          border-radius: 50%;
           transition: all .2s ease-in-out;
           &:hover {
             transform: scale(.9);
           }
         }
       }
-      
+
       input.team-radio:checked + label {
         img {
-          border: 1px solid green;
+          border: 5px solid #69BE28;
+          border-radius: 50%;
+          background-color: #69BE28;
+          transform: scale(.9);
         }
       }
-      
-      
+
+
       input.score-input {
         margin: 3px;
         padding: 5px;
@@ -69,13 +96,14 @@ header {
 button {
   color: black;
   text-align: center;
-  border: 5px solid black;
+  border: 5px solid #69BE28;
   font-family: @df-sans;
-  font-size: 25px;
-  width: 75px;
+  font-size: 30px;
   margin: 5% auto;
-  padding: 10px;
+  padding: 30px;
   cursor: pointer;
+  margin: auto;
+  display: block;
   &:hover {
     background-color: fade(@df-blue, 80%);
   }
