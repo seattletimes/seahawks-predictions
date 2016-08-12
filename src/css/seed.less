@@ -1,5 +1,14 @@
 @import "seattletimes";
 
+body {
+
+}
+
+.container { 
+  max-width: 1200px;
+  margin: auto;
+}
+
 header {
   font-family: @cool;
   font-size: 50px;
@@ -18,26 +27,34 @@ header {
   font-family: @df-sans;
   background: #002244;
   padding: 10px;
+  .display-flex();
+  .flex-wrap(wrap);
+  .justify-content(center);
+  @media @mobile {
+    display: block;
+  }
+
 
   .game {
-    width: 75%;
-    margin: 20px auto;
-    padding: 10px;
-    background:  #dbdddf;
-    border-radius: 20px;
+    width: 21%;
+    background-color: white;
+    margin: 1%;
+    .display-flex();
+    .flex-direction(column);
+    @media @mobile {
+      width: 100%;
+    }
 
-    .prediction-chatter {
-      font-weight: 800;
 
-      .date {
-        font-style: italic;
-        background-color: white;
+    .date {
+        text-align: center;
+      p {
+        font-weight: 900;
+        font-size: 18px;
+        text-transform: uppercase;
+        border-bottom: 3px solid #69BE28;
         display: inline-block;
-      }
-      
-      .prompt {
-        display: inline-block;
-        margin-left: 30%;
+        .flex(1);
       }
     }
 
@@ -47,8 +64,18 @@ header {
       .display-flex();
       .align-items(center);
       .justify-content(space-around);
+
+
       text-align: center;
-      font-family: @cool;
+      @media @mobile {
+        padding: 0;
+        margin: 5px;
+      }
+      
+      .vs {
+        font-size: 18px;
+        font-weight: 900;
+      }
 
 
       input.team-radio {
@@ -57,38 +84,40 @@ header {
 
       input.team-radio + label {
         text-transform: uppercase;
+        font-size: 13px;
+        font-weight: 900;
+        padding-bottom: 30px;
 
         img {
-          width: 200px;
+          width: 100%;
           margin: 3px;
           padding: 5px;
-          display: block;
-          transform: scale(.7);
-          border: 5px solid #dbdddf;
+          transform: scale(.8);
           border-radius: 50%;
           transition: all .2s ease-in-out;
           &:hover {
-            transform: scale(.9);
+            transform: scale(1);
           }
         }
       }
 
       input.team-radio:checked + label {
         img {
-          border: 5px solid #69BE28;
           border-radius: 50%;
-          background-color: #69BE28;
-          transform: scale(.9);
+          background-color: fade(#69BE28, 60%);
+          transform: scale(.8);
         }
       }
+    }
 
-
-      input.score-input {
-        margin: 3px;
-        padding: 5px;
-        width: 60px;
-        text-align: center;
-      }
+    .expert-box {
+      background: fade(#dbdddf, 60%);
+      font-size: 12px;
+      font-weight: 900;
+      text-align: center;
+      text-transform: uppercase;
+      padding: 5px 0;
+      
     }
   }
 }

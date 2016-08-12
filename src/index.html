@@ -15,20 +15,22 @@
     <%= t.include("./partials/_ad.html", { type: "banner" }) %>
     <%= t.include("partials/_nav.html") %>
 
-    <header>
-      Seahawks Season Predictor
-    </header>
     <div class="container"  ng-controller="prediction" ng-cloak>
+
+      <header>
+        Seahawks Season Predictor
+      </header>
+
       <a class="profile you-icon" ng-click="switchView('user')">You</a>
       <a class="profile bob-icon" ng-click="switchView('bob')">Bob</a>
       <a class="profile jayson-icon" ng-click="switchView('jayson')">Jayson</a>
 
+      <div class="chatter" ng-bind="chatter"></div>
       <div class="schedule">
 
         <div class="game" ng-repeat="game in games">
-          <div class="prediction-chatter">
-            <p class="date">Week {{game.id}}</p> 
-            <p class="prompt">{{winner}}</p>
+          <div class="date">
+            <p>Week {{game.id}}</p>
           </div>
 
           <div class="prediction">
@@ -41,19 +43,16 @@
                    name="winner{{game.id}}"
                    id="team{{game.id}}{{game.home}}"
                    ng-model="game.winner"
-                   ng-click="selectTeam(game.home | uppercase)"
                    >
             <label for="team{{game.id}}{{game.home}}">
               <img src="assets/logos/{{game.home}}.png" >
               {{game.home}}
             </label>
 
-            <input ng-model="game.h" class="score-input" pattern="\d+">
 
-            <p class="at">@</p>
+            <span class="vs">vs.</span>
 
             <!--Away Team-->
-            <input ng-model="game.a" class="score-input">
 
             <input
                    class="team-radio"
@@ -62,17 +61,25 @@
                    name="winner{{game.id}}"
                    id="team{{game.id}}{{game.away}}"
                    ng-model="game.winner"
-
                    >
             <label for="team{{game.id}}{{game.away}}">
-              <img src="assets/logos/{{game.away}}.png" ng-click="$parent.winner = game.away" >
+              <img src="assets/logos/{{game.away}}.png">
               {{game.away}}
             </label>
 
           </div>
+
+          <div class="expert-box">
+            <div class="title">Expert Picks</div>
+            <div class="experts">
+              Bob Condotta | Jayson Jenks  
+            </div>
+
+            <div class="watch">Watch the game</div>
+            
+          </div>
         </div>
-        
-        <button class="submit">SUBMIT</button>
+
       </div>
     </div>
     <script>

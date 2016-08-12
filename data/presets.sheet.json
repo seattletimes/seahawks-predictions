@@ -110,5 +110,117 @@
     "h": 1,
     "a": 16,
     "winner": "49ers"
+  },
+  {
+    "author": "jayson",
+    "game": 1,
+    "h": 3,
+    "a": 2,
+    "winner": "dolphins"
+  },
+  {
+    "author": "jayson",
+    "game": 2,
+    "h": 3,
+    "a": 3,
+    "winner": "rams"
+  },
+  {
+    "author": "jayson",
+    "game": 3,
+    "h": 3,
+    "a": 4,
+    "winner": "seahawks"
+  },
+  {
+    "author": "jayson",
+    "game": 4,
+    "h": 3,
+    "a": 5,
+    "winner": "jets"
+  },
+  {
+    "author": "jayson",
+    "game": 5,
+    "h": 3,
+    "a": 6,
+    "winner": "seahawks"
+  },
+  {
+    "author": "jayson",
+    "game": 6,
+    "h": 3,
+    "a": 7,
+    "winner": "cardinals"
+  },
+  {
+    "author": "jayson",
+    "game": 7,
+    "h": 3,
+    "a": 8,
+    "winner": "saints"
+  },
+  {
+    "author": "jayson",
+    "game": 8,
+    "h": 3,
+    "a": 9,
+    "winner": "seahawks"
+  },
+  {
+    "author": "jayson",
+    "game": 9,
+    "h": 3,
+    "a": 10,
+    "winner": "patriots"
+  },
+  {
+    "author": "jayson",
+    "game": 10,
+    "h": 3,
+    "a": 11,
+    "winner": "seahawks"
+  },
+  {
+    "author": "jayson",
+    "game": 11,
+    "h": 3,
+    "a": 12,
+    "winner": "buccaneers"
+  },
+  {
+    "author": "jayson",
+    "game": 12,
+    "h": 3,
+    "a": 13,
+    "winner": "seahawks"
+  },
+  {
+    "author": "jayson",
+    "game": 13,
+    "h": 3,
+    "a": 14,
+    "winner": "packers"
+  },
+  {
+    "author": "jayson",
+    "game": 14,
+    "h": 3,
+    "a": 15,
+    "winner": "seahawks"
+  },
+  {
+    "author": "jayson",
+    "game": 15,
+    "h": 2,
+    "a": 16,
+    "winner": "seahawks"
+  },
+  {
+    "author": "jayson",
+    "game": 16,
+    "h": 1,
+    "a": 17,
+    "winner": "49ers"
   }
 ]

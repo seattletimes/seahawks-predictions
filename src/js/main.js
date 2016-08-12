@@ -9,11 +9,14 @@ var aKeys = "winner h a".split(" ");
 
 // set up the preset configs
 var presets = window.games.pundits;
+
 window.games.presets.forEach(function(row) {
   var pundit = presets[row.author];
   if (!pundit.games) pundit.games = [];
   pundit.games.push(row);
+  console.log(pundit.chatter);
 });
+
 
 //zero out the scores
 window.games.schedule.forEach(function(row) {
@@ -26,6 +29,8 @@ var prediction = function($scope) {
   $scope.games = window.games.schedule;
   var person = "user";
   var saved = null;
+
+  $scope.chatter = "Here is some chatter";
 
   $scope.games.winner = "SELECT YOUR WINNER";
 
@@ -74,6 +79,7 @@ var prediction = function($scope) {
       var p = presets[name];
       if (!p || !p.games) return;
       restore(p.games);
+      rest
     }
     person = name;
   }
