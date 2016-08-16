@@ -42,14 +42,14 @@
                    >
             <label for="team{{game.id}}{{game.home}}">
               <img src="assets/logos/{{game.home}}.png" ng-click="dropdown=true">
-              {{game.home}}.
+              {{game.home}}
             </label>
-            
+
             <input class="team-radio vs">
             <label for="team{{game.id}}{{game.home}}">
-               v.s.
+              vs.
             </label>
-            
+
 
 
             <!--Away Team-->
@@ -68,16 +68,26 @@
             </label>
 
           </div>
-            
-         <!--issue: this shouldn't be based on the click but whether or not game.winner has bee assigned. -->
+
+          <!--issue: this shouldn't be based on the click but whether or not game.winner has bee assigned. -->
           <div class="expert-box" ng-class="{'selected':dropdown}">
+
             <div class="title">Expert Picks</div>
+
             <div class="experts">
-              B. Condotta <img src="assets/logos/{{game.bobWinner}}.png">| J. Jenks <img src="assets/logos/{{game.jaysonWinner}}.png"> 
+
+              <div class="expert">
+                <p class="name">B. Condotta</p>
+                <img class="pick" src="assets/logos/{{game.bobWinner}}.png"></div>
+              
+              <div class="divider">|</div>
+              <div class="expert">
+                <p class="name">J. Jenks</p>
+                <img class="pick" src="assets/logos/{{game.jaysonWinner}}.png"> </div>
             </div>
 
             <p class="watch">Watch the game</p>
-            
+
           </div>
         </div>
 

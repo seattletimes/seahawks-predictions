@@ -42,12 +42,14 @@ header {
     .display-flex();
     .flex-direction(column);
     @media @mobile {
-      width: 100%;
+      width: 90%;
+      display: block;
+      margin: 20px auto;
     }
 
 
     .date {
-        text-align: center;
+      text-align: center;
       p {
         font-weight: 900;
         font-size: 18px;
@@ -64,37 +66,26 @@ header {
       .display-flex();
       .align-items(center);
       .justify-content(space-around);
-      margin: 15px;
 
+      margin: 0 10px;
+      margin-bottom: 20px;
       text-align: center;
       @media @mobile {
         padding: 0;
         margin: 5px;
-      }
-      
-      .vs {
-        font-size: 18px;
-        font-weight: 900;
-    
-      }
-
-      input.vs + label {
-        
-        .flex(0 0 50px);
-        font-size: 18px;
-        font-weight: 900;
       }
 
       input.team-radio {
         display: none;
       }
 
+      //For the icons
       input.team-radio + label {
-        
+
         text-transform: uppercase;
-        font-size: 13px;
+        font-size: 12px;
         font-weight: 900;
-        position: relative;
+        width: 30%;
         img {
           border-radius: 50%;
           transition: all .2s ease-in-out;
@@ -103,8 +94,6 @@ header {
             -webkit-transform: scale(1.2);
           }
         }
-        
-
       }
 
       input.team-radio:checked + label {
@@ -112,6 +101,12 @@ header {
           background: fade(#69BE28, 60%);
         }
 
+      }
+      input.vs + label {
+
+        .flex(0 0 40px);
+        font-size: 18px;
+        font-weight: 900;
       }
     }
 
@@ -123,24 +118,39 @@ header {
       text-align: center;
       text-transform: uppercase;
       padding: 5px 0;
-      
+
       &.selected {
         display: block;
         background: fade(#dbdddf, 60%);
       }
       .experts {
-        img {
-          width: 10%;
+        .display-flex();
+        .align-items(center);
+        .justify-content(center);
+        .expert {
+          .name {
+            display: inline-block;
+          }
+          .pick {
+            width: 30%;
+            vertical-align: middle;
+          }
+        }
+
+        .divider {
+          .flex(0 0 20px);
         }
       }
-      
+
       .watch {
         border-top: 2px solid #69BE28;
         display: inline-block;
         padding-top: 2px;
       }
-      
+
     }
+
+
   }
 }
 
