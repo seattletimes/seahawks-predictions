@@ -18,9 +18,6 @@ var makeShare = function(selector, position, url) {
       flyout: position || "bottom left"
     },
     networks: {
-      google_plus: {
-        url: addQuery(here, utm("google+"))
-      },
       twitter: {
         url: addQuery(here, utm("twitter"))
       },
@@ -46,7 +43,6 @@ var bottom = makeShare(".share.bottom", "top left");
 var update = function(buttons, url) {
   buttons.forEach(function(b) {
     var n = b.config.networks;
-    n.google_plus.url = addQuery(url, utm("google+"));
     n.twitter.url = addQuery(url, utm("twitter"));
     n.facebook.url = addQuery(url, utm("facebook"));
     n.pinterest.url = addQuery(url, utm("pinterest"));

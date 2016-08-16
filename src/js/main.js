@@ -1,5 +1,5 @@
 var social = require("./lib/social");
-// require("./lib/ads");
+//require("./lib/ads");
 // var track = require("./lib/tracking");
 
 var qs = require("querystring");
@@ -10,6 +10,8 @@ var aKeys = "winner h a".split(" ");
 var prediction = function($scope) {
 
   $scope.games = window.games.schedule;
+  
+  console.log($scope.games);
 
   $scope.chatter = "Here is some chatter";
 
@@ -58,25 +60,30 @@ var prediction = function($scope) {
       return {
         id: entry.id,
         // home is 1, away is 2, tie is 0
-        winner: entry.winner ? entry.winner == entry.home ? 1 : 2 : 0,
+        winner: entry.winner ? entry.winner == entry.home ? 1 : 2 : 0
       }
+      
     });
     
-    
-    $scope.scores = filtered;
-    
+    var seaWins = 0;
+    for (var i = 0; i < $scope.games.length; i++) {
+     if ($scope.games[i].winner === "seahawks") {
+       seaWins++;
+     }
+    }
+      $scope.seahawks = seaWins;
+
     // remove trailing items with no data
-    for (var i = filtered.length - 1; i >= 0; i--) {
+/*    for (var i = filtered.length - 1; i >= 0; i--) {
       var item = filtered[i];
       if (!item.winner) {
         filtered.pop();
       }
-    }
+    }*/
 
     //encode this into a URL hash and set it
     var encoded = "#" + qs.encode({
-      games: ascii.pack(aKeys, filtered),
-      timestamp: Date.now()
+      games: ascii.pack(aKeys, filtered)
     });
     history.replaceState(encoded, encoded, encoded);
     //update the social buttons on the page

@@ -12,8 +12,8 @@
   </head>
   <body ng-app="predictions">
 
-    <%= t.include("./partials/_ad.html", { type: "banner" }) %>
     <%= t.include("partials/_nav.html") %>
+    <%= t.include("./partials/_ad.html", { type: "banner" }) %>
 
     <div class="container"  ng-controller="prediction" ng-cloak>
 
@@ -26,7 +26,7 @@
 
         <div class="game" ng-repeat="game in games">
           <div class="date">
-            <p>Week {{game.id}}</p>
+            <h2>Week {{game.id}}</h2>
           </div>
 
           <div class="prediction">
@@ -46,7 +46,7 @@
             </label>
 
             <input class="team-radio vs">
-            <label for="team{{game.id}}{{game.home}}">
+            <label for="team{{game.id}}">
               vs.
             </label>
 
@@ -63,6 +63,7 @@
                    ng-model="game.winner"
                    >
             <label for="team{{game.id}}{{game.away}}">
+              <div class="logo"></div>
               <img src="./assets/logos/{{game.away}}.png" ng-click="dropdown=true">
               {{game.away}}
             </label>
@@ -77,18 +78,23 @@
             <div class="experts">
 
               <div class="expert">
-                <p class="name">B. Condotta</p>
+                <p class="name">Condotta </p>
                 <img class="pick" src="assets/logos/{{game.bobWinner}}.png"></div>
               
               <div class="divider">|</div>
               <div class="expert">
-                <p class="name">J. Jenks</p>
+                <p class="name">Jenks</p>
                 <img class="pick" src="assets/logos/{{game.jaysonWinner}}.png"> </div>
             </div>
 
             <p class="watch">Watch the game</p>
 
           </div>
+        </div>
+        <div class="game results">
+          <h2>Results</h2>
+          
+          <p> You think the Seahawks will win {{seahawks}} out of 16 games this season! </p>
         </div>
 
       </div>
