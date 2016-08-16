@@ -42,12 +42,15 @@
                    >
             <label for="team{{game.id}}{{game.home}}">
               <img src="assets/logos/{{game.home}}.png" ng-click="dropdown=true">
-              <div class="circle"></div>
-              {{game.home}}
+              {{game.home}}.
             </label>
+            
+            <input class="team-radio vs">
+            <label for="team{{game.id}}{{game.home}}">
+               v.s.
+            </label>
+            
 
-
-            <span class="vs">vs.</span>
 
             <!--Away Team-->
 
