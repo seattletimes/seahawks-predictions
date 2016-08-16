@@ -21,11 +21,7 @@
         Seahawks Season Predictor
       </header>
 
-      <a class="profile you-icon" ng-click="switchView('user')">You</a>
-      <a class="profile bob-icon" ng-click="switchView('bob')">Bob</a>
-      <a class="profile jayson-icon" ng-click="switchView('jayson')">Jayson</a>
-
-      <div class="chatter" ng-bind="chatter"></div>
+      <div class="chatter"></div>
       <div class="schedule">
 
         <div class="game" ng-repeat="game in games">
@@ -45,7 +41,8 @@
                    ng-model="game.winner"
                    >
             <label for="team{{game.id}}{{game.home}}">
-              <img src="assets/logos/{{game.home}}.png" >
+              <img src="assets/logos/{{game.home}}.png" ng-click="dropdown=true">
+              <div class="circle"></div>
               {{game.home}}
             </label>
 
@@ -63,13 +60,14 @@
                    ng-model="game.winner"
                    >
             <label for="team{{game.id}}{{game.away}}">
-              <img src="assets/logos/{{game.away}}.png">
+              <img src="./assets/logos/{{game.away}}.png" ng-click="dropdown=true">
               {{game.away}}
             </label>
 
           </div>
-
-          <div class="expert-box">
+            
+         <!--issue: this shouldn't be based on the click but whether or not game.winner has bee assigned. -->
+          <div class="expert-box" ng-class="{'selected':dropdown}">
             <div class="title">Expert Picks</div>
             <div class="experts">
               B. Condotta <img src="assets/logos/{{game.bobWinner}}.png">| J. Jenks <img src="assets/logos/{{game.jaysonWinner}}.png"> 
