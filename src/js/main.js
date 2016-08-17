@@ -11,35 +11,44 @@ var prediction = function($scope) {
 
   $scope.games = window.games.schedule;
   
+  console.log($scope.games);
+
   $scope.chatter = "Here is some chatter";
+
+  $scope.games.winner = "SELECT YOUR WINNER";
 
       $scope.results = "Click below to see your results!";
 
-  $scope.share = "Submit";
+  $scope.selectTeam = function(team) {
+    $scope.winner = "YOU SELECTED THE " + team; 
+  }
 
- var restore = function(source) {
-   source.games.forEach(function(g, i) {
+ //assigns data on top of existing data
+  var restore = function(source) {
+    source.forEach(function(g, i) {
       var game = $scope.games[i];
-      if (g.winner > 0) {
+      if (typeof g.winner == "string") {
+        //handle loading the presets
+        game.winner = g.winner;
+      } else if (g.winner > 0) {
         game.winner = g.winner == 1 ? game.home : game.away;
       }
     });
   }
+  // on startup, check the window hash for a games parameter
   var hash = window.location.hash.replace(/^#/, "");
-  if (hash) {
-    
-    var fromURL = JSON.parse(decodeURIComponent(hash));
-    console.log("from", fromURL);
-    if (fromURL.games) restore(fromURL);
-
+  var query = qs.decode(hash);
+  if (query.games) {
+    //hashes are encoded, you must provide the object keys you want to be restored
+    var fromURL = ascii.unpack(aKeys, query.games);
+    if (fromURL) restore(fromURL);
   } else {
+    //if there's no hash, check localStorage
+    //this is just saved as JSON
     var fromLocal = localStorage.getItem("hawks-prediction");
     if (fromLocal) {
-      fromLocal = fromLocal.replace(/^#/, "");
-      fromLocal = JSON.parse(decodeURIComponent(fromLocal));
-          console.log(fromLocal);
+      fromLocal = JSON.parse(fromLocal);
       restore(fromLocal);
-
     }
   }
 
@@ -50,9 +59,8 @@ var prediction = function($scope) {
     var filtered = $scope.games.map(function(entry) {
       return {
         id: entry.id,
-        // home is 1, away is 2, empty is 0
+        // home is 1, away is 2, tie is 0
         winner: entry.winner ? entry.winner == entry.home ? 1 : 2 : 0
-        //submit: true/false
       }
       
     });
@@ -69,9 +77,6 @@ var prediction = function($scope) {
     $scope.submit = function() {
 
       $scope.results = "You think the Seahawks will win " + seaWins + " out of 16 games this season!";
-      
-      console.log($scope.games);
-      $scope.share = "Share your results";
     };
     
     // remove trailing items with no data
@@ -83,15 +88,15 @@ var prediction = function($scope) {
     }*/
 
     //encode this into a URL hash and set it
-    var json = JSON.stringify({ games: filtered });
-    var encoded = "#" + encodeURIComponent(json);
+    var encoded = "#" + qs.encode({
+      games: ascii.pack(aKeys, filtered)
+    });
     history.replaceState(encoded, encoded, encoded);
     //update the social buttons on the page
     social.update(social.buttons, window.location.href);
-    //store in localStorage encoded
-    localStorage.setItem("hawks-prediction", encoded);
+    //store in localStorage, no encoding needed
+    localStorage.setItem("hawks-prediction", JSON.stringify(filtered));
   });
 }
 
 app.controller("prediction", prediction);
-
