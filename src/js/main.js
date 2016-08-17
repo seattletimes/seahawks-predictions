@@ -72,7 +72,14 @@ var prediction = function($scope) {
      }
     }
       $scope.seahawks = seaWins;
+    
+    $scope.results = "Click below to see your results!";
 
+    $scope.getResults = function() {
+
+      $scope.results = "You think the Seahawks will win " + seaWins + " out of 16 games this season!";
+    };
+    
     // remove trailing items with no data
 /*    for (var i = filtered.length - 1; i >= 0; i--) {
       var item = filtered[i];
