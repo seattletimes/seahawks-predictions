@@ -10,21 +10,21 @@ var aKeys = "winner h a".split(" ");
 var prediction = function($scope) {
 
   $scope.games = window.games.schedule;
-  
+
   console.log($scope.games);
 
   $scope.share="submit";
-  
-  $scope.clear = function() {
-  $scope.games.forEach(function(g) {
-    g.winner = 0;
-  });
-  }
-  
-  $scope.results="See your results below";
-     
 
- //assigns data on top of existing data
+  $scope.clear = function() {
+    $scope.games.forEach(function(g) {
+      g.winner = 0;
+    });
+  }
+
+  $scope.results="See your results below";
+
+
+  //assigns data on top of existing data
   var restore = function(source) {
     source.forEach(function(g, i) {
       var game = $scope.games[i];
@@ -63,28 +63,37 @@ var prediction = function($scope) {
         // home is 1, away is 2, tie is 0
         winner: entry.winner ? entry.winner == entry.home ? 1 : 2 : 0
       }
-      
+
     });
-    
+
     var seaWins = 0;
     for (var i = 0; i < $scope.games.length; i++) {
-     if ($scope.games[i].winner === "seahawks") {
-       seaWins++;
-     }
+      if ($scope.games[i].winner === "seahawks") {
+        seaWins++;
+      }
     }
-      $scope.seahawks = seaWins;
     
+      var counter = 0;
+      filtered.forEach(function(f) {
+        counter += f.winner;
+        console.log(f);
+        if (counter > 15) {
+    $scope.seahawks = seaWins;
+        };
+        
+      });
 
     $scope.submit = function() {
 
       $scope.results = "You think the Seahawks will win " + seaWins + " out of 16 games this season!";
-      
+
       $scope.share = "share your results";
-          
+      
+
     };
-    
+
     // remove trailing items with no data
-/*    for (var i = filtered.length - 1; i >= 0; i--) {
+    /*    for (var i = filtered.length - 1; i >= 0; i--) {
       var item = filtered[i];
       if (!item.winner) {
         filtered.pop();
