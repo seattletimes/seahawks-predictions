@@ -27,6 +27,7 @@
 
         <div class="date">
           <h2 class="big-title">Week {{game.id}}</h2>
+          <p class="small-title">{{game.date}}</p>
         </div>
 
         <div class="prediction">
@@ -46,7 +47,7 @@
           </label>
 
           <input class="team-radio vs">
-          <label><p class="small-title">vs.</p> </label>
+          <label><p class="big-title">vs.</p> </label>
 
           <!--Away Team-->
 
@@ -66,7 +67,7 @@
 
         </div>
 
-        <div class="expert-box" ng-if="game.winner">
+        <div class="expert-box" ng-class="game.winner ? 'selected' : ''">
 
           <header class="small-title">Expert Picks</header>
 

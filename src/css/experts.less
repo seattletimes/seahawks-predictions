@@ -1,36 +1,45 @@
-   .expert-box {
-      background: @df-light-gray;
-      font-size: 12px;
-      font-weight: 900;
-      text-align: center;
-      text-transform: uppercase;
-      padding: 5px 0;
+.expert-box {
+  max-height: 0;
+  overflow: hidden;
+  background: @df-light-gray;
+  font-weight: 900;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 5px 0;
+  -webkit-transition: all .5s  ease-out;
+	-moz-transition: all .5s ease-out;
+	transition: all .5s ease-out;
 
-     
-      .expert {
-        
-        display: inline-block;
-        width: 40%;
-        
-        .name {
-          display: inline-block;
-          font-size: 11px;
-          font-family: @df-sans;
-        }
-        .pick {
-          vertical-align: middle;
-          width: 30%;
-        }
-      }
+  &.selected {
+    //THIS SHOULD CHANGE!!
+    max-height: 110px;
+    height: auto;
+  }
 
-      .divider {
-        display: inline-block;
-      }
+  .expert {
+    display: inline-block;
+    width: 40%;
 
-
-      .watch {
-        border-top: 2px solid #69BE28;
-        display: inline-block;
-        padding-top: 2px;
-      }
+    .name {
+      display: inline-block;
+      font-size: 11px;
+      font-family: @df-sans;
     }
+    .pick {
+      vertical-align: middle;
+      width: 30%;
+    }
+  }
+
+  .divider {
+    display: inline-block;
+  }
+
+
+  .watch {
+    font-size: 12px;
+    border-top: 2px solid #69BE28;
+    display: inline-block;
+    padding-top: 2px;
+  }
+}

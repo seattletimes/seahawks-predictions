@@ -6,12 +6,16 @@
   .display-flex();
   .flex-direction(column);
 
+  @media @small-screen {
+    width: 30%
+  }
+  
   @media @tablet {
     width: 45%;
-        font-size: 12px;
-        font-weight: 100;
-      }
-  
+    font-size: 12px;
+    font-weight: 100;
+  }
+
   @media @mobile {
     width: 95%;
     margin: 20px auto;
@@ -49,7 +53,10 @@
 
       img {
         border-radius: 50%;
-        transition: all .2s ease-in-out;
+        -webkit-transition: all .2s  ease-out;
+        -moz-transition: all .2s ease-out;
+        transition: all .2s ease-out;
+
         &:hover {
           transform: scale(1.2);
           -webkit-transform: scale(1.2);
@@ -61,20 +68,11 @@
       background: fade(#69BE28, 60%);
       padding: 10px;
     }
-    
-    input.vs + label {
 
+    input.vs + label {
       .flex(0 1 80px);
-      font-size: 18px;
-      font-weight: 900;
-      
-      @media @tablet {
-        font-size: 12px;
-        font-weight: 100;
-      }
-      @media @mobile {
-        font-size: 12px;
-        font-weight: 100;
+      .big-title {
+        border-bottom: none;
       }
     }
   }
@@ -86,12 +84,12 @@
     margin: 10px;
     text-align: center;
 
-    @media @tablet {
-        width: 90%;
-      }
-      @media @mobile {
+    @media @small-screen {
+      width: 90%;
+    }
+    @media @mobile {
 
-      }
+    }
     button {
       background-color: white;
       text-align: center;

@@ -17,6 +17,8 @@ var prediction = function($scope) {
 
   $scope.games.winner = "SELECT YOUR WINNER";
 
+      $scope.results = "Click below to see your results!";
+
   $scope.selectTeam = function(team) {
     $scope.winner = "YOU SELECTED THE " + team; 
   }
@@ -73,7 +75,6 @@ var prediction = function($scope) {
     }
       $scope.seahawks = seaWins;
     
-    $scope.results = "Click below to see your results!";
 
     $scope.getResults = function() {
 
