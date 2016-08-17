@@ -13,15 +13,11 @@ var prediction = function($scope) {
   
   console.log($scope.games);
 
-  $scope.chatter = "Here is some chatter";
+  $scope.share="submit";
+  
 
-  $scope.games.winner = "SELECT YOUR WINNER";
-
-      $scope.results = "Click below to see your results!";
-
-  $scope.selectTeam = function(team) {
-    $scope.winner = "YOU SELECTED THE " + team; 
-  }
+  $scope.results="See your results below";
+     
 
  //assigns data on top of existing data
   var restore = function(source) {
@@ -77,6 +73,9 @@ var prediction = function($scope) {
     $scope.submit = function() {
 
       $scope.results = "You think the Seahawks will win " + seaWins + " out of 16 games this season!";
+      
+      $scope.share = "share your results";
+          
     };
     
     // remove trailing items with no data

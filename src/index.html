@@ -40,6 +40,8 @@
                  name="winner{{game.id}}"
                  id="team{{game.id}}{{game.home}}"
                  ng-model="game.winner"
+                 ng-disabled="game.winner"
+
                  >
           <label for="team{{game.id}}{{game.home}}">
             <img src="assets/logos/{{game.home}}.png" ng-click="dropdown=true">
@@ -57,7 +59,8 @@
                  value="{{game.away}}"
                  name="winner{{game.id}}"
                  id="team{{game.id}}{{game.away}}"
-                 ng-model="game.winner" >
+                 ng-model="game.winner"
+                 ng-disabled="game.winner">
 
           <label for="team{{game.id}}{{game.away}}">
             <div class="logo"></div>
@@ -70,15 +73,18 @@
         <div class="expert-box" ng-class="game.winner ? 'selected' : ''">
 
           <header class="small-title">Expert Picks</header>
-
+          <div class="experts">
           <div class="expert">
             <p class="name">Condotta </p>
-            <img class="pick" src="assets/logos/{{game.bobWinner}}.png"></div>
+            <img class="pick" src="assets/logos/{{game.bobWinner}}.png">
+            </div>
 
-          <div class="divider">|</div>
           <div class="expert">
             <p class="name">Jenks</p>
-            <img class="pick" src="assets/logos/{{game.jaysonWinner}}.png"> </div>
+            <img class="pick" src="assets/logos/{{game.jaysonWinner}}.png"> 
+            </div>
+            
+            </div>
           <p class="watch">Watch the game</p>
         </div>
 
