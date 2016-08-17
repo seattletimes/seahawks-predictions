@@ -15,7 +15,12 @@ var prediction = function($scope) {
 
   $scope.share="submit";
   
-
+  $scope.clear = function() {
+  $scope.games.forEach(function(g) {
+    g.winner = 0;
+  });
+  }
+  
   $scope.results="See your results below";
      
 

@@ -19,6 +19,22 @@ body {
 
     }
   }
+      button {
+      background-color: white;
+      text-align: center;
+      border: none;
+      font-family: @df-sans;
+      font-size: 30px;
+      margin: 5% auto;
+      cursor: pointer;
+      display: block;
+      &:hover {
+        .big-title {
+          
+        border-color: teal;
+        }
+      }
+    }
 
   .big-title {
     text-align: center;
@@ -53,6 +69,9 @@ body {
     .flex-wrap(wrap);
     .justify-content(center);
 
+    .reset {
+      display: block;
+    }
     @media @mobile {
     }
   }

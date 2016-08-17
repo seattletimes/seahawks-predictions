@@ -15,13 +15,14 @@
     <%= t.include("partials/_nav.html") %>
     <%= t.include("./partials/_ad.html", { type: "banner" }) %>
 
-
-
-    <div class="schedule" ng-controller="prediction" ng-cloak>
+<div class="container" ng-controller="prediction" ng-cloak>
 
       <header class="header"> Seahawks Season Predictor </header>
 
       <div class="chatter"></div>
+<button class="reset" ng-click="clear()">Reset</button>
+
+    <div class="schedule" >
 
       <div class="game" ng-repeat="game in games">
 
@@ -103,6 +104,7 @@
       
      
     </div>
+  </div>
 
     <script>
       window.games = {schedule: <%= JSON.stringify(json.schedule) %>};
