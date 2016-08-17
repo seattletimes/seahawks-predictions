@@ -1,179 +1,49 @@
 @import "seattletimes";
+@import "experts";
+@import "game";
 
 body {
-    background: #002244;
+  background: #002244;
 
-}
-
-.container { 
-  max-width: 1200px;
-  margin: auto;
-
-}
-
-header {
-  font-family: @cool;
-  font-size: 50px;
-  margin: 0 auto;
-  text-align: center;
-  -webkit-font-smoothing: antialiased;
-  width: 100%;
-  color: white;
-}
-
-h2 {
-  text-align: center;
-  font-weight: 900;
-  font-size: 18px;
-  text-transform: uppercase;
-  border-bottom: 3px solid #69BE28;
-  display: inline-block;
-}
-.profile {
-  display: inline-block;
-  cursor: pointer;
-}
-
-.schedule {
-  font-family: @df-sans;
-  padding: 10px;
-  .display-flex();
-  .flex-wrap(wrap);
-  .justify-content(center);
-  @media @mobile {
+  .header {
+    font-family: @cool;
+    font-size: 50px;
+    margin: 0 auto;
+    text-align: center;
+    -webkit-font-smoothing: antialiased;
+    width: 100%;
+    color: white;
   }
 
+  .big-title {
+    text-align: center;
+    font-weight: 900;
+    font-size: 18px;
+    text-transform: uppercase;
+    border-bottom: 3px solid #69BE28;
+    display: inline-block;
+  }
 
-  .game {
-    width: 21%;
-    background-color: white;
-    margin: 1%;
-    font-family: @cool;
+  .small-title {
+    display: block;
+    font-size: 12px;
+    margin: 5px;
+  }
+
+  .schedule {
+    max-width: 1200px;
+    margin: auto;
+    font-family: @df-sans;
+    padding: 10px;
     .display-flex();
-    .flex-direction(column);
+    .flex-wrap(wrap);
+    .justify-content(center);
 
     @media @mobile {
-      width: 95%;
-      margin: 20px auto;
-    }
-
-    
-
-    .date {
-      text-align: center;
-    }
-
-    .prediction {
-
-      .display-flex();
-      .align-items(center);
-      .justify-content(center);
-
-      margin-bottom: 20px;
-      text-align: center;
-      @media @mobile {
-        padding-bottom: 20px;
-      }
-
-      input.team-radio {
-        display: none;
-      }
-
-      //For the icons
-      input.team-radio + label {
-
-        text-transform: uppercase;
-        font-size: 12px;
-        font-weight: 900;
-        width: 30%;
-        img {
-          border-radius: 50%;
-          transition: all .2s ease-in-out;
-          &:hover {
-            transform: scale(1.2);
-            -webkit-transform: scale(1.2);
-          }
-        }
-      }
-
-      input.team-radio:checked + label {
-        img {
-          background: fade(#69BE28, 60%);
-          padding: 10px;
-        }
-
-      }
-      input.vs + label {
-
-        .flex(0 0 80px);
-        font-size: 18px;
-        font-weight: 900;
-      }
-    }
-
-    .expert-box {
-      display:none;
-      background: #002244;
-      font-size: 12px;
-      font-weight: 900;
-      text-align: center;
-      text-transform: uppercase;
-      padding: 5px 0;
-
-      &.selected {
-        display: block;
-        background: fade(#dbdddf, 60%);
-        
-      }
-      .experts {
-
-        .expert {
-          display: inline-block;
-          width: 40%;
-          .name {
-            display: inline-block;
-            font-size: 11px;
-            font-family: @df-sans;
-          }
-          .pick {
-            vertical-align: middle;
-            width: 30%;
-          }
-        }
-
-        .divider {
-          display: inline-block;
-        }
-      }
-
-      .watch {
-        border-top: 2px solid #69BE28;
-        display: inline-block;
-        padding-top: 2px;
-      }
-    }
-    
-    &.results {
-      width: 40%;
-      display: block;
-      background-color: @df-light-gray;
-      margin: 10px;
-      text-align: center;
     }
   }
+
 }
 
-button {
-  background-color: white;
-  text-align: center;
-  border: none;
-  font-family: @df-sans;
-  font-size: 30px;
-  margin: 5% auto;
-  cursor: pointer;
-  margin: auto;
-  display: block;
-  &:hover {
-    background-color: fade(@df-light-gray, 80%);
-  }
-}
+
+
