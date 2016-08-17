@@ -83,14 +83,19 @@
         </div>
 
       </div>
+      
       <div class="game results">
         <h2>You did it</h2>
-        <p>{{results}}</p>
-
-        <button ng-click="getResults()"><h2>Submit</h2></button>
+        <p>{{results}} </p>
+        <button ng-click="submit()">
+          
+          <h2 class="big-title share">{{share}}</h2>
+        
+        </button>
 
       </div>
-
+      
+     
     </div>
 
     <script>
