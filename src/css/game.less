@@ -1,11 +1,17 @@
 .game {
   width: 21%;
   background: #002244;   
-  margin: 1%;
+  margin: 10px;
   font-family: @cool;
   .display-flex();
   .flex-direction(column);
 
+  @media @tablet {
+    width: 45%;
+        font-size: 12px;
+        font-weight: 100;
+      }
+  
   @media @mobile {
     width: 95%;
     margin: 20px auto;
@@ -40,6 +46,7 @@
       font-size: 12px;
       font-weight: 900;
       width: 30%;
+
       img {
         border-radius: 50%;
         transition: all .2s ease-in-out;
@@ -48,20 +55,27 @@
           -webkit-transform: scale(1.2);
         }
       }
-      
-      &:checked  img {
+    }
+
+    input.team-radio:checked + label img {
       background: fade(#69BE28, 60%);
       padding: 10px;
     }
-    }
-
-
     
     input.vs + label {
 
-      .flex(0 0 80px);
+      .flex(0 1 80px);
       font-size: 18px;
       font-weight: 900;
+      
+      @media @tablet {
+        font-size: 12px;
+        font-weight: 100;
+      }
+      @media @mobile {
+        font-size: 12px;
+        font-weight: 100;
+      }
     }
   }
 
@@ -72,6 +86,12 @@
     margin: 10px;
     text-align: center;
 
+    @media @tablet {
+        width: 90%;
+      }
+      @media @mobile {
+
+      }
     button {
       background-color: white;
       text-align: center;

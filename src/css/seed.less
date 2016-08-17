@@ -13,6 +13,11 @@ body {
     -webkit-font-smoothing: antialiased;
     width: 100%;
     color: white;
+
+    @media @mobile {
+      font-size: 30px;
+
+    }
   }
 
   .big-title {
@@ -22,12 +27,20 @@ body {
     text-transform: uppercase;
     border-bottom: 3px solid #69BE28;
     display: inline-block;
+
+    @media @tablet {
+      font-size: 25px;
+    }
   }
 
   .small-title {
     display: block;
     font-size: 12px;
     margin: 5px;
+
+    @media @tablet {
+      font-size: 16px;
+    }
   }
 
   .schedule {

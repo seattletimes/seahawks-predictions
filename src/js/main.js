@@ -21,7 +21,7 @@ var prediction = function($scope) {
     $scope.winner = "YOU SELECTED THE " + team; 
   }
 
-  //assigns data on top of existing data
+/*  //assigns data on top of existing data
   var restore = function(source) {
     source.forEach(function(g, i) {
       var game = $scope.games[i];
@@ -50,7 +50,7 @@ var prediction = function($scope) {
       fromLocal = JSON.parse(fromLocal);
       restore(fromLocal);
     }
-  }
+  }*/
 
   // When any data changes (or for each digest cycle), run this function
   $scope.$watch(function() {
@@ -99,7 +99,6 @@ var prediction = function($scope) {
     localStorage.setItem("hawks-prediction", JSON.stringify(filtered));
   });
 }
-prediction.$inject = ["$scope"];
 
 app.controller("prediction", prediction);
 
