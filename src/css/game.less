@@ -9,7 +9,7 @@
   @media @small-screen {
     width: 30%
   }
-  
+
   @media @tablet {
     width: 45%;
     font-size: 12px;
@@ -24,23 +24,15 @@
   .date {
     background: @df-light-gray;
     text-align: center;
-    
+
     .small-text {
-    display: block;
+      display: block;
       font-size: 14px;
       margin-top: 0;
     }
   }
 
   .prediction {
-
-    .display-flex();
-    .align-items(center);
-    .justify-content(center);
-    
-    &.chosen {
-      .flex-direction(column);
-    }
 
     background: @df-light-gray;
     padding-bottom: 20px;
@@ -49,20 +41,16 @@
       padding-bottom: 20px;
     }
 
+    .display-flex();
+    .align-items(center);
+    .justify-content(center);
+
     input.team-radio {
       display: none;
     }
 
-    //For the icons
-    input.team-radio {
-    
-      &.chosen {
-        
-      }
-    + label {
+    input.team-radio + label {
       .flex-order(2);
-      
-
       text-transform: uppercase;
       font-size: 12px;
       font-weight: 900;
@@ -78,30 +66,61 @@
           transform: scale(1.2);
           -webkit-transform: scale(1.2);
         }
-        
       }
-      
-     
+
+      .vs {
+        display: none;
+      }
     }
-  }
 
     input.team-radio:checked + label {
-    
+
       .flex-order(1);
-    img {
-      background: white;
-      padding: 10px;
-      transform: scale(1.6);
-          -webkit-transform: scale(1.6);
-      
-      
-    }
+      img {
+        background: white;
+        padding: 10px;
+        transform: scale(1.2);
+        -webkit-transform: scale(1.2);
+      }
     }
 
     input.vs + label {
       .flex(0 1 80px);
+      .flex-order(2);
       .big-title {
         border-bottom: none;
+      }
+    }
+
+    &.selected {
+
+      .flex-direction(column);
+
+      input.unchosen + label {
+        .flex-order(3);
+
+        width: 15%;
+        opacity: .6;
+
+        img {
+          display: inline-block;
+
+          &:hover {
+            transform: none;
+          }
+        }
+
+        .small-title {
+          display: none;
+        }
+
+        .vs {
+          display: inline-block;
+        }
+      }
+
+      input.vs + label {
+        display: none;
       }
     }
   }
@@ -112,24 +131,24 @@
     background-color: @df-light-gray;
     margin: 10px;
     text-align: center;
-    
-     z-index: 99;
+
+    z-index: 99;
     &::after {
-    clear: both;
-    content: " ";
-    display: block;
+      clear: both;
+      content: " ";
+      display: block;
       visibility: visible;
       opacity: 1;
-  }
-      .share.bottom {
-    float: right;
-    margin-top: 2px;
-
-    label {
-      background: black !important;
-      color: white !important;
     }
-  }
+    .share.bottom {
+      float: right;
+      margin-top: 2px;
+
+      label {
+        background: black !important;
+        color: white !important;
+      }
+    }
 
     @media @small-screen {
       width: 90%;

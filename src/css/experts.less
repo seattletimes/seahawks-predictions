@@ -1,5 +1,5 @@
 .expert-box {
-  max-height: 0;
+  height: 0;
   overflow: hidden;
 
   background: white;
@@ -13,7 +13,7 @@
 
   &.selected {
     //THIS SHOULD CHANGE!!
-   max-height: 450px;
+    height: auto;
   }
 
   .experts {
@@ -34,15 +34,15 @@
 
 
   }
-  .watch {
-    .title {
+    .watch {
+      .title {
       font-size: 12px;
       border-top: 2px solid #69BE28;
       display: inline-block;
       padding-top: 2px;
+      }
+      .small-text {
+        display: block;
+      }
     }
-    .small-text {
-      display: block;
-    }
-  }
 }

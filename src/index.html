@@ -31,7 +31,7 @@
             <p class="small-text">{{game.date}}</p>
           </div>
 
-          <div class="prediction" ng-class="game.winner ? 'chosen' : ''">
+          <div class="prediction" ng-class="game.winner ? 'selected' : ''">
 
             <!--Home Team-->
               <input
@@ -42,11 +42,12 @@
                      id="team{{game.id}}{{game.home}}"
                      ng-model="game.winner"
                      ng-disabled="game.winner"
-                     ng-class="game.winner === game.home ? 'chosen' : ''"
+                     ng-class="game.winner === game.home ? 'chosen' : 'unchosen'"
 
                      >
               <label for="team{{game.id}}{{game.home}}">
-                <img src="assets/logos/{{game.home}}.png" ng-click="dropdown=true">
+                <p class="vs" ng-class="game.winner === game.away ? 'chosen' : 'unchosen'">vs.</p>
+                <img src="assets/logos/{{game.home}}.png">
                 <p class="small-title">{{game.home}}</p>
               </label>
 
@@ -61,11 +62,11 @@
                      id="team{{game.id}}{{game.away}}"
                      ng-model="game.winner"
                      ng-disabled="game.winner"
-                     ng-class="game.winner === game.away ? 'chosen' : ''">
+                     ng-class="game.winner === game.away ? 'chosen' : 'unchosen'">
 
               <label for="team{{game.id}}{{game.away}}">
-                <div class="logo"></div>
-                <img src="./assets/logos/{{game.away}}.png" ng-click="dropdown=true">
+                <p class="vs" ng-class="game.winner === game.away ? 'chosen' : 'unchosen'">vs.</p>
+                <img src="./assets/logos/{{game.away}}.png">
                 <p class="small-title">{{game.away}}</p>
               </label>
           </div>
