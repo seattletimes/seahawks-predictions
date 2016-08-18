@@ -24,9 +24,7 @@ var makeShare = function(selector, position, url) {
       facebook: {
         url: addQuery(here, utm("facebook"))
       },
-      pinterest: {
-        url: addQuery(here, utm("pinterest"))
-      }
+
     }
   };
 
@@ -45,11 +43,15 @@ var update = function(buttons, url) {
     var n = b.config.networks;
     n.twitter.url = addQuery(url, utm("twitter"));
     n.facebook.url = addQuery(url, utm("facebook"));
-    n.pinterest.url = addQuery(url, utm("pinterest"));
+    
+    if (window.score.seaWins) {
+      
+    n.twitter.description = window.score.seaWins;
+    }
+
   });
 };
 
-console.log(top);
 
 module.exports = {
   Share,

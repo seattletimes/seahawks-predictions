@@ -15,99 +15,114 @@
     <%= t.include("partials/_nav.html") %>
     <%= t.include("./partials/_ad.html", { type: "banner" }) %>
 
-<div class="container" ng-controller="prediction" ng-cloak>
+    <div class="container" ng-controller="prediction" ng-cloak>
 
       <header class="header"> Seahawks Season Predictor </header>
 
       <div class="chatter"></div>
-<button class="reset" ng-click="clear()">Reset</button>
 
-    <div class="schedule" >
+      <button class="reset" ng-click="clear()">Reset <i class="fa fa-refresh" aria-hidden="true"></i></button>
+      <div class="schedule" >
 
-      <div class="game" ng-repeat="game in games">
+        <div class="game" ng-repeat="game in games">
 
-        <div class="date">
-          <h2 class="big-title">Week {{game.id}}</h2>
-          <p class="small-title">{{game.date}}</p>
-        </div>
+          <div class="date">
+            <h2 class="big-title">Week {{game.id}}</h2>
+            <p class="small-text">{{game.date}}</p>
+          </div>
 
-        <div class="prediction">
+          <div class="prediction" ng-class="game.winner ? 'chosen' : ''">
 
-          <!--Home Team-->
-          <input
-                 class="team-radio"
-                 type="radio"
-                 value="{{game.home}}"
-                 name="winner{{game.id}}"
-                 id="team{{game.id}}{{game.home}}"
-                 ng-model="game.winner"
-                 ng-disabled="game.winner"
+            <!--Home Team-->
+              <input
+                     class="team-radio"
+                     type="radio"
+                     value="{{game.home}}"
+                     name="winner{{game.id}}"
+                     id="team{{game.id}}{{game.home}}"
+                     ng-model="game.winner"
+                     ng-disabled="game.winner"
+                     ng-class="game.winner === game.home ? 'chosen' : ''"
 
-                 >
-          <label for="team{{game.id}}{{game.home}}">
-            <img src="assets/logos/{{game.home}}.png" ng-click="dropdown=true">
-            <p class="small-title">{{game.home}}</p>
-          </label>
+                     >
+              <label for="team{{game.id}}{{game.home}}">
+                <img src="assets/logos/{{game.home}}.png" ng-click="dropdown=true">
+                <p class="small-title">{{game.home}}</p>
+              </label>
 
-          <input class="team-radio vs">
-          <label><p class="big-title">vs.</p> </label>
+              <input class="team-radio vs">
+              <label><p class="big-title">vs.</p> </label>
+            <!--Away Team-->
+              <input
+                     class="team-radio"
+                     type="radio"
+                     value="{{game.away}}"
+                     name="winner{{game.id}}"
+                     id="team{{game.id}}{{game.away}}"
+                     ng-model="game.winner"
+                     ng-disabled="game.winner"
+                     ng-class="game.winner === game.away ? 'chosen' : ''">
 
-          <!--Away Team-->
+              <label for="team{{game.id}}{{game.away}}">
+                <div class="logo"></div>
+                <img src="./assets/logos/{{game.away}}.png" ng-click="dropdown=true">
+                <p class="small-title">{{game.away}}</p>
+              </label>
+          </div>
 
-          <input
-                 class="team-radio"
-                 type="radio"
-                 value="{{game.away}}"
-                 name="winner{{game.id}}"
-                 id="team{{game.id}}{{game.away}}"
-                 ng-model="game.winner"
-                 ng-disabled="game.winner">
+          <div class="expert-box" ng-class="game.winner ? 'selected' : ''">
 
-          <label for="team{{game.id}}{{game.away}}">
-            <div class="logo"></div>
-            <img src="./assets/logos/{{game.away}}.png">
-            <p class="small-title">{{game.away}}</p>
-          </label>
+            <header class="small-title">Expert Picks</header>
+            <div class="experts">
+              <div class="expert">
+                <p class="small-text">Condotta </p>
+                <img class="pick" src="assets/logos/{{game.bobWinner}}.png">
+              </div>
 
-        </div>
+              <div class="expert">
+                <p class="small-text">Jenks</p>
+                <img class="pick" src="assets/logos/{{game.jaysonWinner}}.png"> 
+              </div>
 
-        <div class="expert-box" ng-class="game.winner ? 'selected' : ''">
+              <div class="expert">
+                <p class="small-text">Third</p>
+                <img class="pick" src="assets/logos/{{game.thirdWinner}}.png"> 
+              </div>
 
-          <header class="small-title">Expert Picks</header>
-          <div class="experts">
-          <div class="expert">
-            <p class="name">Condotta </p>
-            <img class="pick" src="assets/logos/{{game.bobWinner}}.png">
+              <div class="expert">
+                <p class="small-text">Fourth</p>
+                <img class="pick" src="assets/logos/{{game.fourthWinner}}.png"> 
+              </div>
+
             </div>
 
-          <div class="expert">
-            <p class="name">Jenks</p>
-            <img class="pick" src="assets/logos/{{game.jaysonWinner}}.png"> 
+            <div class="watch">
+              <p class="title">Watch the game</p>
+
+              <p class="small-text"><i class="fa fa-map-marker" aria-hidden="true"></i> {{game.location}}</p>
+              <p class="small-text"><i class="fa fa-television" aria-hidden="true"></i> {{game.tv}}, {{game.time}} PST</p>
             </div>
-            
-            </div>
-          <p class="watch">Watch the game</p>
+          </div>
+
         </div>
 
-      </div>
-      
-      <div class="game results">
-        <h2>You did it</h2>
-        <p>{{seahawks}} </p>
-        <button ng-click="submit()">
+        <div class="game results" ng-if="seahawks">
+          <h2>You did it</h2>
+          <p>You think the Seahawks will win {{seahawks}} out of 16 games. </p>
           
-          <h2 class="big-title share">{{share}}</h2>
-        
-        </button>
+
+           <a class="share bottom" aria-label="Share"></a>
+
+
+        </div>
+
 
       </div>
-      
-     
     </div>
-  </div>
 
     <script>
       window.games = {schedule: <%= JSON.stringify(json.schedule) %>};
+      
     </script>
 
     <script src="app.js" async></script>

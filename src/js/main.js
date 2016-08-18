@@ -11,17 +11,12 @@ var prediction = function($scope) {
 
   $scope.games = window.games.schedule;
 
-  console.log($scope.games);
-
-  $scope.share="submit";
-
   $scope.clear = function() {
     $scope.games.forEach(function(g) {
       g.winner = 0;
     });
+    $scope.seahawks = "";
   }
-
-  $scope.results="See your results below";
 
 
   //assigns data on top of existing data
@@ -72,25 +67,19 @@ var prediction = function($scope) {
         seaWins++;
       }
     }
-    
-      var counter = 0;
-      filtered.forEach(function(f) {
-        counter += f.winner;
-        console.log(f);
-        if (counter > 15) {
-    $scope.seahawks = seaWins;
-        };
-        
-      });
 
-    $scope.submit = function() {
+    function completed(game) {
+      return (game.winner);
+    }
 
-      $scope.results = "You think the Seahawks will win " + seaWins + " out of 16 games this season!";
+    if ($scope.games.every(completed)) {
+      $scope.seahawks = seaWins;
+      window.score = {seaWins};
+      //add scroll down
+    }
 
-      $scope.share = "share your results";
-      
 
-    };
+
 
     // remove trailing items with no data
     /*    for (var i = filtered.length - 1; i >= 0; i--) {
@@ -113,3 +102,4 @@ var prediction = function($scope) {
 }
 
 app.controller("prediction", prediction);
+

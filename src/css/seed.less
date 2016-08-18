@@ -19,22 +19,23 @@ body {
 
     }
   }
-      button {
-      background-color: white;
-      text-align: center;
-      border: none;
-      font-family: @df-sans;
-      font-size: 30px;
-      margin: 5% auto;
-      cursor: pointer;
-      display: block;
-      &:hover {
-        .big-title {
-          
+  button {
+    background-color: white;
+    text-align: center;
+    border: none;
+    font-family: @df-sans;
+    font-size: 30px;
+    margin: 5% auto;
+    cursor: pointer;
+    display: block;
+    &:hover {
+      .big-title {
+
         border-color: teal;
-        }
       }
+      z-index: 999;
     }
+  }
 
   .big-title {
     text-align: center;
@@ -60,6 +61,17 @@ body {
   }
 
 
+  .small-text {
+    display: inline-block;
+    font-size: 11px;
+    font-family: @df-sans;
+  }
+    .reset {
+      display: block;
+      text-align: right;
+      margin-right: 5%;
+    }
+
   .schedule {
     max-width: 1200px;
     margin: auto;
@@ -69,9 +81,7 @@ body {
     .flex-wrap(wrap);
     .justify-content(center);
 
-    .reset {
-      display: block;
-    }
+ 
     @media @mobile {
     }
   }

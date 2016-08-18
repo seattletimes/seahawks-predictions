@@ -22,8 +22,14 @@
   }
 
   .date {
-    background: white;
+    background: @df-light-gray;
     text-align: center;
+    
+    .small-text {
+    display: block;
+      font-size: 14px;
+      margin-top: 0;
+    }
   }
 
   .prediction {
@@ -31,8 +37,12 @@
     .display-flex();
     .align-items(center);
     .justify-content(center);
+    
+    &.chosen {
+      .flex-direction(column);
+    }
 
-    background: white;
+    background: @df-light-gray;
     padding-bottom: 20px;
     text-align: center;
     @media @mobile {
@@ -44,7 +54,14 @@
     }
 
     //For the icons
-    input.team-radio + label {
+    input.team-radio {
+    
+      &.chosen {
+        
+      }
+    + label {
+      .flex-order(2);
+      
 
       text-transform: uppercase;
       font-size: 12px;
@@ -61,14 +78,24 @@
           transform: scale(1.2);
           -webkit-transform: scale(1.2);
         }
+        
       }
+      
+     
     }
+  }
 
-    input.team-radio:checked + label img {
-      background: fade(#69BE28, 60%);
+    input.team-radio:checked + label {
+    
+      .flex-order(1);
+    img {
+      background: white;
       padding: 10px;
-      transform: scale(1.2);
-          -webkit-transform: scale(1.2);
+      transform: scale(1.6);
+          -webkit-transform: scale(1.6);
+      
+      
+    }
     }
 
     input.vs + label {
@@ -85,6 +112,24 @@
     background-color: @df-light-gray;
     margin: 10px;
     text-align: center;
+    
+     z-index: 99;
+    &::after {
+    clear: both;
+    content: " ";
+    display: block;
+      visibility: visible;
+      opacity: 1;
+  }
+      .share.bottom {
+    float: right;
+    margin-top: 2px;
+
+    label {
+      background: black !important;
+      color: white !important;
+    }
+  }
 
     @media @small-screen {
       width: 90%;

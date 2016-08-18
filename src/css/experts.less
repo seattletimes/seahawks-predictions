@@ -2,7 +2,7 @@
   max-height: 0;
   overflow: hidden;
 
-  background: @df-light-gray;
+  background: white;
   font-weight: 900;
   text-align: center;
   text-transform: uppercase;
@@ -13,23 +13,17 @@
 
   &.selected {
     //THIS SHOULD CHANGE!!
-    max-height: 110px;
-    height: auto;
+   max-height: 450px;
   }
 
   .experts {
     .display-flex();
+    .flex-wrap(wrap);
 
     .expert {
-      .flex(1);
-      display: inline-block;
+      .flex(1 0 40%);
       width: 40%;
 
-      .name {
-        display: inline-block;
-        font-size: 11px;
-        font-family: @df-sans;
-      }
       .pick {
         vertical-align: middle;
         width: 30%;
@@ -37,16 +31,18 @@
       }
     }
 
-    .divider {
-      display: inline-block;
-    }
 
 
   }
-    .watch {
+  .watch {
+    .title {
       font-size: 12px;
       border-top: 2px solid #69BE28;
       display: inline-block;
       padding-top: 2px;
     }
+    .small-text {
+      display: block;
+    }
+  }
 }
