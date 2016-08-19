@@ -97,9 +97,6 @@ console.log(alreadyComplete);
     }
 
 
-
-
-
     // remove trailing items with no data
     /*    for (var i = filtered.length - 1; i >= 0; i--) {
       var item = filtered[i];

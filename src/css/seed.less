@@ -27,23 +27,44 @@ body {
   }
 
   button {
-    background-color: white;
-    text-align: center;
-    border: none;
-    font-family: @df-sans;
-    margin: 3px auto;
-    padding: 5px;
-    font-size: 20px;
-    cursor: pointer;
-    display: block;
 
 
     .reset {
+      background-color: white;
+      text-align: center;
+      border: none;
+      font-family: @df-sans;
+      margin: 3px auto;
+      padding: 5px;
+      font-size: 20px;
+      cursor: pointer;
+      display: block;
+
       display: inline-block;
       text-align: right;
       margin-right: 5%;
     }
   }
+
+
+  .share  {
+    margin: auto;
+    margin-top: 10px;
+    width: 300px;
+    
+    &.sharer-0 label {
+      padding: 6px 10px !important;
+      margin-left: 2px;
+      color: @df-dark-gray !important;
+      background: @df-light-gray !important;
+
+      &:hover {
+        background: @df-border-gray !important;
+        color: @df-charcoal !important;
+      }
+    }
+  }
+
 
   .big-title {
     text-align: center;
