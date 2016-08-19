@@ -1,7 +1,7 @@
 var social = require("./lib/social");
 //require("./lib/ads");
 // var track = require("./lib/tracking");
-
+var animate = require("./lib/animateScroll");
 var qs = require("querystring");
 var app = require("./application");
 var ascii = require("./arrayCode");
@@ -11,12 +11,26 @@ var prediction = function($scope) {
 
   $scope.games = window.games.schedule;
 
+
+  var alreadyComplete = false;
+
+
+
   $scope.clear = function() {
     $scope.games.forEach(function(g) {
       g.winner = 0;
     });
     $scope.seahawks = "";
   }
+
+  //for testing
+  $scope.setAll = function() {
+    for (var i = 0; i < 15; i++) {
+      $scope.games[i].winner = "seahawks";
+    }
+
+  }
+
 
 
   //assigns data on top of existing data
@@ -71,12 +85,17 @@ var prediction = function($scope) {
     function completed(game) {
       return (game.winner);
     }
+console.log(alreadyComplete);
 
     if ($scope.games.every(completed)) {
       $scope.seahawks = seaWins;
       window.score = {seaWins};
-      //add scroll down
+      if (!alreadyComplete) {
+      var box = document.querySelector(".congrats");
+      animate(box); 
+      }
     }
+
 
 
 

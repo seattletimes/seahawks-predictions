@@ -5,35 +5,43 @@
 body {
   background: #002244;
 
+
   .header {
     font-family: @cool;
     font-size: 50px;
     margin: 0 auto;
     text-align: center;
     -webkit-font-smoothing: antialiased;
-    width: 100%;
     color: white;
-
     @media @mobile {
       font-size: 30px;
-
     }
   }
+
+  .chatter {
+    font-family: @df-sans;
+    font-size: 20px;
+    padding: 5%;
+    color: white;
+    display: inline-block;
+  }
+
   button {
     background-color: white;
     text-align: center;
     border: none;
     font-family: @df-sans;
-    font-size: 30px;
-    margin: 5% auto;
+    margin: 3px auto;
+    padding: 5px;
+    font-size: 20px;
     cursor: pointer;
     display: block;
-    &:hover {
-      .big-title {
 
-        border-color: teal;
-      }
-      z-index: 999;
+
+    .reset {
+      display: inline-block;
+      text-align: right;
+      margin-right: 5%;
     }
   }
 
@@ -66,25 +74,27 @@ body {
     font-size: 11px;
     font-family: @df-sans;
   }
-    .reset {
-      display: block;
-      text-align: right;
-      margin-right: 5%;
-    }
 
-  .schedule {
+
+  .container {
     max-width: 1200px;
     margin: auto;
+  }
+  .schedule {
+
     font-family: @df-sans;
     padding: 10px;
     .display-flex();
     .flex-wrap(wrap);
     .justify-content(center);
 
- 
+
     @media @mobile {
     }
   }
+
+
+
 
 }
 

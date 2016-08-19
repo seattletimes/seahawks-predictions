@@ -19,9 +19,12 @@
 
       <header class="header"> Seahawks Season Predictor </header>
 
-      <div class="chatter"></div>
-
+      <div class="chatter">Think you’ve got what it takes to guess the Seahawks’ 2016 season correctly? Put your football knowledge to the test by picking the winner of each game this season, and see how your preseason picks stack up against your friends and our experts at The Seattle Times.</div>
+      
       <button class="reset" ng-click="clear()">Reset <i class="fa fa-refresh" aria-hidden="true"></i></button>
+      <button class="reset" ng-click="setAll()">Set <i class="fa fa-refresh" aria-hidden="true"></i></button>
+      
+
       <div class="schedule" >
 
         <div class="game" ng-repeat="game in games">
@@ -35,7 +38,7 @@
 
             <!--Home Team-->
               <input
-                     class="team-radio"
+                     class="team-radio {{game.id}}"
                      type="radio"
                      value="{{game.home}}"
                      name="winner{{game.id}}"
@@ -46,7 +49,7 @@
 
                      >
               <label for="team{{game.id}}{{game.home}}">
-                <p class="vs" ng-class="game.winner === game.away ? 'chosen' : 'unchosen'">vs.</p>
+                <p class="vs" ng-class="game.winner === game.away ? 'chosen' : 'unchosen'">will beat</p>
                 <img src="assets/logos/{{game.home}}.png">
                 <p class="small-title">{{game.home}}</p>
               </label>
@@ -55,17 +58,18 @@
               <label><p class="big-title">vs.</p> </label>
             <!--Away Team-->
               <input
-                     class="team-radio"
+                     class="team-radio {{game.id}}"
                      type="radio"
                      value="{{game.away}}"
                      name="winner{{game.id}}"
                      id="team{{game.id}}{{game.away}}"
                      ng-model="game.winner"
                      ng-disabled="game.winner"
-                     ng-class="game.winner === game.away ? 'chosen' : 'unchosen'">
+                     ng-class="game.winner === game.away ? 'chosen' : 'unchosen'"
+                    >
 
               <label for="team{{game.id}}{{game.away}}">
-                <p class="vs" ng-class="game.winner === game.away ? 'chosen' : 'unchosen'">vs.</p>
+                <p class="vs" ng-class="game.winner === game.away ? 'chosen' : 'unchosen'">will beat</p>
                 <img src="./assets/logos/{{game.away}}.png">
                 <p class="small-title">{{game.away}}</p>
               </label>
@@ -98,21 +102,23 @@
             </div>
 
             <div class="watch">
-              <p class="title">Watch the game</p>
+              <p class="small-text border">{{game.location}} stadium</p>
+              <p class="small-text"> {{game.time}} PST</p>
+              <p class="small-text"> {{game.tv}}</p>
 
-              <p class="small-text"><i class="fa fa-map-marker" aria-hidden="true"></i> {{game.location}}</p>
-              <p class="small-text"><i class="fa fa-television" aria-hidden="true"></i> {{game.tv}}, {{game.time}} PST</p>
             </div>
           </div>
 
         </div>
 
         <div class="game results" ng-if="seahawks">
-          <h2>You did it</h2>
+          <h2 class="congrats">You did it</h2>
           <p>You think the Seahawks will win {{seahawks}} out of 16 games. </p>
           
 
-           <a class="share bottom" aria-label="Share"></a>
+          <button>
+          <a class="share bottom" aria-label="Share"></a>
+          </button> 
 
 
         </div>
