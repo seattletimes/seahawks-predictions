@@ -15,12 +15,12 @@ var prediction = function($scope) {
   var alreadyComplete = false;
 
 
-
   $scope.clear = function() {
     $scope.games.forEach(function(g) {
       g.winner = 0;
     });
     $scope.seahawks = "";
+    alreadyComplete = false;
   }
 
   //for testing
@@ -37,6 +37,9 @@ var prediction = function($scope) {
   var restore = function(source) {
     source.forEach(function(g, i) {
       var game = $scope.games[i];
+      if (g.winner) {
+        alreadyComplete = true;
+      }
       if (typeof g.winner == "string") {
         //handle loading the presets
         game.winner = g.winner;
