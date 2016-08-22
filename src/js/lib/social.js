@@ -44,15 +44,10 @@ var update = function(buttons, url) {
     n.twitter.url = addQuery(url, utm("twitter"));
     n.facebook.url = addQuery(url, utm("facebook"));
     
-    if (window.score.seaWins) {
-    n.twitter.description = window.score.seaWins;
-      
-    }
 
   });
 };
 
-console.log(top);
 
 module.exports = {
   Share,

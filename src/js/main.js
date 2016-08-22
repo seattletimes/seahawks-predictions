@@ -5,15 +5,14 @@ var animate = require("./lib/animateScroll");
 var qs = require("querystring");
 var app = require("./application");
 var ascii = require("./arrayCode");
-var aKeys = "winner h a".split(" ");
+var Share = require("share");
+var aKeys = "winner".split(" ");
 
 var prediction = function($scope) {
 
   $scope.games = window.games.schedule;
 
-
   var alreadyComplete = false;
-
 
   $scope.clear = function() {
     $scope.games.forEach(function(g) {
@@ -32,7 +31,6 @@ var prediction = function($scope) {
   }
 
 
-
   //assigns data on top of existing data
   var restore = function(source) {
     source.forEach(function(g, i) {
@@ -48,6 +46,7 @@ var prediction = function($scope) {
       }
     });
   }
+  
   // on startup, check the window hash for a games parameter
   var hash = window.location.hash.replace(/^#/, "");
   var query = qs.decode(hash);
@@ -68,6 +67,56 @@ var prediction = function($scope) {
   // When any data changes (or for each digest cycle), run this function
   $scope.$watch(function() {
 
+    var seaWins = 0;
+    var otherWins = 0;
+    var bobMatch = 0;
+    var jaysonMatch = 0;
+    for (var i = 0; i < $scope.games.length; i++) {
+      var winner = $scope.games[i].winner;
+      
+      if (winner === $scope.games[i].bobWinner) {
+        bobMatch++;
+      }
+      if (winner === $scope.games[i].jaysonWinner) {
+        jaysonMatch++;
+      }
+      if (winner === "seahawks") {
+        seaWins++;
+      }
+      else { otherWins++; }
+    }
+
+    
+    function completed(game) {
+      return (game.winner);
+    }
+
+    if ($scope.games.every(completed)) {
+      $scope.seahawks = seaWins;
+      window.score = {seaWins};
+      
+      $scope.other = otherWins; 
+      $scope.bobMatch = bobMatch;
+      $scope.jaysonMatch = jaysonMatch;
+      if (!alreadyComplete) {
+        var box = document.querySelector(".congrats");
+        animate(box); 
+      }
+    }
+
+    new Share(".share-results", {
+      description: "I think the Seahawks will go " + seaWins + "-" + otherWins + " this season." + document.querySelector(`meta[property="og:description"]`).innerHTML,
+      ui: {
+        flyout: "bottom right",
+        button_text: "Tell your friends"
+      },
+      networks: {
+        email: {
+          description: "I think the Seahawks will go " + seaWins + "-" + otherWins + " this season."  + [document.querySelector(`meta[property="og:description"]`).innerHTML, window.location.href].join("\n")
+        }
+      }
+    });
+
     //create a coded version of the scores
     var filtered = $scope.games.map(function(entry) {
       return {
@@ -77,37 +126,7 @@ var prediction = function($scope) {
       }
 
     });
-
-    var seaWins = 0;
-    for (var i = 0; i < $scope.games.length; i++) {
-      if ($scope.games[i].winner === "seahawks") {
-        seaWins++;
-      }
-    }
-
-    function completed(game) {
-      return (game.winner);
-    }
-console.log(alreadyComplete);
-
-    if ($scope.games.every(completed)) {
-      $scope.seahawks = seaWins;
-      window.score = {seaWins};
-      if (!alreadyComplete) {
-      var box = document.querySelector(".congrats");
-      animate(box); 
-      }
-    }
-
-
-    // remove trailing items with no data
-    /*    for (var i = filtered.length - 1; i >= 0; i--) {
-      var item = filtered[i];
-      if (!item.winner) {
-        filtered.pop();
-      }
-    }*/
-
+    
     //encode this into a URL hash and set it
     var encoded = "#" + qs.encode({
       games: ascii.pack(aKeys, filtered)
@@ -121,4 +140,3 @@ console.log(alreadyComplete);
 }
 
 app.controller("prediction", prediction);
-

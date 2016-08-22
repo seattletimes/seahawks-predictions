@@ -93,27 +93,29 @@
     &.selected {
 
       .flex-direction(column);
+      .small-title {
+        display: none;
+      }
 
       input.unchosen + label {
         .flex-order(3);
 
-        width: 15%;
-        opacity: .6;
 
         img {
           display: inline-block;
+          width: 50%;         
+          vertical-align: middle;
+          opacity: .6;
+
 
           &:hover {
             transform: none;
           }
         }
 
-        .small-title {
-          display: none;
-        }
-
         .vs {
           display: inline-block;
+          vertical-align: middle;
         }
       }
 
@@ -123,22 +125,5 @@
     }
   }
 
-  &.results {
-    width: 40%;
-    display: block;
-    background-color: @df-light-gray;
-    margin: 10px;
-    text-align: center;
 
-
-
-
-    @media @small-screen {
-      width: 90%;
-    }
-    @media @mobile {
-
-    }
-
-  }
 }
