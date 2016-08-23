@@ -71,9 +71,6 @@
       img {
         border-radius: 50%;
         cursor: pointer;
-        -webkit-transition: all .2s  ease-out;
-        -moz-transition: all .2s ease-out;
-        transition: all .2s ease-out;
 
         &:hover {
           transform: scale(1.2);
@@ -85,7 +82,13 @@
         display: none;
       }
     }
-
+   input.vs + label {
+      .flex(0 1 80px);
+      .flex-order(2);
+      .big-title {
+        border-bottom: none;
+      }
+    }
     input.team-radio:checked + label {
 
       .flex-order(1);
@@ -93,15 +96,12 @@
         cursor: default;
         transform: scale(1.6);
         -webkit-transform: scale(1.6);
+        margin: 10px 0;
+        
       }
     }
 
-    input.vs + label {
-      .flex(0 1 80px);
-      .flex-order(2);
-      .big-title {
-      }
-    }
+ 
 
     &.selected {
 
