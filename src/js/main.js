@@ -29,6 +29,9 @@ var prediction = function($scope) {
 
   }
 
+
+
+
   //assigns data on top of existing data
   var restore = function(source) {
     source.forEach(function(g, i) {
@@ -73,42 +76,37 @@ var prediction = function($scope) {
     }
 
     if ($scope.games.every(completed)) {
-
-  var seaWins = 0;
-  var otherWins = 0;
-
       
- var experts = [
-    {name: "bob", score: 0},
-    {name: "jayson", score: 0}
-  ];
+          var seaWins = 0;
+    var otherWins = 0;
+    var bobMatch = 0;
+    var jaysonMatch = 0;
 
-      for (var i = 0; i < $scope.games.length; i++) {
 
-        experts.forEach(function(expert) {
-          var exp = expert.name + "Winner";
-          if ($scope.games[i].winner === $scope.games[i][exp]) {
-            expert.score++;
-          }
 
-        });
+    for (var i = 0; i < $scope.games.length; i++) {
+      var winner = $scope.games[i].winner;
 
-        if ($scope.games[i].winner === "seahawks") {
-          seaWins++;
-        }
-        else { otherWins++; }
+      if (winner === $scope.games[i].bobWinner) {
+        bobMatch++;
       }
+      if (winner === $scope.games[i].jaysonWinner) {
+        jaysonMatch++;
+      }
+      
+      if (winner === "seahawks") {
+        seaWins++;
+      }
+      else { otherWins++; }
+    }
 
-
+        
       $scope.seahawks = seaWins;
       window.score = {seaWins};
 
       $scope.other = otherWins; 
-
-      $scope.experts = experts;
-      console.log($scope.experts);
-      
-      
+      $scope.bobMatch = bobMatch;
+      $scope.jaysonMatch = jaysonMatch;
       if (!alreadyComplete) {
         var box = document.querySelector(".congrats");
         animate(box); 
