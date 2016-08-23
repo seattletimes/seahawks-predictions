@@ -1,0 +1,45 @@
+@media print {
+
+  .dont-miss,
+  .nav-bottom,
+  .thin-div,
+  .ad,
+  button,
+  .chatter,
+  .date > .big-title,
+  .expert-box{
+    display: none !important;
+  }
+
+
+
+  .game {
+    &.selected {
+      outline: none;
+    }
+
+    .prediction {
+
+      &.selected {
+        .small-title {
+          display: block;
+          text-align: center;
+          font-family: @df-sans;
+        }
+
+        img {
+          display: none;
+        }
+        input.unchosen + label img {
+        
+            display: none;
+          
+      }
+    }
+
+    .date > .small-text {
+      font-weight: 900;
+    }
+  }
+}
+}

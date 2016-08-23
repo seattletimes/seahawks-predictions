@@ -1,10 +1,13 @@
 @import "seattletimes";
 @import "experts";
 @import "game";
+@import "print";
 
 body {
   background: #002244;
 
+
+}
 
   .container {
     max-width: 1200px;
@@ -19,6 +22,9 @@ body {
   header {
     max-width: 840px;
     margin: 0 auto;
+    
+  
+    
 
     @media @tablet {
       padding-left: 8px;
@@ -69,9 +75,9 @@ body {
     margin: 10px auto;
     text-align: center;
     position: relative;
+    color: white;
     
     .congrats {
-      font-family: @cool;
       text-transform: uppercase;
       color: white;
     }
@@ -80,9 +86,7 @@ body {
     @media @mobile {
     }
 
-
   }
-
 
   .big-title {
     text-align: center;
@@ -117,10 +121,12 @@ body {
 
   .chatter {
     font-family: @df-sans;
-    font-size: 20px;
+    font-size: 24px;
+    font-style: italic;
     padding: 5%;
     color: white;
     display: inline-block;
+    width: 80%;
   }
 
   button {
@@ -137,8 +143,9 @@ body {
 
     .reset {
       display: inline-block;
-      text-align: right;
       margin-right: 5%;
+      float: right;
+      width: 10px;
     }
   }
 
@@ -184,4 +191,3 @@ body {
     }
 
   }
-}

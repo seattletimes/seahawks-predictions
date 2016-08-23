@@ -25,14 +25,14 @@
       <div class="chatter">Think you’ve got what it takes to guess the Seahawks’ 2016 season correctly? Put your football knowledge to the test by picking the winner of each game this season, and see how your preseason picks stack up against your friends and our experts at The Seattle Times.</div>
 
       <button class="reset" ng-click="clear()">Reset <i class="fa fa-refresh" aria-hidden="true"></i></button>
-      <button class="reset" ng-click="setAll()">Set <i class="fa fa-refresh" aria-hidden="true"></i></button>
+      <button class="reset" ng-click="setAll()">Print <i class="fa fa-print" aria-hidden="true"></i></button>
 
 
       <div class="schedule" >
 
         <div class="game" ng-repeat="game in games" ng-class="game.winner ? 'selected' : ''">
 
-          <div class="top" ng-class="game.winner ? 'selected' : ''">
+          <div class="top">
             <div class="date">
               <h2 class="big-title">Week {{game.id}}</h2>
               <p class="small-text">{{game.date}}</p>
@@ -94,12 +94,12 @@
               </div>
 
               <div class="expert">
-                <p class="small-text">Third</p>
+                <p class="small-text">Stone</p>
                 <img class="pick" src="assets/logos/{{game.thirdWinner}}.png"> 
               </div>
 
               <div class="expert">
-                <p class="small-text">Fourth</p>
+                <p class="small-text">Calkins</p>
                 <img class="pick" src="assets/logos/{{game.fourthWinner}}.png"> 
               </div>
 
@@ -115,14 +115,10 @@
 
         <div class="results" ng-if="seahawks">
           <h2 class="congrats">You predict the Seahawks will go {{seahawks}} - {{other}} this season.</h2>
-          <p>Jayson: {{jaysonMatch}}</p>
-          <p>Bob: {{bobMatch}}</p>
-          <p>Bob: {{bobMatch}}</p>
+          <h2 class="congrats">You and Bob Condotta have {{bobMatch}} games in common.</h2>
+          
           <a class="share-results"></a>
         </div>
-
-
-
 
 
 

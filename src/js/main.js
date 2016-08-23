@@ -31,7 +31,6 @@ var prediction = function($scope) {
 
 
 
-
   //assigns data on top of existing data
   var restore = function(source) {
     source.forEach(function(g, i) {
@@ -77,11 +76,10 @@ var prediction = function($scope) {
 
     if ($scope.games.every(completed)) {
       
-          var seaWins = 0;
+    var seaWins = 0;
     var otherWins = 0;
     var bobMatch = 0;
     var jaysonMatch = 0;
-
 
 
     for (var i = 0; i < $scope.games.length; i++) {
@@ -107,24 +105,35 @@ var prediction = function($scope) {
       $scope.other = otherWins; 
       $scope.bobMatch = bobMatch;
       $scope.jaysonMatch = jaysonMatch;
+      
       if (!alreadyComplete) {
         var box = document.querySelector(".congrats");
         animate(box); 
+        
       }
+      
     }
 
-    new Share(".share-results", {
-      description: "I think the Seahawks will go " + seaWins + "-" + otherWins + " this season." + document.querySelector(`meta[property="og:description"]`).innerHTML,
+     document.querySelector(`meta[property="og:description"]`).content = ("ason.");
+  
+
+    var s = new Share(".share-results", {
       ui: {
         flyout: "bottom right",
         button_text: "Tell your friends"
       },
       networks: {
         email: {
-          description: "I think the Seahawks will go " + seaWins + "-" + otherWins + " this season."  + [document.querySelector(`meta[property="og:description"]`).innerHTML, window.location.href].join("\n")
+          description: "I think the Seahawks will go " + seaWins + "-" + otherWins + " this season."  + [document.querySelector(`meta[property="og:description"]`).content, window.location.href].join("\n")
+        },
+        facbook: {
+          description: "I think the Seahawks will go " + seaWins + "-" + otherWins + " this season."  + [document.querySelector(`meta[property="og:description"]`).content, window.location.href].join("\n"),
+          caption: "I think the Seahawewks will go " + seaWins + "-" + otherWins + " this season."  + [document.querySelector(`meta[property="og:description"]`).content, window.location.href].join("\n"),
         }
       }
     });
+    
+
 
     //create a coded version of the scores
     var filtered = $scope.games.map(function(entry) {
