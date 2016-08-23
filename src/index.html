@@ -30,54 +30,55 @@
 
       <div class="schedule" >
 
-        <div class="game" ng-repeat="game in games">
+        <div class="game" ng-repeat="game in games" ng-class="game.winner ? 'selected' : ''">
 
-          <div class="date">
-            <h2 class="big-title">Week {{game.id}}</h2>
-            <p class="small-text">{{game.date}}</p>
+          <div class="top" ng-class="game.winner ? 'selected' : ''">
+            <div class="date">
+              <h2 class="big-title">Week {{game.id}}</h2>
+              <p class="small-text">{{game.date}}</p>
+            </div>
+
+            <div class="prediction" ng-class="game.winner ? 'selected' : ''">
+
+              <!--Home Team-->
+              <input
+                     class="team-radio {{game.id}}"
+                     type="radio"
+                     value="{{game.home}}"
+                     name="winner{{game.id}}"
+                     id="team{{game.id}}{{game.home}}"
+                     ng-model="game.winner"
+                     ng-disabled="game.winner"
+                     ng-class="game.winner === game.home ? 'chosen' : 'unchosen'"
+
+                     >
+              <label for="team{{game.id}}{{game.home}}">
+                <div class="vs"><p>over</p></div>
+                <img src="assets/logos/{{game.home}}.png">
+                <p class="small-title">{{game.home}}</p>
+              </label>
+
+              <input class="team-radio vs">
+              <label><p class="big-title">vs.</p> </label>
+              <!--Away Team-->
+              <input
+                     class="team-radio {{game.id}}"
+                     type="radio"
+                     value="{{game.away}}"
+                     name="winner{{game.id}}"
+                     id="team{{game.id}}{{game.away}}"
+                     ng-model="game.winner"
+                     ng-disabled="game.winner"
+                     ng-class="game.winner === game.away ? 'chosen' : 'unchosen'"
+                     >
+
+              <label for="team{{game.id}}{{game.away}}">
+                <div class="vs"><p>over</p></div>
+                <img src="./assets/logos/{{game.away}}.png">
+                <p class="small-title">{{game.away}}</p>
+              </label>
+            </div>
           </div>
-
-          <div class="prediction" ng-class="game.winner ? 'selected' : ''">
-
-            <!--Home Team-->
-            <input
-                   class="team-radio {{game.id}}"
-                   type="radio"
-                   value="{{game.home}}"
-                   name="winner{{game.id}}"
-                   id="team{{game.id}}{{game.home}}"
-                   ng-model="game.winner"
-                   ng-disabled="game.winner"
-                   ng-class="game.winner === game.home ? 'chosen' : 'unchosen'"
-
-                   >
-            <label for="team{{game.id}}{{game.home}}">
-              <div class="vs"><p>over</p></div>
-              <img src="assets/logos/{{game.home}}.png">
-              <p class="small-title">{{game.home}}</p>
-            </label>
-
-            <input class="team-radio vs">
-            <label><p class="big-title">vs.</p> </label>
-            <!--Away Team-->
-            <input
-                   class="team-radio {{game.id}}"
-                   type="radio"
-                   value="{{game.away}}"
-                   name="winner{{game.id}}"
-                   id="team{{game.id}}{{game.away}}"
-                   ng-model="game.winner"
-                   ng-disabled="game.winner"
-                   ng-class="game.winner === game.away ? 'chosen' : 'unchosen'"
-                   >
-
-            <label for="team{{game.id}}{{game.away}}">
-              <div class="vs"><p>over</p></div>
-              <img src="./assets/logos/{{game.away}}.png">
-              <p class="small-title">{{game.away}}</p>
-            </label>
-          </div>
-
           <div class="expert-box" ng-class="game.winner ? 'selected' : ''">
 
             <header class="small-title">Expert Picks</header>
@@ -105,7 +106,7 @@
             </div>
 
             <div class="watch">
-              <p class="small-text border">{{game.location}}</p>
+              <p class="small-text">{{game.location}}</p>
               <p class="small-text"> {{game.tv}}, {{game.time}} PST</p>
             </div>
           </div>
@@ -113,9 +114,6 @@
         </div>
 
         <div class="results" ng-if="seahawks">
-          <h2 class="congrats">Your prediction...</h2>
-          <p>You think the Seahawks will go {{seahawks}}-{{other}}. </p>
-          <p>Bob: {{bobMatch}}</p>
           <p>Jayson: {{jaysonMatch}}</p>
           <p>Bob: {{bobMatch}}</p>
           <p>Bob: {{bobMatch}}</p>

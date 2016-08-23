@@ -1,5 +1,5 @@
 .expert-box {
-  height: 0;
+  max-height: 0;
   overflow: hidden;
 
   background: white;
@@ -7,13 +7,16 @@
   text-align: center;
   text-transform: uppercase;
   padding: 5px 0;
-  -webkit-transition: all .5s  ease-out;
-  -moz-transition: all .5s ease-out;
-  transition: all .5s ease-out;
+  -webkit-transition: all .3s  ease-out;
+  -moz-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+  
+
 
   &.selected {
     //THIS SHOULD CHANGE!!
-    height: auto;
+    max-height: 155px;
+    
   }
 
   .experts {
@@ -41,10 +44,7 @@
       margin: 2px;
       text-transform: none;
       font-weight: normal;
-      &.border { 
-        border-top: 2px dashed #69BE28;
-        padding-top: 3px;
-      }  
+      
     }
 
   }

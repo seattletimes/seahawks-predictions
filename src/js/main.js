@@ -7,7 +7,6 @@ var app = require("./application");
 var ascii = require("./arrayCode");
 var Share = require("share");
 var aKeys = "winner".split(" ");
-
 var prediction = function($scope) {
 
   $scope.games = window.games.schedule;
@@ -30,7 +29,6 @@ var prediction = function($scope) {
 
   }
 
-
   //assigns data on top of existing data
   var restore = function(source) {
     source.forEach(function(g, i) {
@@ -46,7 +44,7 @@ var prediction = function($scope) {
       }
     });
   }
-  
+
   // on startup, check the window hash for a games parameter
   var hash = window.location.hash.replace(/^#/, "");
   var query = qs.decode(hash);
@@ -67,37 +65,50 @@ var prediction = function($scope) {
   // When any data changes (or for each digest cycle), run this function
   $scope.$watch(function() {
 
-    var seaWins = 0;
-    var otherWins = 0;
-    var bobMatch = 0;
-    var jaysonMatch = 0;
-    for (var i = 0; i < $scope.games.length; i++) {
-      var winner = $scope.games[i].winner;
-      
-      if (winner === $scope.games[i].bobWinner) {
-        bobMatch++;
-      }
-      if (winner === $scope.games[i].jaysonWinner) {
-        jaysonMatch++;
-      }
-      if (winner === "seahawks") {
-        seaWins++;
-      }
-      else { otherWins++; }
-    }
 
-    
+
+
     function completed(game) {
       return (game.winner);
     }
 
     if ($scope.games.every(completed)) {
+
+  var seaWins = 0;
+  var otherWins = 0;
+
+      
+ var experts = [
+    {name: "bob", score: 0},
+    {name: "jayson", score: 0}
+  ];
+
+      for (var i = 0; i < $scope.games.length; i++) {
+
+        experts.forEach(function(expert) {
+          var exp = expert.name + "Winner";
+          if ($scope.games[i].winner === $scope.games[i][exp]) {
+            expert.score++;
+          }
+
+        });
+
+        if ($scope.games[i].winner === "seahawks") {
+          seaWins++;
+        }
+        else { otherWins++; }
+      }
+
+
       $scope.seahawks = seaWins;
       window.score = {seaWins};
-      
+
       $scope.other = otherWins; 
-      $scope.bobMatch = bobMatch;
-      $scope.jaysonMatch = jaysonMatch;
+
+      $scope.experts = experts;
+      console.log($scope.experts);
+      
+      
       if (!alreadyComplete) {
         var box = document.querySelector(".congrats");
         animate(box); 
@@ -126,7 +137,7 @@ var prediction = function($scope) {
       }
 
     });
-    
+
     //encode this into a URL hash and set it
     var encoded = "#" + qs.encode({
       games: ascii.pack(aKeys, filtered)
