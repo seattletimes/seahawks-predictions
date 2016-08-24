@@ -22,10 +22,18 @@
         <h2 class="title">Seahawks Season Predictor</h2> 
       </header>
 
-      <div class="chatter">Think you’ve got what it takes to guess the Seahawks’ 2016 season correctly? Put your football knowledge to the test by picking the winner of each game this season, and see how your preseason picks stack up against your friends and our experts at The Seattle Times.</div>
+      <div class="chatter">
+        
+        Think you’ve got what it takes to guess the Seahawks’ 2016 season correctly? Put your football knowledge to the test by picking the winner of each game this season, and see how your preseason picks stack up against your friends and our experts at The Seattle Times.
 
-      <button class="reset" ng-click="clear()">Reset <i class="fa fa-refresh" aria-hidden="true"></i></button>
-      <button class="reset" ng-click="setAll()">Print <i class="fa fa-print" aria-hidden="true"></i></button>
+        <div class="buttons">
+          <button class="reset" ng-click="clear()">Reset <i class="fa fa-refresh" aria-hidden="true"></i></button>
+
+          <button class="print" ng-click="setAll()">Print <i class="fa fa-print" aria-hidden="true"></i></button>
+          
+        </div>
+        
+      </div>
 
 
       <div class="schedule" >
@@ -114,9 +122,44 @@
         </div>
 
         <div class="results" ng-if="seahawks">
-          <h2 class="congrats">You predict the Seahawks will go {{seahawks}} - {{other}} this season.</h2>
-          <h2 class="congrats">You and Bob Condotta have {{bobMatch}} games in common.</h2>
-          
+          <p class="congrats">You predict the Seahawks will go <span>{{seahawks}} - {{other}}</span> this season.</p >
+
+          <section class="experts">
+
+            <div class="expert">
+
+              <img class="mug" src="assets/mugs/condotta_mug_transparent.png">
+              <p class="comparison">
+                You and Bob Condotta have {{bobMatch}} games in common.
+              </p>
+
+            </div>           
+            <div class="expert">
+
+              <img class="mug" src="assets/mugs/calkins_mug_transparent.png">
+              <p class="comparison">
+                You and Matt Caulkins have {{bobMatch}} games in common.
+              </p>
+
+            </div>        
+            <div class="expert">
+
+              <img class="mug" src="assets/mugs/stone_mug_transparent.png">
+              <p class="comparison">
+                You and Larry Stone have {{bobMatch}} games in common.
+              </p>
+
+            </div>        
+            <div class="expert">
+
+              <img class="mug" src="assets/mugs/jenks_mug_transparent.png">
+              <p class="comparison">
+                You and Jayson Jenks have {{bobMatch}} games in common.
+              </p>
+
+            </div>
+          </section>
+
           <a class="share-results"></a>
         </div>
 

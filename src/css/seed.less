@@ -2,12 +2,11 @@
 @import "experts";
 @import "game";
 @import "print";
+@import "results";
 
 body {
   background: #002244;
-
-
-}
+  font-family: @df-sans;
 
   .container {
     max-width: 1200px;
@@ -18,30 +17,29 @@ body {
       padding: 15px 0;
     }
   }
+}
 
-  header {
-    max-width: 840px;
-    margin: 0 auto;
-    
-  
-    
+header {
+  max-width: 840px;
+  margin: 0 auto;
 
-    @media @tablet {
-      padding-left: 8px;
-      padding-right: 5px;
-    }
-
-    @media @mobile {
-      padding: 5px 0;
-    }
+  @media @tablet {
+    padding-left: 8px;
+    padding-right: 5px;
   }
+
+  @media @mobile {
+    padding: 5px 0;
+  }
+}
 
   .title {
     font-family: @cool;
     font-size: 2.2em;
-    margin: 5px auto;
+    line-height: 1.1;
+    margin: 0 auto;
     -webkit-font-smoothing: antialiased;
-    color: greenyellow;
+    color:  #69BE28;
 
     @media @small-screen {
       font-size: 1.3em;
@@ -56,37 +54,54 @@ body {
       }
     }
   }
-  .schedule {
 
-    font-family: @df-sans;
-    padding: 10px;
+
+
+
+.chatter {
+  text-align: justify;
+  font-size: 24px;
+  font-style: italic;
+  padding: 3%;
+  color: white;
+  display: inline-block;
+
+  @media @mobile {
+    font-size: 16px;
+  }
+
+  .buttons {
     .display-flex();
-    .flex-wrap(wrap);
-    .justify-content(center);
+    .justify-content(space-between);
+    margin-top: 5%;
 
-
-    @media @mobile {
-    }
-  }
-
-  .results {
-    width: 95%;
-    min-height: 300px;
-    margin: 10px auto;
-    text-align: center;
-    position: relative;
-    color: white;
-    
-    .congrats {
-      text-transform: uppercase;
+    button {
+      text-align: center;
+      border: none;
+      padding: 5px;
+      font-size: 25px;
+      cursor: pointer;
       color: white;
-    }
-    @media @small-screen {
-    }
-    @media @mobile {
-    }
 
+      @media @mobile {
+        font-size: 16px;
+      }
+      &.print {
+        background: none;
+      }
+
+      &.reset {
+        background: #69BE28;
+      }
+    }
   }
+}
+
+
+.schedule {
+  .display-flex();
+  .flex-wrap(wrap);
+  .justify-content(center);
 
   .big-title {
     text-align: center;
@@ -95,7 +110,6 @@ body {
     text-transform: uppercase;
     border-bottom: 3px solid #69BE28;
     display: inline-block;
-
     @media @tablet {
       font-size: 25px;
     }
@@ -105,89 +119,14 @@ body {
     display: block;
     font-size: 12px;
     margin: 5px;
-
     @media @tablet {
       font-size: 16px;
     }
   }
-
 
   .small-text {
     display: inline-block;
     font-size: 11px;
     font-family: @df-sans;
   }
-
-
-  .chatter {
-    font-family: @df-sans;
-    font-size: 24px;
-    font-style: italic;
-    padding: 5%;
-    color: white;
-    display: inline-block;
-    width: 80%;
-  }
-
-  button {
-
-    background-color: white;
-    text-align: center;
-    border: none;
-    font-family: @df-sans;
-    margin: 3px auto;
-    padding: 5px;
-    font-size: 20px;
-    cursor: pointer;
-    display: block;
-
-    .reset {
-      display: inline-block;
-      margin-right: 5%;
-      float: right;
-      width: 10px;
-    }
-  }
-
-
-  a.share-results {
-    margin: auto;
-    margin-top: 10px;
-    margin-top: 2px;
-
-    label {
-      background: black !important;
-      color: white !important;
-
-    }
-
-    &.sharer-0 {
-      width: 500px;
-      @media @mobile {
-        width: 360px;
-      }
-
-
-      label {
-        font-size: 36px !important;
-        margin-left: 2px;
-        width: 500px !important;
-        color: @df-dark-gray !important;
-        background: @df-light-gray !important;
-        &:hover {
-          background: @df-border-gray !important;
-          color: @df-charcoal !important;
-        }
-
-        &:before {
-          display: none;
-
-        }
-        span {
-          font-size: 36px !important;
-          font-family: @cool !important;
-        }
-      }
-    }
-
-  }
+}
