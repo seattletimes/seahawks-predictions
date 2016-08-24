@@ -23,28 +23,27 @@
       </header>
 
       <div class="chatter">
-        
+
         Think you’ve got what it takes to guess the Seahawks’ 2016 season correctly? Put your football knowledge to the test by picking the winner of each game this season, and see how your preseason picks stack up against your friends and our experts at The Seattle Times.
 
+<p class="chatter instructions">Click on each logo to pick your winner.</p>
+      </div>
         <div class="buttons">
           <button class="reset" ng-click="clear()">Reset <i class="fa fa-refresh" aria-hidden="true"></i></button>
 
           <button class="print" ng-click="setAll()">Print <i class="fa fa-print" aria-hidden="true"></i></button>
-          
+
         </div>
-        
-      </div>
 
-
+      
       <div class="schedule" >
 
         <div class="game" ng-repeat="game in games" ng-class="game.winner ? 'selected' : ''">
 
           <div class="top">
-            <div class="date">
-              <h2 class="big-title">Week {{game.id}}</h2>
-              <p class="small-text">{{game.date}}</p>
-            </div>
+            
+            <h2 class="week">Week {{game.id}}</h2>
+            <p class="day">{{game.date}}</p>
 
             <div class="prediction" ng-class="game.winner ? 'selected' : ''">
 
@@ -122,6 +121,7 @@
         </div>
 
         <div class="results" ng-if="seahawks">
+
           <p class="congrats">You predict the Seahawks will go <span>{{seahawks}} - {{other}}</span> this season.</p >
 
           <section class="experts">
@@ -159,7 +159,6 @@
 
             </div>
           </section>
-
           <a class="share-results"></a>
         </div>
 
@@ -171,7 +170,6 @@
 
     <script>
       window.games = {schedule: <%= JSON.stringify(json.schedule) %>};
-
     </script>
 
     <script src="app.js" async></script>

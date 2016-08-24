@@ -1,51 +1,53 @@
 .game {
   width: 21%;
-  background: #002244;   
   margin: 10px;
-  font-family: @cool;
+
   .display-flex();
   .flex-direction(column);
 
-      -webkit-transition: all .1s  ease-out;
-  -moz-transition: all .1s ease-out;
+  -webkit-transition: all .1s  ease-out;
   transition: all .1s ease-out;
-    -webkit-transition-delay: .3s;
-    transition-delay: .3s;
-  
+  -webkit-transition-delay: .3s;
+  transition-delay: .3s;
+
   &.selected {
     outline: 5px solid #69BE28;
   }
 
   @media @small-screen {
-    width: 30%
+    width: 30%;
   }
-
   @media @tablet {
     width: 45%;
     font-size: 12px;
     font-weight: 100;
   }
-
   @media @mobile {
-    width: 95%;
+    width: 90%;
     margin: 20px auto;
-  }
-
-  .date {
-    text-align: center;
-
-    .small-text {
-      display: block;
-      font-size: 14px;
-      margin: 0;
-    }
   }
 
   .top {
     background: @df-light-gray;
 
-  }
-  .prediction {
+    .day {
+      display: block;
+      font-size: 14px;
+      margin: 0;
+    }
+    
+    .week {
+      font-family: @cool;
+      font-weight: 900;
+      font-size: 18px;
+      text-transform: uppercase;
+      border-bottom: 3px solid #69BE28;
+      display: inline-block;
+      @media @tablet {
+        font-size: 25px;
+      }
+    }
+      .prediction {
 
     text-align: center;
     @media @mobile {
@@ -80,7 +82,8 @@
         display: none;
       }
     }
-   input.vs + label {
+
+    input.vs + label {
       .flex(0 1 80px);
       .flex-order(2);
       .big-title {
@@ -95,11 +98,11 @@
         transform: scale(1.6);
         -webkit-transform: scale(1.6);
         margin: 10px 0;
-        
+
       }
     }
 
- 
+
 
     &.selected {
 
@@ -129,6 +132,7 @@
         .vs {
           display: inline-block;
           vertical-align: middle;
+          font-family: @cool;
         }
       }
 
@@ -137,6 +141,10 @@
       }
     }
   }
+
+  }
+  
+
 
 
 }

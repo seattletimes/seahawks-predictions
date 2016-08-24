@@ -28,8 +28,7 @@ var prediction = function($scope) {
     }
 
   }
-
-  
+   
   //assigns data on top of existing data
   var restore = function(source) {
     source.forEach(function(g, i) {
@@ -65,8 +64,6 @@ var prediction = function($scope) {
 
   // When any data changes (or for each digest cycle), run this function
   $scope.$watch(function() {
-
-
 
 
     function completed(game) {
@@ -115,6 +112,7 @@ var prediction = function($scope) {
   
 
     var s = new Share(".share-results", {
+      description: "I think the Seahawks will go " + seaWins + "-" + otherWins + " this season." + document.querySelector(`meta[property="og:description"]`).content,
       ui: {
         flyout: "bottom right",
         button_text: "Tell your friends"
@@ -122,14 +120,9 @@ var prediction = function($scope) {
       networks: {
         email: {
           description: "I think the Seahawks will go " + seaWins + "-" + otherWins + " this season."  + [document.querySelector(`meta[property="og:description"]`).content, window.location.href].join("\n")
-        },
-        facbook: {
-          description: "I think the Seahawks will go " + seaWins + "-" + otherWins + " this season."  + [document.querySelector(`meta[property="og:description"]`).content, window.location.href].join("\n"),
-          caption: "I think the Seahawewks will go " + seaWins + "-" + otherWins + " this season."  + [document.querySelector(`meta[property="og:description"]`).content, window.location.href].join("\n"),
         }
       }
     });
-    
 
 
     //create a coded version of the scores

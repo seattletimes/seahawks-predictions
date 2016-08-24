@@ -14,6 +14,7 @@ var makeShare = function(selector, position, url) {
   var here = url || window.location.href;
 
   var config = {
+    
     ui: {
       flyout: position || "bottom left"
     },

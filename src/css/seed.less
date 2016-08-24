@@ -36,7 +36,7 @@ header {
   .title {
     font-family: @cool;
     font-size: 2.2em;
-    line-height: 1.1;
+    line-height: 1.4;
     margin: 0 auto;
     -webkit-font-smoothing: antialiased;
     color:  #69BE28;
@@ -47,7 +47,7 @@ header {
 
 
     &.first {
-      font-size: 4.4em;
+      font-size: 5.4em;
       color: white;
       @media @small-screen {
         font-size: 2.2em;
@@ -61,7 +61,6 @@ header {
 .chatter {
   text-align: justify;
   font-size: 24px;
-  font-style: italic;
   padding: 3%;
   color: white;
   display: inline-block;
@@ -69,20 +68,37 @@ header {
   @media @mobile {
     font-size: 16px;
   }
+  
+  &.instructions {
+    font-size: 14px;
+    padding: 0;
+    font-style: italic;
+    text-align: left;
+    display: block;
+  }
 
+}
   .buttons {
     .display-flex();
     .justify-content(space-between);
-    margin-top: 5%;
+    padding: 1% 5%;
+    
+    @media @small-screen {
+         padding: 2%;
+        }
 
     button {
+      font-family: @cool;
+      text-transform: uppercase;
       text-align: center;
       border: none;
-      padding: 5px;
-      font-size: 25px;
+      padding: 5px 10px;
+      font-size: 20px;
       cursor: pointer;
       color: white;
+      border-radius: 5px;
 
+      font-weight: lighter;
       @media @mobile {
         font-size: 16px;
       }
@@ -95,7 +111,6 @@ header {
       }
     }
   }
-}
 
 
 .schedule {
@@ -103,17 +118,6 @@ header {
   .flex-wrap(wrap);
   .justify-content(center);
 
-  .big-title {
-    text-align: center;
-    font-weight: 900;
-    font-size: 18px;
-    text-transform: uppercase;
-    border-bottom: 3px solid #69BE28;
-    display: inline-block;
-    @media @tablet {
-      font-size: 25px;
-    }
-  }
 
   .small-title {
     display: block;
@@ -127,6 +131,5 @@ header {
   .small-text {
     display: inline-block;
     font-size: 11px;
-    font-family: @df-sans;
   }
 }
