@@ -6,6 +6,9 @@
 body {
   background: #002244;
   font-family: @df-sans;
+  a {
+    color: white;
+  }
 
   .container {
     max-width: 1200px;
@@ -32,27 +35,27 @@ header {
   }
 }
 
-  .title {
-    font-family: @cool;
-    color:  @green;
-    font-size: 2.2em;
-    line-height: 1.4;
-    margin: 0 auto;
-    -webkit-font-smoothing: antialiased;
+.title {
+  font-family: @cool;
+  color:  @green;
+  font-size: 2.2em;
+  line-height: 1.4;
+  margin: 0 auto;
+  -webkit-font-smoothing: antialiased;
 
+  @media @small-screen {
+    font-size: 1.3em;
+  }
+
+
+  &.first {
+    font-size: 5.4em;
+    color: white;
     @media @small-screen {
-      font-size: 1.3em;
-    }
-
-
-    &.first {
-      font-size: 5.4em;
-      color: white;
-      @media @small-screen {
-        font-size: 2.2em;
-      }
+      font-size: 2.2em;
     }
   }
+}
 
 
 
@@ -67,7 +70,7 @@ header {
   @media @mobile {
     font-size: 16px;
   }
-  
+
   &.instructions {
     font-size: 14px;
     padding: 0;
@@ -77,38 +80,41 @@ header {
   }
 
 }
-  .buttons {
-    .display-flex();
-    .justify-content(space-between);
-    padding: 1% 5%;
-    
-    @media @small-screen {
-         padding: 2%;
-        }
+.buttons {
+  .display-flex();
+  .justify-content(space-between);
+  padding: 1% 5%;
 
-    button {
-      font-family: @cool;
-      text-transform: uppercase;
-      text-align: center;
-      border: none;
-      padding: 5px 10px;
-      font-size: 20px;
-      cursor: pointer;
+  @media @small-screen {
+    padding: 2%;
+  }
+
+  button {
+    font-family: @cool;
+    text-transform: uppercase;
+    text-align: center;
+    border: none;
+    padding: 5px 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+    border-radius: 5px;
+
+    a {
       color: white;
-      border-radius: 5px;
+    }
+    @media @mobile {
+      font-size: 16px;
+    }
+    &.print {
+      background: none;
+    }
 
-      @media @mobile {
-        font-size: 16px;
-      }
-      &.print {
-        background: none;
-      }
-
-      &.reset {
-        background: @green;
-      }
+    &.reset {
+      background: @green;
     }
   }
+}
 
 
 .schedule {
@@ -130,4 +136,18 @@ header {
     display: inline-block;
     font-size: 11px;
   }
+}
+
+.dont-miss {
+
+  a {
+  color: white;
+    &:hover {
+      color: @green;
+    } 
+  }
+}
+.thin-div .center {
+  background: #002244;
+  color: white;
 }
