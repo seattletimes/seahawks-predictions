@@ -19,6 +19,14 @@ module.exports = function(grunt) {
 
     files.forEach(function(file) {
       var json = grunt.file.readJSON(file);
+      
+      
+      //Not a solution
+      if (json.description === "description") {
+        json.description = "This is the description.";
+      }
+      console.log(json.description);
+
       var name = path.basename(file).replace(/(\.sheet)?\.json$/, "");
       grunt.data.json[name] = json;
     });

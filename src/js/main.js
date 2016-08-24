@@ -29,8 +29,7 @@ var prediction = function($scope) {
 
   }
 
-
-
+  
   //assigns data on top of existing data
   var restore = function(source) {
     source.forEach(function(g, i) {
@@ -113,8 +112,6 @@ var prediction = function($scope) {
       }
       
     }
-
-     document.querySelector(`meta[property="og:description"]`).content = ("ason.");
   
 
     var s = new Share(".share-results", {
