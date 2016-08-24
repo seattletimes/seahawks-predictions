@@ -1,4 +1,5 @@
 .game {
+  
   width: 21%;
   margin: 10px;
 
@@ -11,7 +12,7 @@
   transition-delay: .3s;
 
   &.selected {
-    outline: 5px solid #69BE28;
+    outline: 5px solid @green;
   }
 
   @media @small-screen {
@@ -27,6 +28,7 @@
     margin: 20px auto;
   }
 
+  
   .top {
     background: @df-light-gray;
 
@@ -35,116 +37,114 @@
       font-size: 14px;
       margin: 0;
     }
-    
+
     .week {
       font-family: @cool;
       font-weight: 900;
       font-size: 18px;
       text-transform: uppercase;
-      border-bottom: 3px solid #69BE28;
+      border-bottom: 3px solid @green;
       display: inline-block;
       @media @tablet {
         font-size: 25px;
       }
     }
-      .prediction {
+    
+    
+    .prediction {
 
-    text-align: center;
-    @media @mobile {
-      padding-bottom: 20px;
-    }
-
-    .display-flex();
-    .align-items(center);
-    .justify-content(center);
-
-    input.team-radio {
-      display: none;
-    }
-
-    input.team-radio + label {
-      .flex-order(2);
-      text-transform: uppercase;
-      font-size: 12px;
-      font-weight: 900;
-      width: 30%;
-
-      img {
-        cursor: pointer;
-
-        &:hover {
-          transform: scale(1.2);
-          -webkit-transform: scale(1.2);
-        }
+      text-align: center;
+      @media @mobile {
+        padding-bottom: 20px;
       }
 
-      .vs {
-        display: none;
-      }
-    }
+      .display-flex();
+      .align-items(center);
+      .justify-content(center);
 
-    input.vs + label {
-      .flex(0 1 80px);
-      .flex-order(2);
-      .big-title {
-        border-bottom: none;
-      }
-    }
-    input.team-radio:checked + label {
-
-      .flex-order(1);
-      img {
-        cursor: default;
-        transform: scale(1.6);
-        -webkit-transform: scale(1.6);
-        margin: 10px 0;
-
-      }
-    }
-
-
-
-    &.selected {
-
-      .flex-direction(column);
-      .small-title {
+      input.team-radio {
         display: none;
       }
 
-      input.unchosen + label {
-        .flex-order(3);
-
+      input.team-radio + label {
+        .flex-order(2);
+        text-transform: uppercase;
+        font-size: 12px;
+        font-weight: 900;
+        width: 30%;
 
         img {
-          display: inline-block;
-          cursor: default;
-          width: 50%;         
-          vertical-align: middle;
-          opacity: .6;
-          padding-left: 5px;
-
+          cursor: pointer;
 
           &:hover {
-            transform: none;
+            transform: scale(1.2);
+            -webkit-transform: scale(1.2);
           }
         }
 
         .vs {
-          display: inline-block;
-          vertical-align: middle;
-          font-family: @cool;
+          display: none;
         }
       }
 
       input.vs + label {
-        display: none;
+        .flex(0 1 80px);
+        .flex-order(2);
+        .big-title {
+          border-bottom: none;
+        }
+      }
+      input.team-radio:checked + label {
+
+        .flex-order(1);
+        img {
+          cursor: default;
+          transform: scale(1.6);
+          -webkit-transform: scale(1.6);
+          margin: 10px 0;
+
+        }
+      }
+
+
+      &.selected {
+
+        .flex-direction(column);
+        .small-title {
+          display: none;
+        }
+
+        input.unchosen + label {
+          .flex-order(3);
+
+
+          img {
+            display: inline-block;
+            cursor: default;
+            width: 50%;         
+            vertical-align: middle;
+            opacity: .6;
+            padding-left: 5px;
+
+
+            &:hover {
+              transform: none;
+            }
+          }
+
+          .vs {
+            display: inline-block;
+            vertical-align: middle;
+            font-family: @cool;
+          }
+        }
+
+        input.vs + label {
+          display: none;
+        }
       }
     }
-  }
 
   }
-  
-
-
 
 }

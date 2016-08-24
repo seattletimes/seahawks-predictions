@@ -1,42 +1,47 @@
-  .results {
-    padding: 0 5%;
-    color: white;
-    
-    .congrats {
-      font-family: @cool;
-      font-size: 30px;
-      text-transform: uppercase;
+.results {
+  padding: 0 5%;
+  color: white;
+
+  .congrats {
+    font-family: @cool;
+    font-size: 30px;
+    text-transform: uppercase;
+    span {
+      font-size: 50px;
+      margin: 0 4px;
+      color: #69BE28;
     }
-    
-    .experts {
-      .display-flex();
-      .justify-content(space-between);
-      .flex-wrap(wrap);
-      
-      .expert {
-          .flex(1);
-        
-        @media @mobile {
-          .flex(0 1 150px);
-        }
-        
+  }
+
+  .experts {
+    .display-flex();
+    .justify-content(space-between);
+    .flex-wrap(wrap);
+
+    .expert {
+      .flex(1);
+
+      @media @mobile {
+        .flex(0 1 150px);
+      }
+
       img {
         width: 40%;
         border-radius: 50%;
-        border: 3px solid yellowgreen;
+        border: 3px solid #69BE28;
         background: @df-light-gray;
       }
-        
-        .comparison {
-          
+
+      .comparison {
+        padding: 0 20px;
         @media @mobile {
           font-size: 15px;
-      }
         }
-        
       }
+
     }
-    
+  }
+
   a.share-results {
     margin: auto;
     margin-top: 10px;
@@ -45,22 +50,22 @@
 
 
     &.sharer-0 {
-       width: 500px !important;
+      width: 500px !important;
       @media @mobile {
-          width: 100% !important;
-        
+        width: 100% !important;
+
       }
       label {
         width: 500px !important;
         font-size: 36px !important;
         color: @df-dark-gray !important;
         background: @df-light-gray !important;
-        
+
         @media @mobile {
           width: 100% !important;
           font-size: 24px !important;
-      }
-        
+        }
+
         &:hover {
           background: @df-border-gray !important;
           color: @df-charcoal !important;
@@ -77,4 +82,4 @@
     }
 
   }
-  }
+}

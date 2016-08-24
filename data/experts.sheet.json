@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Bob Condotta",
+    "prediction": "bobWinner",
+    "last": "condotta",
+    "first": "bob"
+  },
+  {
+    "name": "Jayson Jenks",
+    "prediction": "jaysonWinner",
+    "last": "jenks",
+    "first": "jayson"
+  },
+  {
+    "name": "Larry Stone",
+    "prediction": "larryWinner",
+    "last": "stone",
+    "first": "stone"
+  },
+  {
+    "name": "Matt Calkins",
+    "prediction": "mattWinner",
+    "last": "calkins",
+    "first": "calkins"
+  }
+]

@@ -8,16 +8,16 @@
   },
   {
     "order": 2,
-    "category": "UW Huskies",
-    "title": "Enjoy this picker? Try your hand at predicting Washington's wins and losses",
-    "link": "http://www.seattletimes.com/life/travel/celebrate-washingtons-national-parks-with-a-hike-a-drive-an-adventure/",
+    "category": "More Seahawks",
+    "title": "Get the latest news, updates, analysis and opinions on the Seattle Seahawks",
+    "link": "http://www.seattletimes.com/sports/seahawks/",
     "image": "Quad_2.jpg"
   },
   {
     "order": 3,
-    "category": "WSU Cougars",
-    "title": "Don't forget Washington State &ndash; pick the Cougs' weekly wins and losses",
-    "link": "http://www.seattletimes.com/life/outdoors/students-trek-a-reset-for-the-human-spirit-as-national-park-service-turns-100/",
+    "category": "Paper Hawks",
+    "title": "Download and print all of our Seahawks paper dolls",
+    "link": "http://www.seattletimes.com/category/paperhawks/",
     "image": "Quad_3.jpg"
   },
   {
@@ -26,5 +26,13 @@
     "title": "Find our quizzes, Paper Hawks, fan maps and other fun Seahawks activities",
     "link": "http://www.seattletimes.com/tag/seahawks-fan-zone/",
     "image": "Quad_4.jpg"
+  },
+  {
+    "category": "UW Huskies",
+    "title": "Enjoy this picker? Try your hand at predicting Washington's wins and losses"
+  },
+  {
+    "category": "WSU Cougars",
+    "title": "Don't forget Washington State &ndash; pick the Cougs' weekly wins and losses"
   }
 ]

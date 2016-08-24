@@ -89,32 +89,17 @@
           <div class="expert-box" ng-class="game.winner ? 'selected' : ''">
 
             <header class="small-title">Expert Picks</header>
+            
             <div class="experts">
-              <div class="expert">
-                <p class="small-text">Condotta </p>
-                <img class="pick" src="assets/logos/{{game.bobWinner}}.png">
+              <div class="expert" ng-repeat="expert in experts">
+                <p class="small-text"> {{expert.last}}</p>
+                <img class="pick" src="assets/logos/{{game[expert.prediction]}}.png">
               </div>
-
-              <div class="expert">
-                <p class="small-text">Jenks</p>
-                <img class="pick" src="assets/logos/{{game.jaysonWinner}}.png"> 
-              </div>
-
-              <div class="expert">
-                <p class="small-text">Stone</p>
-                <img class="pick" src="assets/logos/{{game.thirdWinner}}.png"> 
-              </div>
-
-              <div class="expert">
-                <p class="small-text">Calkins</p>
-                <img class="pick" src="assets/logos/{{game.fourthWinner}}.png"> 
-              </div>
-
             </div>
 
             <div class="watch">
               <p class="small-text">{{game.location}}</p>
-              <p class="small-text"> {{game.tv}}, {{game.time}} PST</p>
+              <p class="small-text"> {{game.tv}}, {{game.time}} PT</p>
             </div>
           </div>
 
@@ -138,7 +123,7 @@
 
               <img class="mug" src="assets/mugs/calkins_mug_transparent.png">
               <p class="comparison">
-                You and Matt Caulkins have {{bobMatch}} games in common.
+                You and Matt Caulkins have {{mattMatch}} games in common.
               </p>
 
             </div>        
@@ -146,7 +131,7 @@
 
               <img class="mug" src="assets/mugs/stone_mug_transparent.png">
               <p class="comparison">
-                You and Larry Stone have {{bobMatch}} games in common.
+                You and Larry Stone have {{larryMatch}} games in common.
               </p>
 
             </div>        
@@ -154,7 +139,7 @@
 
               <img class="mug" src="assets/mugs/jenks_mug_transparent.png">
               <p class="comparison">
-                You and Jayson Jenks have {{bobMatch}} games in common.
+                You and Jayson Jenks have {{jaysonMatch}} games in common.
               </p>
 
             </div>
@@ -169,6 +154,7 @@
     </div>
 
     <script>
+      window.experts = {expert: <%= JSON.stringify(json.experts) %>};
       window.games = {schedule: <%= JSON.stringify(json.schedule) %>};
     </script>
 

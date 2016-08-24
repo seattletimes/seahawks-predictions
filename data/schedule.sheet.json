@@ -5,12 +5,12 @@
     "time": "1:05 PM",
     "location": "CenturyLink Field",
     "tv": "CBS",
-    "home": "seahawks",
-    "away": "dolphins",
+    "home": "dolphins",
+    "away": "seahawks",
     "bobWinner": "seahawks",
     "jaysonWinner": "seahawks",
-    "thirdWinner": "saints",
-    "fourthWinner": "seahawks"
+    "larryWinner": "seahawks",
+    "mattWinner": "seahawks"
   },
   {
     "id": 2,
@@ -18,12 +18,12 @@
     "time": "1:05 PM",
     "location": "Los Angeles Memorial Coliseum",
     "tv": "FOX",
-    "home": "rams",
-    "away": "seahawks",
+    "home": "seahawks",
+    "away": "rams",
     "bobWinner": "rams",
     "jaysonWinner": "seahawks",
-    "thirdWinner": "seahawks",
-    "fourthWinner": "seahawks"
+    "larryWinner": "seahawks",
+    "mattWinner": "rams"
   },
   {
     "id": 3,
@@ -31,12 +31,12 @@
     "time": "1:05 PM",
     "location": "CenturyLink Field",
     "tv": "FOX",
-    "home": "seahawks",
-    "away": "49ers",
+    "home": "49ers",
+    "away": "seahawks",
     "bobWinner": "seahawks",
-    "jaysonWinner": "bills",
-    "thirdWinner": "patriots",
-    "fourthWinner": "seahawks"
+    "jaysonWinner": "seahawks",
+    "larryWinner": "seahawks",
+    "mattWinner": "seahawks"
   },
   {
     "id": 4,
@@ -44,12 +44,12 @@
     "time": "10:00 AM",
     "location": "MetLife Stadium",
     "tv": "FOX",
-    "home": "jets",
-    "away": "seahawks",
-    "bobWinner": "jets",
+    "home": "seahawks",
+    "away": "jets",
+    "bobWinner": "seahawks",
     "jaysonWinner": "seahawks",
-    "thirdWinner": "seahawks",
-    "fourthWinner": "seahawks"
+    "larryWinner": "seahawks",
+    "mattWinner": "seahawks"
   },
   {
     "id": 6,
@@ -57,12 +57,12 @@
     "time": "1:25 PM",
     "location": "CenturyLink Field",
     "tv": "FOX",
-    "home": "seahawks",
-    "away": "falcons",
+    "home": "falcons",
+    "away": "seahawks",
     "bobWinner": "seahawks",
-    "jaysonWinner": "eagles",
-    "thirdWinner": "buccaneers",
-    "fourthWinner": "49ers"
+    "jaysonWinner": "seahawks",
+    "larryWinner": "seahawks",
+    "mattWinner": "seahawks"
   },
   {
     "id": 7,
@@ -70,12 +70,12 @@
     "time": "5:30 PM",
     "location": "University of Phoenix Stadium",
     "tv": "NBC",
-    "home": "cardinals",
-    "away": "seahawks",
+    "home": "seahawks",
+    "away": "cardinals",
     "bobWinner": "cardinals",
-    "jaysonWinner": "seahawks",
-    "thirdWinner": "seahawks",
-    "fourthWinner": "seahawks"
+    "jaysonWinner": "cardinals",
+    "larryWinner": "cardinals",
+    "mattWinner": "cardinals"
   },
   {
     "id": 8,
@@ -83,12 +83,12 @@
     "time": "10:00 AM",
     "location": "Mercedes-Benz Superdome",
     "tv": "FOX",
-    "home": "saints",
-    "away": "seahawks",
+    "home": "seahawks",
+    "away": "saints",
     "bobWinner": "saints",
     "jaysonWinner": "seahawks",
-    "thirdWinner": "seahawks",
-    "fourthWinner": "falcons"
+    "larryWinner": "saints",
+    "mattWinner": "seahawks"
   },
   {
     "id": 9,
@@ -96,12 +96,12 @@
     "time": "5:30 PM",
     "location": "CenturyLink Field",
     "tv": "ESPN",
-    "home": "seahawks",
-    "away": "bills",
+    "home": "bills",
+    "away": "seahawks",
     "bobWinner": "seahawks",
-    "jaysonWinner": "rams",
-    "thirdWinner": "seahawks",
-    "fourthWinner": "seahawks"
+    "jaysonWinner": "seahawks",
+    "larryWinner": "seahawks",
+    "mattWinner": "seahawks"
   },
   {
     "id": 10,
@@ -109,12 +109,12 @@
     "time": "5:30 PM",
     "location": "Gillette Stadium",
     "tv": "NBC",
-    "home": "patriots",
-    "away": "seahawks",
+    "home": "seahawks",
+    "away": "patriots",
     "bobWinner": "patriots",
-    "jaysonWinner": "seahawks",
-    "thirdWinner": "bills",
-    "fourthWinner": "patriots"
+    "jaysonWinner": "patriots",
+    "larryWinner": "patriots",
+    "mattWinner": "patriots"
   },
   {
     "id": 11,
@@ -122,12 +122,12 @@
     "time": "1:25 PM",
     "location": "CenturyLink Field",
     "tv": "CBS",
-    "home": "seahawks",
-    "away": "eagles",
+    "home": "eagles",
+    "away": "seahawks",
     "bobWinner": "seahawks",
-    "jaysonWinner": "jets",
-    "thirdWinner": "seahawks",
-    "fourthWinner": "seahawks"
+    "jaysonWinner": "seahawks",
+    "larryWinner": "seahawks",
+    "mattWinner": "seahawks"
   },
   {
     "id": 12,
@@ -135,12 +135,12 @@
     "time": "1:05 PM",
     "location": "Raymond James Stadium",
     "tv": "FOX",
-    "home": "buccaneers",
-    "away": "seahawks",
+    "home": "seahawks",
+    "away": "buccaneers",
     "bobWinner": "buccaneers",
     "jaysonWinner": "seahawks",
-    "thirdWinner": "eagles",
-    "fourthWinner": "buccaneers"
+    "larryWinner": "buccaneers",
+    "mattWinner": "seahawks"
   },
   {
     "id": 13,
@@ -148,12 +148,12 @@
     "time": "5:30 PM",
     "location": "CenturyLink Field",
     "tv": "NBC",
-    "home": "seahawks",
-    "away": "panthers",
+    "home": "panthers",
+    "away": "seahawks",
     "bobWinner": "seahawks",
-    "jaysonWinner": "saints",
-    "thirdWinner": "seahawks",
-    "fourthWinner": "seahawks"
+    "jaysonWinner": "panthers",
+    "larryWinner": "seahawks",
+    "mattWinner": "seahawks"
   },
   {
     "id": 14,
@@ -161,12 +161,12 @@
     "time": "1:25 PM",
     "location": "Lambeau Field",
     "tv": "FOX",
-    "home": "packers",
-    "away": "seahawks",
+    "home": "seahawks",
+    "away": "packers",
     "bobWinner": "packers",
-    "jaysonWinner": "seahawks",
-    "thirdWinner": "seahawks",
-    "fourthWinner": "seahawks"
+    "jaysonWinner": "packers",
+    "larryWinner": "packers",
+    "mattWinner": "packers"
   },
   {
     "id": 15,
@@ -174,12 +174,12 @@
     "time": "5:25 PM",
     "location": "CenturyLink Field",
     "tv": "NBC, NFL Network",
-    "home": "seahawks",
-    "away": "rams",
+    "home": "rams",
+    "away": "seahawks",
     "bobWinner": "seahawks",
-    "jaysonWinner": "patriots",
-    "thirdWinner": "49ers",
-    "fourthWinner": "seahawks"
+    "jaysonWinner": "seahawks",
+    "larryWinner": "seahawks",
+    "mattWinner": "seahawks"
   },
   {
     "id": 16,
@@ -187,12 +187,12 @@
     "time": "1:25 PM",
     "location": "CenturyLink Field",
     "tv": "FOX",
-    "home": "seahawks",
-    "away": "cardinals",
+    "home": "cardinals",
+    "away": "seahawks",
     "bobWinner": "seahawks",
     "jaysonWinner": "seahawks",
-    "thirdWinner": "seahawks",
-    "fourthWinner": "bills"
+    "larryWinner": "seahawks",
+    "mattWinner": "cardinals"
   },
   {
     "id": 17,
@@ -200,11 +200,11 @@
     "time": "1:25 PM",
     "location": "Levi's Stadium",
     "tv": "FOX",
-    "home": "49ers",
-    "away": "seahawks",
+    "home": "seahawks",
+    "away": "49ers",
     "bobWinner": "seahawks",
-    "jaysonWinner": "buccaneers",
-    "thirdWinner": "falcons",
-    "fourthWinner": "seahawks"
+    "jaysonWinner": "seahawks",
+    "larryWinner": "seahawks",
+    "mattWinner": "seahawks"
   }
 ]
