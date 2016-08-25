@@ -120,6 +120,7 @@ var prediction = function($scope) {
 
 
       if (!alreadyComplete) {
+      
         var box = document.querySelector(".congrats");
         animate(box); 
 
@@ -137,6 +138,9 @@ var prediction = function($scope) {
         });
       }
 
+      if (alreadyComplete) {
+        $scope.instructions = true;
+      }
     }
 
     //create a coded version of the scores
