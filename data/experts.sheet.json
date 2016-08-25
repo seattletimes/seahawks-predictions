@@ -3,24 +3,28 @@
     "name": "Bob Condotta",
     "prediction": "bobWinner",
     "last": "condotta",
-    "first": "bob"
+    "first": "bob",
+    "score": 0
   },
   {
     "name": "Jayson Jenks",
     "prediction": "jaysonWinner",
     "last": "jenks",
-    "first": "jayson"
+    "first": "jayson",
+    "score": 0
   },
   {
     "name": "Larry Stone",
     "prediction": "larryWinner",
     "last": "stone",
-    "first": "stone"
+    "first": "stone",
+    "score": 0
   },
   {
     "name": "Matt Calkins",
     "prediction": "mattWinner",
     "last": "calkins",
-    "first": "calkins"
+    "first": "calkins",
+    "score": 0
   }
 ]
