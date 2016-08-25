@@ -13,8 +13,8 @@ var prediction = function($scope) {
 
   $scope.experts = window.experts.expert;
 
-
   var alreadyComplete = false;
+  var userCompleted = false;
 
   $scope.clear = function() {
     $scope.games.forEach(function(g) {
@@ -31,9 +31,7 @@ var prediction = function($scope) {
     }
 
   }
-  $scope.experts.forEach(function(expert) {
-    expert.score = 0;
-  }) 
+
   //assigns data on top of existing data
   var restore = function(source) {
     source.forEach(function(g, i) {
@@ -67,81 +65,78 @@ var prediction = function($scope) {
     }
   }
 
-  // When any data changes (or for each digest cycle), run this function
-  $scope.$watch(function() {
-    console.log($scope.games);
+  var countScores = function() {
+    var seaWins = 0;
+    var otherWins = 0;
 
-    function completed(game) {
-      return (game.winner);
+
+    $scope.experts.forEach(function(e) {
+      e.score = 0;
+    });
+
+    for (var i = 0; i < $scope.games.length; i++) {
+
+      $scope.experts.forEach(function(expert) {
+        var exp = expert.prediction;
+        if ($scope.games[i].winner === $scope.games[i][exp]) {
+          expert.score++;
+        }
+
+      });
+
+      if ($scope.games[i].winner === "seahawks") {
+        seaWins++;
+      }
+      else { otherWins++; }
     }
 
-    if ($scope.games.every(completed)) {
+    $scope.seahawks = seaWins;
 
-      var seaWins = 0;
-      var otherWins = 0;
-      var bobMatch = 0;
-      var jaysonMatch = 0;
-      var larryMatch = 0;
-      var mattMatch = 0;
+    $scope.other = otherWins; 
 
 
 
-      for (var i = 0; i < $scope.games.length; i++) {
 
-        var winner = $scope.games[i].winner;
+    if (alreadyComplete) {
+      $scope.instructions = true;
+    }
+  }
 
-        if (winner === $scope.games[i].bobWinner) {
-          bobMatch++;
-        }
-        if (winner === $scope.games[i].jaysonWinner) {
-          jaysonMatch++;
-        }
-        if (winner === $scope.games[i].larryWinner) {
-          larryMatch++;
-        }
-        if (winner === $scope.games[i].mattWinner) {
-          mattMatch++;
-        }
-
-        if (winner === "seahawks") {
-          seaWins++;
-        }
-        else { otherWins++; }
-      }
+  $scope.teamSelected = function(team) {
+    if ($scope.games.every(game => game.winner)) {
+      countScores();
+    }
+  }
 
 
-      $scope.seahawks = seaWins;
+  if ($scope.games.every(game => game.winner)) {
+    countScores();
 
-      $scope.other = otherWins; 
-      $scope.bobMatch = bobMatch;
-      $scope.jaysonMatch = jaysonMatch;
-      $scope.larryMatch = larryMatch;
-      $scope.mattMatch = mattMatch;
+  }
 
+  // When any data changes (or for each digest cycle), run this function
+  $scope.$watch(function() {
+
+    if ($scope.games.every(game => game.winner)) {
 
       if (!alreadyComplete) {
-      
         var box = document.querySelector(".congrats");
         animate(box); 
 
-        var s = new Share(".share-results", {
-          description: "I think the Seahawks will go " + seaWins + "-" + otherWins + " this season." + document.querySelector(`meta[property="og:description"]`).content,
+        new Share(".share-results", {
+          description: "I think the Seahawks will go " + $scope.seahawks + "-" + $scope.other + " this season." + document.querySelector(`meta[property="og:description"]`).content,
           ui: {
             flyout: "bottom right",
             button_text: "Tell your friends"
           },
           networks: {
             email: {
-              description: "I think the Seahawks will go " + seaWins + "-" + otherWins + " this season."  + [document.querySelector(`meta[property="og:description"]`).content, window.location.href].join("\n")
+              description: "I think the Seahawks will go " + $scope.seahawks + "-" + $scope.other + " this season."  + [document.querySelector(`meta[property="og:description"]`).content, window.location.href].join("\n")
             }
           }
         });
       }
-
-      if (alreadyComplete) {
-        $scope.instructions = true;
-      }
-    }
+    }  
 
     //create a coded version of the scores
     var filtered = $scope.games.map(function(entry) {
@@ -150,6 +145,7 @@ var prediction = function($scope) {
         // home is 1, away is 2, tie is 0
         winner: entry.winner ? entry.winner == entry.home ? 1 : 2 : 0
       }
+
 
     });
 
