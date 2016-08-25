@@ -31,26 +31,50 @@
 
       <div class="results" ng-if="seahawks">
 
-        <p class="congrats">You predicted the Seahawks will go <span>{{seahawks}} - {{other}}</span> this season.</p >
+        <p class="congrats">You predict the Seahawks will go <span>{{seahawks}} - {{other}}</span> this season.</p >
 
         <section class="experts">
 
-          <div class="expert" ng-repeat="expert in experts">
+          <div class="expert">
 
-            <img class="mug" src="assets/mugs/{{expert.last}}_mug_transparent.png">
+            <img class="mug" src="assets/mugs/condotta_mug_transparent.png">
             <p class="comparison">
-              You and {{expert.name}} have {{expert.score}} picks in common.
+              You and Bob Condotta have {{bobMatch}} games in common.
             </p>
 
-          </div>  
+          </div>           
+          <div class="expert">
 
+            <img class="mug" src="assets/mugs/calkins_mug_transparent.png">
+            <p class="comparison">
+              You and Matt Caulkins have {{mattMatch}} games in common.
+            </p>
+
+          </div>        
+          <div class="expert">
+
+            <img class="mug" src="assets/mugs/stone_mug_transparent.png">
+            <p class="comparison">
+              You and Larry Stone have {{larryMatch}} games in common.
+            </p>
+
+          </div>        
+          <div class="expert">
+
+            <img class="mug" src="assets/mugs/jenks_mug_transparent.png">
+            <p class="comparison">
+              You and Jayson Jenks have {{jaysonMatch}} games in common.
+            </p>
+
+          </div>
         </section>
         <a class="share-results"></a>
       </div>
       <div class="buttons">
-        <button class="reset" ng-click="clear()">Reset <i class="fa fa-refresh" aria-hidden="true"></i></button>
+        <button class="reset" ng-click="clear()">Reset <i class="fa fa-refresh" aria-hidden="true"></i></button>s
 
-        <button class="print" ng-click="setAll()"> <i class="fa fa-print" aria-hidden="true"></i></button>
+        <button class="print" ng-click="setAll()">
+          <a target="_blank" href="assets/seahawks2016schedule.pdf">Printable schedule <i class="fa fa-print" aria-hidden="true"></i></a></button>
 
       </div>
 
@@ -76,7 +100,7 @@
                      ng-model="game.winner"
                      ng-disabled="game.winner"
                      ng-class="game.winner === game.home ? 'chosen' : 'unchosen'"
-                     ng-change="teamSelected(game.winner)"
+
                      >
               <label for="team{{game.id}}{{game.home}}">
                 <div class="vs"><p>over</p></div>
@@ -96,7 +120,6 @@
                      ng-model="game.winner"
                      ng-disabled="game.winner"
                      ng-class="game.winner === game.away ? 'chosen' : 'unchosen'"
-                     ng-change='teamSelected(game.winner)'
                      >
 
               <label for="team{{game.id}}{{game.away}}">
@@ -129,10 +152,6 @@
 
 
 
-      </div>
-      <div class="credit">
-        Production: Nick Eaton and Sean Quinton <br>
-        Development: Elif Koc
 
       </div>
     </div>

@@ -15,63 +15,30 @@ var prediction = function($scope) {
 
 
   var alreadyComplete = false;
-  var userDone = false; 
-  var teams = 0;
-  var seaWins = 0;
-  var otherWins = 0;
 
   $scope.clear = function() {
-
     $scope.games.forEach(function(g) {
       g.winner = 0;
     });
-    $scope.experts.forEach(function(expert) {
-      expert.score = 0;
-    });
-
-    teams = 0;
-    seaWins = 0;
-    otherWins = 0;
     $scope.seahawks = "";
     alreadyComplete = false;
   }
 
-
-  $scope.teamSelected = function(value) {   
-    teams++;
-    console.log(value);
-    if (teams > 15) {
-      userDone = true;
-
-      for (var i = 0; i < $scope.games.length; i++) {
-
-        $scope.experts.forEach(function(expert) {
-          var exp = expert.prediction;
-          if ($scope.games[i].winner === $scope.games[i][exp]) {
-            expert.score++;
-          }
-
-        });
-
-        if ($scope.games[i].winner === "seahawks") {
-          seaWins++;
-        }
-        else { otherWins++; }
-      }
-
-      $scope.seahawks = seaWins;
-      $scope.other = otherWins; 
-            
+  //for testing
+  $scope.setAll = function() {
+    for (var i = 0; i < 15; i++) {
+      $scope.games[i].winner = "seahawks";
     }
+
   }
-console.log(teams);
-  
+  $scope.experts.forEach(function(expert) {
+    expert.score = 0;
+  }) 
   //assigns data on top of existing data
   var restore = function(source) {
     source.forEach(function(g, i) {
       var game = $scope.games[i];
       if (g.winner) {
-        teams = 16;
         alreadyComplete = true;
       }
       if (typeof g.winner == "string") {
@@ -100,23 +67,76 @@ console.log(teams);
     }
   }
 
-
   // When any data changes (or for each digest cycle), run this function
   $scope.$watch(function() {
+    console.log($scope.games);
 
-    if (userDone) {
-      new Share(".share-results", {
-        description: "I think the Seahawks will go " + seaWins + "-" + otherWins + " this season." + document.querySelector(`meta[property="og:description"]`).content,
-        ui: {
-          flyout: "bottom right",
-          button_text: "Tell your friends"
-        },
-        networks: {
-          email: {
-            description: "I think the Seahawks will go " + seaWins + "-" + otherWins + " this season."  + [document.querySelector(`meta[property="og:description"]`).content, window.location.href].join("\n")
-          }
+    function completed(game) {
+      return (game.winner);
+    }
+
+    if ($scope.games.every(completed)) {
+
+      var seaWins = 0;
+      var otherWins = 0;
+      var bobMatch = 0;
+      var jaysonMatch = 0;
+      var larryMatch = 0;
+      var mattMatch = 0;
+
+
+
+      for (var i = 0; i < $scope.games.length; i++) {
+
+        var winner = $scope.games[i].winner;
+
+        if (winner === $scope.games[i].bobWinner) {
+          bobMatch++;
         }
-      });
+        if (winner === $scope.games[i].jaysonWinner) {
+          jaysonMatch++;
+        }
+        if (winner === $scope.games[i].larryWinner) {
+          larryMatch++;
+        }
+        if (winner === $scope.games[i].mattWinner) {
+          mattMatch++;
+        }
+
+        if (winner === "seahawks") {
+          seaWins++;
+        }
+        else { otherWins++; }
+      }
+
+
+      $scope.seahawks = seaWins;
+
+      $scope.other = otherWins; 
+      $scope.bobMatch = bobMatch;
+      $scope.jaysonMatch = jaysonMatch;
+      $scope.larryMatch = larryMatch;
+      $scope.mattMatch = mattMatch;
+
+
+      if (!alreadyComplete) {
+        var box = document.querySelector(".congrats");
+        animate(box); 
+
+        var s = new Share(".share-results", {
+          description: "I think the Seahawks will go " + seaWins + "-" + otherWins + " this season." + document.querySelector(`meta[property="og:description"]`).content,
+          ui: {
+            flyout: "bottom right",
+            button_text: "Tell your friends"
+          },
+          networks: {
+            email: {
+              description: "I think the Seahawks will go " + seaWins + "-" + otherWins + " this season."  + [document.querySelector(`meta[property="og:description"]`).content, window.location.href].join("\n")
+            }
+          }
+        });
+      }
+
     }
 
     //create a coded version of the scores
