@@ -26,22 +26,22 @@
 
         Think you’ve got what it takes to guess the Seahawks’ 2016 season correctly? Put your football knowledge to the test by picking the winner of each game this season, and see how your preseason picks stack up against your friends and our experts at The Seattle Times.
 
-<p class="chatter instructions">Click on each logo to pick your winner.</p>
+        <p class="chatter instructions">Click on each logo to pick your winner.</p>
       </div>
-        <div class="buttons">
-          <button class="reset" ng-click="clear()">Reset <i class="fa fa-refresh" aria-hidden="true"></i></button>
+      <div class="buttons">
+        <button class="reset" ng-click="clear()">Reset <i class="fa fa-refresh" aria-hidden="true"></i></button>
 
-          <button class="print" ng-click="setAll()"><a target="_blank" href="http://your_url_here.html">Print <i class="fa fa-print" aria-hidden="true"></i></a></button>
+        <button class="print" ng-click="setAll()"><a target="_blank" href="assets/seahawks2016schedule.pdf">Printable schedule <i class="fa fa-print" aria-hidden="true"></i></a></button>
 
-        </div>
+      </div>
 
-      
+
       <div class="schedule" >
 
         <div class="game" ng-repeat="game in games" ng-class="game.winner ? 'selected' : ''">
 
           <div class="top">
-            
+
             <h2 class="week">Week {{game.id}}</h2>
             <p class="day">{{game.date}}</p>
 
@@ -89,7 +89,7 @@
           <div class="expert-box" ng-class="game.winner ? 'selected' : ''">
 
             <header class="small-title">Expert Picks</header>
-            
+
             <div class="experts">
               <div class="expert" ng-repeat="expert in experts">
                 <p class="small-text"> {{expert.last}}</p>
@@ -115,7 +115,7 @@
 
               <img class="mug" src="assets/mugs/condotta_mug_transparent.png">
               <p class="comparison">
-                You and Bob Condotta have {{bobMatch}} games in common.
+                You and Bob Condotta have {{bobMatch}} picks in common.
               </p>
 
             </div>           
@@ -123,7 +123,7 @@
 
               <img class="mug" src="assets/mugs/calkins_mug_transparent.png">
               <p class="comparison">
-                You and Matt Caulkins have {{mattMatch}} games in common.
+                You and Matt Caulkins have {{mattMatch}} picks in common.
               </p>
 
             </div>        
@@ -131,7 +131,7 @@
 
               <img class="mug" src="assets/mugs/stone_mug_transparent.png">
               <p class="comparison">
-                You and Larry Stone have {{larryMatch}} games in common.
+                You and Larry Stone have {{larryMatch}} picks in common.
               </p>
 
             </div>        
@@ -139,7 +139,7 @@
 
               <img class="mug" src="assets/mugs/jenks_mug_transparent.png">
               <p class="comparison">
-                You and Jayson Jenks have {{jaysonMatch}} games in common.
+                You and Jayson Jenks have {{jaysonMatch}} picks in common.
               </p>
 
             </div>
@@ -149,13 +149,17 @@
 
 
 
-
       </div>
+        <div class="credit">
+          Production: Nick Eaton and Sean Quinton <br>
+          Development: Elif Koc
+
+        </div>
     </div>
 
     <script>
       window.experts = {expert: <%= JSON.stringify(json.experts) %>};
-      window.games = {schedule: <%= JSON.stringify(json.schedule) %>};
+                        window.games = {schedule: <%= JSON.stringify(json.schedule) %>};
     </script>
 
     <script src="app.js" async></script>
