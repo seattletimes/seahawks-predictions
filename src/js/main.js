@@ -69,7 +69,6 @@ var prediction = function($scope) {
     var seaWins = 0;
     var otherWins = 0;
 
-
     $scope.experts.forEach(function(e) {
       e.score = 0;
     });
@@ -91,11 +90,7 @@ var prediction = function($scope) {
     }
 
     $scope.seahawks = seaWins;
-
     $scope.other = otherWins; 
-
-
-
 
     if (alreadyComplete) {
       $scope.instructions = true;
@@ -120,11 +115,13 @@ var prediction = function($scope) {
     if ($scope.games.every(game => game.winner)) {
 
       if (!alreadyComplete) {
+        $scope.instructions = false;
+        
         var box = document.querySelector(".congrats");
         animate(box); 
 
         new Share(".share-results", {
-          description: "I think the Seahawks will go " + $scope.seahawks + "-" + $scope.other + " this season." + document.querySelector(`meta[property="og:description"]`).content,
+          description: document.querySelector(`meta[property="og:description"]`).content + "I think they'll go " + $scope.seahawks + "-" + $scope.other + ".",
           ui: {
             flyout: "bottom right",
             button_text: "Tell your friends"
