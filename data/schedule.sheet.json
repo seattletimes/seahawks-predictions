@@ -10,8 +10,7 @@
     "bobWinner": "seahawks",
     "jaysonWinner": "seahawks",
     "larryWinner": "seahawks",
-    "mattWinner": "seahawks",
-    "winner": 0
+    "mattWinner": "seahawks"
   },
   {
     "id": 2,
@@ -24,8 +23,7 @@
     "bobWinner": "rams",
     "jaysonWinner": "seahawks",
     "larryWinner": "seahawks",
-    "mattWinner": "rams",
-    "winner": 0
+    "mattWinner": "rams"
   },
   {
     "id": 3,
@@ -38,8 +36,7 @@
     "bobWinner": "seahawks",
     "jaysonWinner": "seahawks",
     "larryWinner": "seahawks",
-    "mattWinner": "seahawks",
-    "winner": 0
+    "mattWinner": "seahawks"
   },
   {
     "id": 4,
@@ -52,8 +49,7 @@
     "bobWinner": "seahawks",
     "jaysonWinner": "seahawks",
     "larryWinner": "seahawks",
-    "mattWinner": "seahawks",
-    "winner": 0
+    "mattWinner": "seahawks"
   },
   {
     "id": 6,
@@ -66,8 +62,7 @@
     "bobWinner": "seahawks",
     "jaysonWinner": "seahawks",
     "larryWinner": "seahawks",
-    "mattWinner": "seahawks",
-    "winner": 0
+    "mattWinner": "seahawks"
   },
   {
     "id": 7,
@@ -80,8 +75,7 @@
     "bobWinner": "cardinals",
     "jaysonWinner": "cardinals",
     "larryWinner": "cardinals",
-    "mattWinner": "cardinals",
-    "winner": 0
+    "mattWinner": "cardinals"
   },
   {
     "id": 8,
@@ -94,8 +88,7 @@
     "bobWinner": "saints",
     "jaysonWinner": "seahawks",
     "larryWinner": "saints",
-    "mattWinner": "seahawks",
-    "winner": 0
+    "mattWinner": "seahawks"
   },
   {
     "id": 9,
@@ -108,8 +101,7 @@
     "bobWinner": "seahawks",
     "jaysonWinner": "seahawks",
     "larryWinner": "seahawks",
-    "mattWinner": "seahawks",
-    "winner": 0
+    "mattWinner": "seahawks"
   },
   {
     "id": 10,
@@ -122,8 +114,7 @@
     "bobWinner": "patriots",
     "jaysonWinner": "patriots",
     "larryWinner": "patriots",
-    "mattWinner": "patriots",
-    "winner": 0
+    "mattWinner": "patriots"
   },
   {
     "id": 11,
@@ -136,8 +127,7 @@
     "bobWinner": "seahawks",
     "jaysonWinner": "seahawks",
     "larryWinner": "seahawks",
-    "mattWinner": "seahawks",
-    "winner": 0
+    "mattWinner": "seahawks"
   },
   {
     "id": 12,
@@ -150,8 +140,7 @@
     "bobWinner": "buccaneers",
     "jaysonWinner": "seahawks",
     "larryWinner": "buccaneers",
-    "mattWinner": "seahawks",
-    "winner": 0
+    "mattWinner": "seahawks"
   },
   {
     "id": 13,
@@ -164,8 +153,7 @@
     "bobWinner": "seahawks",
     "jaysonWinner": "panthers",
     "larryWinner": "seahawks",
-    "mattWinner": "seahawks",
-    "winner": 0
+    "mattWinner": "seahawks"
   },
   {
     "id": 14,
@@ -178,8 +166,7 @@
     "bobWinner": "packers",
     "jaysonWinner": "packers",
     "larryWinner": "packers",
-    "mattWinner": "packers",
-    "winner": 0
+    "mattWinner": "packers"
   },
   {
     "id": 15,
@@ -192,8 +179,7 @@
     "bobWinner": "seahawks",
     "jaysonWinner": "seahawks",
     "larryWinner": "seahawks",
-    "mattWinner": "seahawks",
-    "winner": 0
+    "mattWinner": "seahawks"
   },
   {
     "id": 16,
@@ -206,8 +192,7 @@
     "bobWinner": "seahawks",
     "jaysonWinner": "seahawks",
     "larryWinner": "seahawks",
-    "mattWinner": "cardinals",
-    "winner": 0
+    "mattWinner": "cardinals"
   },
   {
     "id": 17,
@@ -220,7 +205,6 @@
     "bobWinner": "seahawks",
     "jaysonWinner": "seahawks",
     "larryWinner": "seahawks",
-    "mattWinner": "seahawks",
-    "winner": 0
+    "mattWinner": "seahawks"
   }
 ]

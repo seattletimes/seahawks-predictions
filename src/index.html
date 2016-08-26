@@ -30,17 +30,23 @@
 
       </div>
 
-      <hr ng-if="seahawks">
+ 
       
  <div class="results" ng-if="seahawks">
+   
+   <button class="scratch" ng-click="clear()">
+           Start from scratch
+          </button>
+        <hr>
 
         <p class="congrats">You predicted the Seahawks will go <span>{{seahawks}} - {{other}}</span> this season.</p >
 
         <section class="experts">
 
           <div class="expert" ng-repeat="expert in experts">
-
+            
             <img class="mug" src="assets/mugs/{{expert.last}}_mug_transparent.png">
+            <p class="final">{{expert.final}}</p>
             <p class="comparison">
               You and {{expert.name}} have {{expert.score}} picks in common.
             </p>
@@ -50,23 +56,15 @@
         </section>
         <a class="share-results"></a>
       </div>
-
-      <hr ng-if="instructions"> 
       
       <div class="buttons">
-        <div class="button">
-          Start from scratch: 
+       
           <button class="reset" ng-click="clear()">
             Reset <i class="fa fa-refresh" aria-hidden="true"></i>
           </button>
-        </div>
-
-        <div class="button">
-          <button class="print" ng-click="setAll()">
-            <a target="_blank" href="./assets/seahawks2016schedule.pdf">Printable schedule <i class="fa fa-print" aria-hidden="true"></i>
-            </a>
+     
+              <button class="print" ng-click="setAll()">Printable schedule <i class="fa fa-print" aria-hidden="true"></i>
           </button>
-        </div>
 
       </div>
 

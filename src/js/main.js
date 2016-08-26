@@ -108,6 +108,7 @@ var prediction = function($scope) {
     countScores();
 
   }
+  
 
   // When any data changes (or for each digest cycle), run this function
   $scope.$watch(function() {
@@ -116,21 +117,19 @@ var prediction = function($scope) {
 
       if (!alreadyComplete) {
         $scope.instructions = false;
-        
         var box = document.querySelector(".congrats");
+        console.log(box);
         animate(box); 
 
+
         new Share(".share-results", {
-          description: document.querySelector(`meta[property="og:description"]`).content + "I think they'll go " + $scope.seahawks + "-" + $scope.other + ".",
+          description: "I think the Seahawks will go " + $scope.seahawks + "-" + $scope.other + " this season. What’s your prediction for 2016? Make your picks: ",
           ui: {
             flyout: "bottom right",
-            button_text: "Tell your friends"
-          },
-          networks: {
-            email: {
-              description: "I think the Seahawks will go " + $scope.seahawks + "-" + $scope.other + " this season."  + [document.querySelector(`meta[property="og:description"]`).content, window.location.href].join("\n")
-            }
+            button_text: "Show your friends"
           }
+        
+          
         });
       }
     }  

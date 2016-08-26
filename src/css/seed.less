@@ -6,9 +6,6 @@
 body {
   background: #002244;
   font-family: @df-sans;
-  a {
-    color: white;
-  }
 
   .container {
     max-width: 1200px;
@@ -22,7 +19,6 @@ body {
 }
 
 header {
-  max-width: 840px;
   margin: 0 auto;
 
   @media @tablet {
@@ -43,7 +39,8 @@ header {
   margin: 0 auto;
   -webkit-font-smoothing: antialiased;
 
-  @media @small-screen {
+  
+  @media @mobile {
     font-size: 1.3em;
   }
 
@@ -51,7 +48,7 @@ header {
   &.first {
     font-size: 5.4em;
     color: white;
-    @media @small-screen {
+    @media @mobile {
       font-size: 2.2em;
     }
   }
@@ -70,12 +67,15 @@ hr {
   color: white;
   display: inline-block;
 
+  @media @small-screen {
+    font-size: 16px;
+  }
   @media @mobile {
     font-size: 16px;
   }
 
   &.instructions {
-    font-size: 14px;
+    font-size: 15px;
     padding: 0;
     font-style: italic;
     text-align: left;
@@ -88,18 +88,21 @@ hr {
   .justify-content(space-between);
   color: white;
   padding: 1% 5%;
+  width: 100%;
 
   @media @small-screen {
     padding: 2%;
   }
 
+
+}
   button {
     font-family: @cool;
     text-transform: uppercase;
     text-align: center;
     border: none;
     padding: 5px 10px;
-    margin: 5px 0;
+    margin: 5px;
     font-size: 20px;
     cursor: pointer;
     color: white;
@@ -118,9 +121,12 @@ hr {
     &.reset {
       background: @green;
     }
+    
+    &.scratch {
+      background: @green;
+      font-size: 30px;
+    }
   }
-}
-
 
 .schedule {
   .display-flex();
@@ -146,7 +152,7 @@ hr {
 .dont-miss {
 
   a {
-  color: white;
+    color: white;
     &:hover {
       color: @green;
     } 
