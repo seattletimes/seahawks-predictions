@@ -88,10 +88,16 @@
       }
 
       input.vs + label {
-        .flex(0 1);
+
+        .flex(0 1 60px);
+
         .flex-order(2);
         .big-title {
           border-bottom: none;
+        }
+
+        @media @tablet {
+          .flex(0 1 50px);
         }
       }
       
