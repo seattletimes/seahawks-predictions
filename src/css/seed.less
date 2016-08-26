@@ -42,25 +42,25 @@ header {
   margin: 0 auto;
   -webkit-font-smoothing: antialiased;
 
-<<<<<<< HEAD
-  
+
+
   @media @mobile {
     font-size: 1.3em;
-=======
+  }
   @media @tablet {
     font-size: 1.8em;
->>>>>>> origin/master
+
   }
 
   &.first {
     font-size: 5.4em;
     color: white;
-<<<<<<< HEAD
+
     @media @mobile {
-=======
-    @media @tablet {
->>>>>>> origin/master
-      font-size: 2.2em;
+      @media @tablet {
+
+        font-size: 2.2em;
+      }
     }
   }
 }
@@ -78,16 +78,15 @@ hr {
   color: white;
   display: inline-block;
 
-<<<<<<< HEAD
+
   @media @small-screen {
     font-size: 16px;
   }
-=======
+
   @media @tablet {
     font-size: 20px;
   }
 
->>>>>>> origin/master
   @media @mobile {
     font-size: 16px;
   }
@@ -114,37 +113,37 @@ hr {
 
 
 }
-  button {
-    font-family: @cool;
-    text-transform: uppercase;
-    text-align: center;
-    border: none;
-    padding: 5px 10px;
-    margin: 5px;
-    font-size: 20px;
-    cursor: pointer;
+button {
+  font-family: @cool;
+  text-transform: uppercase;
+  text-align: center;
+  border: none;
+  padding: 5px 10px;
+  margin: 5px;
+  font-size: 20px;
+  cursor: pointer;
+  color: white;
+  border-radius: 5px;
+
+  a {
     color: white;
-    border-radius: 5px;
-
-    a {
-      color: white;
-    }
-    @media @mobile {
-      font-size: 16px;
-    }
-    &.print {
-      background: none;
-    }
-
-    &.reset {
-      background: @green;
-    }
-    
-    &.scratch {
-      background: @green;
-      font-size: 30px;
-    }
   }
+  @media @mobile {
+    font-size: 16px;
+  }
+  &.print {
+    background: none;
+  }
+
+  &.reset {
+    background: @green;
+  }
+
+  &.scratch {
+    background: @green;
+    font-size: 30px;
+  }
+}
 
 .schedule {
   .display-flex();

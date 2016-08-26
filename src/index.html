@@ -26,17 +26,17 @@
 
         Think you’ve got what it takes to guess the Seahawks’ 2016 season correctly? Put your football knowledge to the test by picking the winner of each game this season, then see how your preseason picks stack up against your friends and our experts at The Seattle Times.
 
-      <p class="chatter instructions" ng-if="instructions">Click on each logo to pick your winner.</p>
+        <p class="chatter instructions" ng-if="instructions">Click on each logo to pick your winner.</p>
 
       </div>
 
- 
-      
- <div class="results" ng-if="seahawks">
-   
-   <button class="scratch" ng-click="clear()">
-           Start from scratch
-          </button>
+
+
+      <div class="results" ng-if="seahawks">
+
+        <button class="scratch" ng-click="clear()">
+          Start from scratch
+        </button>
         <hr>
 
         <p class="congrats">You predicted the Seahawks will go <span>{{seahawks}} - {{other}}</span> this season.</p >
@@ -44,7 +44,7 @@
         <section class="experts">
 
           <div class="expert" ng-repeat="expert in experts">
-            
+
             <img class="mug" src="assets/mugs/{{expert.last}}_mug_transparent.png">
             <p class="final">{{expert.final}}</p>
             <p class="comparison">
@@ -56,15 +56,15 @@
         </section>
         <a class="share-results"></a>
       </div>
-      
+
       <div class="buttons">
-       
-          <button class="reset" ng-click="clear()">
-            Reset <i class="fa fa-refresh" aria-hidden="true"></i>
-          </button>
-     
-              <button class="print" ng-click="setAll()">Printable schedule <i class="fa fa-print" aria-hidden="true"></i>
-          </button>
+
+        <button class="reset" ng-click="clear()">
+          Reset <i class="fa fa-refresh" aria-hidden="true"></i>
+        </button>
+
+        <button class="print" ng-click="setAll()">Printable schedule <i class="fa fa-print" aria-hidden="true"></i>
+        </button>
 
       </div>
 
@@ -92,13 +92,15 @@
                      ng-change="teamSelected(game.winner)"
                      >
               <label for="team{{game.id}}{{game.home}}">
-                <div class="vs"><p>over</p></div>
+
                 <img src="assets/logos/{{game.home}}.png">
-                <p class="small-title">{{game.home}}</p>
               </label>
 
               <input class="team-radio vs">
-              <label><p class="big-title">vs.</p> </label>
+              <label>
+                <p class="big-title" ng-if="!game.winner">vs.</p>
+                <p class="over" ng-if="game.winner">over</p>
+              </label>
               <!--Away Team-->
               <input
                      class="team-radio {{game.id}}"
@@ -113,9 +115,7 @@
                      >
 
               <label for="team{{game.id}}{{game.away}}">
-                <div class="vs"><p>over</p></div>
                 <img src="./assets/logos/{{game.away}}.png">
-                <p class="small-title">{{game.away}}</p>
               </label>
             </div>
           </div>
@@ -144,11 +144,11 @@
 
       </div>
     </div>
-      <div class="credit">
-        Production: Nick Eaton and Sean Quinton <br>
-        Development: Elif Koc
+    <div class="credit">
+      Production: Nick Eaton and Sean Quinton <br>
+      Development: Elif Koc
 
-      </div>
+    </div>
 
     <script>
       window.experts = {expert: <%= JSON.stringify(json.experts) %>};

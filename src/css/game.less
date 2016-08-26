@@ -75,26 +75,23 @@
 
         img {
           cursor: pointer;
-
           &:hover {
             transform: scale(1.2);
             -webkit-transform: scale(1.2);
           }
         }
 
-        .vs {
-          display: none;
-        }
       }
 
       input.vs + label {
 
-        .flex(0 1 60px);
-
-        .flex-order(2);
-        .big-title {
-          border-bottom: none;
-        }
+        .flex(0 1);
+        
+        .over {
+            display: inline-block;
+            vertical-align: middle;
+            font-family: @cool;
+          }
 
         @media @tablet {
           .flex(0 1 50px);
@@ -137,16 +134,9 @@
             }
           }
 
-          .vs {
-            display: inline-block;
-            vertical-align: middle;
-            font-family: @cool;
-          }
+          
         }
 
-        input.vs + label {
-          display: none;
-        }
       }
     }
 
