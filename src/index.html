@@ -91,9 +91,9 @@
                      ng-class="game.winner === game.home ? 'chosen' : 'unchosen'"
                      ng-change="teamSelected(game.winner)"
                      >
-              <label for="team{{game.id}}{{game.home}}">
 
-                <img src="assets/logos/{{game.home}}.png">
+              <label for="team{{game.id}}{{game.home}}">
+                 <img src="./assets/logos/{{game.home}}.png">
               </label>
 
               <input class="team-radio vs">
@@ -114,8 +114,10 @@
                      ng-change='teamSelected(game.winner)'
                      >
 
-              <label for="team{{game.id}}{{game.away}}">
-                <img src="./assets/logos/{{game.away}}.png">
+              <label for="team{{game.id}}{{game.away}}" >
+                 <img src="./assets/logos/{{game.away}}.png">
+
+
               </label>
             </div>
           </div>
@@ -161,6 +163,8 @@
     <%= t.include("partials/_workHere.html") %>
     <% } %>
     <%= t.include("partials/_dontMiss.html") %>
+        <%= t.include("./partials/_ad.html", { type: "bannerBottom" }) %>
+
     <%= t.include("partials/_navBottom.html") %>
 
   </body>
