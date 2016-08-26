@@ -1,5 +1,5 @@
 var social = require("./lib/social");
-//require("./lib/ads");
+require("./lib/ads");
 // var track = require("./lib/tracking");
 var animate = require("./lib/animateScroll");
 var qs = require("querystring");
