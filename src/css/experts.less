@@ -1,30 +1,16 @@
 .expert-box {
-  max-height: 0;
-  overflow: hidden;
-
+  display: none;
   background: white;
   font-weight: 900;
   text-align: center;
   text-transform: uppercase;
-  padding: 5px 0;
   -webkit-transition: all .3s  ease-out;
   -moz-transition: all .3s ease-out;
   transition: all .3s ease-out;
-  
-
 
   &.selected {
-    //THIS SHOULD CHANGE!!
-    max-height: 173px;
-    
-    @media @tablet {
-      max-height: 190px;
-    }    
-    @media @mobile {
-      max-height: 225px;
-    }
-    
-    
+    padding: 5px 0;
+    display: block;
   }
 
   .experts {
@@ -52,7 +38,7 @@
       margin: 2px;
       text-transform: none;
       font-weight: normal;
-      
+
     }
 
   }
