@@ -1,12 +1,15 @@
 var social = require("./lib/social");
 require("./lib/ads");
 // var track = require("./lib/tracking");
+require("angular");
 var animate = require("./lib/animateScroll");
 var qs = require("querystring");
-var app = require("./application");
 var ascii = require("./arrayCode");
 var Share = require("share");
 var aKeys = "winner".split(" ");
+
+var app = angular.module("predictions", []);
+
 var prediction = function($scope) {
 
   $scope.games = window.games.schedule;
@@ -15,6 +18,7 @@ var prediction = function($scope) {
 
   var alreadyComplete = false;
   var userCompleted = false;
+  var animating = false;
 
   $scope.clear = function() {
     $scope.games.forEach(function(g) {
@@ -22,14 +26,6 @@ var prediction = function($scope) {
     });
     $scope.seahawks = "";
     alreadyComplete = false;
-  }
-
-  //for testing
-  $scope.setAll = function() {
-    for (var i = 0; i < 15; i++) {
-      $scope.games[i].winner = "seahawks";
-    }
-
   }
 
   //assigns data on top of existing data
@@ -90,37 +86,32 @@ var prediction = function($scope) {
     }
 
     $scope.seahawks = seaWins;
-    $scope.other = otherWins; 
+    $scope.other = otherWins;
 
     if (alreadyComplete) {
       $scope.instructions = true;
     }
   }
 
-  $scope.teamSelected = function(team) {
-    if ($scope.games.every(game => game.winner)) {
-      countScores();
-    }
+  window.bam = function() {
+    $scope.games.forEach(g => g.winner = "seahawks");
+    $scope.$apply();
   }
 
-
-  if ($scope.games.every(game => game.winner)) {
-    countScores();
-
-  }
-  
 
   // When any data changes (or for each digest cycle), run this function
   $scope.$watch(function() {
 
     if ($scope.games.every(game => game.winner)) {
+      countScores();
 
       if (!alreadyComplete) {
         $scope.instructions = false;
         var box = document.querySelector(".congrats");
-        console.log(box);
-        animate(box); 
-
+        if (!animating) {
+          setTimeout(() => animate(box), 200);
+          animating = true;
+        }
 
         new Share(".share-results", {
           description: "I think the Seahawks will go " + $scope.seahawks + "-" + $scope.other + " this season. What’s your prediction for 2016? Make your picks: ",
@@ -128,11 +119,9 @@ var prediction = function($scope) {
             flyout: "bottom right",
             button_text: "Show your friends"
           }
-        
-          
         });
       }
-    }  
+    }
 
     //create a coded version of the scores
     var filtered = $scope.games.map(function(entry) {
@@ -141,8 +130,6 @@ var prediction = function($scope) {
         // home is 1, away is 2, tie is 0
         winner: entry.winner ? entry.winner == entry.home ? 1 : 2 : 0
       }
-
-
     });
 
     //encode this into a URL hash and set it
@@ -157,5 +144,6 @@ var prediction = function($scope) {
   });
 
 }
+prediction.$inject = ["$scope"];
 
 app.controller("prediction", prediction);

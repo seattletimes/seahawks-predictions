@@ -1,45 +1,45 @@
 <!doctype html>
 <html>
-  <head>
-    <title><%= json.project.title %></title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link href='http://fonts.googleapis.com/css?family=Paytone+One|Oswald:700,400,300' rel='stylesheet' type='text/css'>
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <%= t.include("partials/_head.html") %>
-    <style>[ng-cloak] { display: none; }</style>
-  </head>
-  <body ng-app="predictions">
+<head>
+  <title><%= json.project.title %></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href='http://fonts.googleapis.com/css?family=Paytone+One|Oswald:700,400,300' rel='stylesheet' type='text/css'>
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <%= t.include("partials/_head.html") %>
+  <style>[ng-cloak] { display: none; }</style>
+</head>
+<body ng-app="predictions">
 
-    <%= t.include("partials/_nav.html") %>
-    <%= t.include("./partials/_ad.html", { type: "banner" }) %>
+  <%= t.include("partials/_nav.html") %>
+  <%= t.include("./partials/_ad.html", { type: "banner" }) %>
 
-    <div class="container" ng-controller="prediction" ng-cloak>
+  <div class="container" ng-controller="prediction" ng-cloak>
 
-      <header>
-        <h2 class="title first">Make your pick</h2>
-        <h2 class="title">Seahawks Season Predictor</h2>
-      </header>
+    <header>
+      <h2 class="title first">Make your pick</h2>
+      <h2 class="title">Seahawks Season Predictor</h2>
+    </header>
 
-      <div class="chatter">
+    <div class="chatter">
 
-        Think you’ve got what it takes to guess the Seahawks’ 2016 season correctly? Put your football knowledge to the test by picking the winner of each game this season, then see how your preseason picks stack up against your friends and our experts at The Seattle Times.
+      Think you’ve got what it takes to guess the Seahawks’ 2016 season correctly? Put your football knowledge to the test by picking the winner of each game this season, then see how your preseason picks stack up against your friends and our experts at The Seattle Times.
 
-        <p class="chatter instructions" ng-if="instructions">Click on each logo to pick your winner.</p>
+      <p class="chatter instructions" ng-if="instructions">Click on each logo to pick your winner.</p>
 
-      </div>
+    </div>
 
 
 
-      <div class="results" ng-if="seahawks">
+    <div class="results" ng-hide="!seahawks">
 
-        <button class="scratch" ng-click="clear()">
-          Start from scratch
-        </button>
-        <hr>
+      <button class="scratch" ng-click="clear()">
+        Start from scratch
+      </button>
+      <hr>
 
-        <p class="congrats">You predicted the Seahawks will go <span>{{seahawks}} - {{other}}</span> this season.</p >
+      <p class="congrats">You predicted the Seahawks will go <span>{{seahawks}} - {{other}}</span> this season.</p >
 
         <section class="experts">
 
@@ -81,92 +81,87 @@
 
               <!--Home Team-->
               <input
-                     class="team-radio {{game.id}}"
-                     type="radio"
-                     value="{{game.home}}"
-                     name="winner{{game.id}}"
-                     id="team{{game.id}}{{game.home}}"
-                     ng-model="game.winner"
-                     ng-disabled="game.winner"
-                     ng-class="game.winner === game.home ? 'chosen' : 'unchosen'"
-                     ng-change="teamSelected(game.winner)"
-                     >
+                class="team-radio {{game.id}}"
+                type="radio"
+                value="{{game.home}}"
+                name="winner{{game.id}}"
+                id="team{{game.id}}{{game.home}}"
+                ng-model="game.winner"
+                ng-disabled="game.winner"
+                ng-class="game.winner === game.home ? 'chosen' : 'unchosen'"
+              >
 
               <label for="team{{game.id}}{{game.home}}">
-                 <img src="./assets/logos/{{game.home}}.png">
+                <img src="./assets/logos/{{game.home}}.png">
               </label>
 
-              <input class="team-radio vs">
-              <label>
-                <p class="big-title" ng-if="!game.winner">vs.</p>
-                <p class="over" ng-if="game.winner">over</p>
-              </label>
+              <div class="vs">
+                vs.
+              </div>
+
               <!--Away Team-->
               <input
-                     class="team-radio {{game.id}}"
-                     type="radio"
-                     value="{{game.away}}"
-                     name="winner{{game.id}}"
-                     id="team{{game.id}}{{game.away}}"
-                     ng-model="game.winner"
-                     ng-disabled="game.winner"
-                     ng-class="game.winner === game.away ? 'chosen' : 'unchosen'"
-                     ng-change='teamSelected(game.winner)'
-                     >
+              class="team-radio {{game.id}}"
+              type="radio"
+              value="{{game.away}}"
+              name="winner{{game.id}}"
+              id="team{{game.id}}{{game.away}}"
+              ng-model="game.winner"
+              ng-disabled="game.winner"
+              ng-class="game.winner === game.away ? 'chosen' : 'unchosen'"
+              >
 
               <label for="team{{game.id}}{{game.away}}" >
-                 <img src="./assets/logos/{{game.away}}.png">
-
-
+                <img src="./assets/logos/{{game.away}}.png">
               </label>
-            </div>
           </div>
-          <div class="expert-box" ng-class="game.winner ? 'selected' : ''">
+        </div>
+        <div class="expert-box" ng-class="game.winner ? 'selected' : ''">
 
-            <header class="small-title">Expert Picks</header>
+          <header class="small-title">Expert Picks</header>
 
-            <div class="experts">
-              <div class="expert" ng-repeat="expert in experts">
-                <p class="small-text"> {{expert.last}}</p>
-                <img class="pick" src="assets/logos/{{game[expert.prediction]}}.png">
-              </div>
-            </div>
-
-            <div class="watch">
-              <p class="small-text">{{game.location}}</p>
-              <p class="small-text"> {{game.tv}}, {{game.time}} PT</p>
+          <div class="experts">
+            <div class="expert" ng-repeat="expert in experts">
+              <p class="small-text"> {{expert.last}}</p>
+              <img class="pick" src="assets/logos/{{game[expert.prediction]}}.png">
             </div>
           </div>
 
+          <div class="watch">
+            <p class="small-text">{{game.location}}</p>
+            <p class="small-text"> {{game.tv}}, {{game.time}} PT</p>
+          </div>
         </div>
 
-
-
-
-
       </div>
-    </div>
-    <div class="credit">
-      Production: Nick Eaton and Sean Quinton <br>
-      Development: Elif Koc
+
+
+
+
 
     </div>
+  </div>
+  <div class="credit">
+    Production: Nick Eaton and Sean Quinton <br>
+    Development: Elif Koc
 
-    <script>
-      window.experts = {expert: <%= JSON.stringify(json.experts) %>};
-                        window.games = {schedule: <%= JSON.stringify(json.schedule) %>};
-    </script>
+  </div>
 
-    <script src="app.js" async></script>
-    <% if (json.project.production) { %>
-    <%= !json.project.embedded ? t.include("partials/_foot.html") : "" %>
-    <%= t.include("partials/_workHere.html") %>
-    <% } %>
-    <%= t.include("partials/_dontMiss.html") %>
-        <%= t.include("./partials/_ad.html", { type: "bannerBottom" }) %>
+  <script>
+  window.experts = {expert: <%= JSON.stringify(json.experts) %>};
+  window.games = {schedule: <%= JSON.stringify(json.schedule) %>};
+  </script>
 
-    <%= t.include("partials/_navBottom.html") %>
+  <script src="app.js" async></script>
+  <% if (json.project.production) { %>
+  <%= !json.project.embedded ? t.include("partials/_foot.html") : "" %>
+  <%= t.include("partials/_workHere.html") %>
+  <% } %>
+  <%= t.include("partials/_dontMiss.html") %>
+  <%= t.include("./partials/_ad.html", { type: "bannerBottom" }) %>
 
-  </body>
+  <%= t.include("partials/_navBottom.html") %>
+
+</body>
 
 </html>

@@ -50,39 +50,36 @@
     .prediction {
       .display-flex();
       .align-items(center);
-      .justify-content(space-around);
+      text-align: center;
 
-      text-align: center;      
+      label {
+        .flex(1 1 0px);
+        display: block;
+      }
+
       @media @mobile {
         padding-bottom: 20px;
       }
-
-
 
       input.team-radio {
         display: none;
       }
 
       input.team-radio + label {
-        .flex-order(2);
         text-transform: uppercase;
         font-size: 12px;
         font-weight: 900;
-        width: 30%;
 
         img {
           cursor: pointer;
-          &:hover {
-            transform: scale(1.2);
-            -webkit-transform: scale(1.2);
-          }
+          width: 100%;
+          max-width: 25vw;
+          display: block;
         }
 
       }
 
-      input.vs + label {
-        .flex(0 1);
-
+      div.vs {
         .over {
           font-family: @cool;
           margin: 2px;
@@ -90,27 +87,24 @@
       }
 
       input.team-radio:checked + label {
-        .flex-order(1);
-        
+
         img {
           cursor: default;
-          transform: scale(1.6);
-          -webkit-transform: scale(1.6);
           margin-top: 10px;
         }
       }
 
-            &.selected {
-
-        .flex-direction(column);
+      &.selected {
+        display: block;
 
         input.unchosen + label {
           .flex-order(3);
           padding-bottom: 5px;
 
           img {
+            display: inline-block;
             cursor: default;
-            width: 50%;         
+            width: 50%;
             opacity: .6;
             padding-left: 5px;
 
