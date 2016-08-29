@@ -92,7 +92,8 @@
               >
 
               <label for="team{{game.id}}{{game.home}}">
-                <img src="./assets/logos/{{game.home}}.png">
+                <img src="./assets/logos/{{game.home_logo}}.png">
+                <div class="team-name">{{game.home}}</div>
               </label>
 
               <div class="vs">
@@ -112,7 +113,8 @@
               >
 
               <label for="team{{game.id}}{{game.away}}" >
-                <img src="./assets/logos/{{game.away}}.png">
+                <img src="./assets/logos/{{game.away_logo}}.png">
+                <div class="team-name">{{game.away}}</div>
               </label>
           </div>
         </div>
@@ -123,7 +125,7 @@
           <div class="experts">
             <div class="expert" ng-repeat="expert in experts">
               <p class="small-text"> {{expert.last}}</p>
-              <img class="pick" src="assets/logos/{{game[expert.prediction]}}.png">
+              <img class="pick" src="assets/logos/{{game[expert.logo]}}.png">
             </div>
           </div>
 

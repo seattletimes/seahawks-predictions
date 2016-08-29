@@ -13,8 +13,17 @@ var app = angular.module("predictions", []);
 var prediction = function($scope) {
 
   $scope.games = window.games.schedule;
-
   $scope.experts = window.experts.expert;
+
+  $scope.games.forEach(function(g) {
+    $scope.experts.forEach(function(e) {
+      var key = e.prediction;
+      var logoKey = key + "_logo";
+      e.logo = logoKey;
+      g[logoKey] = g[key] == g.home ? g.home_logo : g.away_logo;
+    });
+  });
+
 
   var alreadyComplete = false;
   var userCompleted = false;
