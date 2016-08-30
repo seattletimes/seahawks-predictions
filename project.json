@@ -6,16 +6,16 @@
     },
     "live": {
       "bucket": "projects.seattletimes.com",
-      "path": ""
+      "path": "2016/sports/seahawks-season-predictor"
     }
   },
   "title": "Make your pick: Seahawks Season Predictor",
-  "description": "How do you think the Seahawks will do this year?",
-  "url": "http://projects-staging.seattletimes.com/stinky-farming/",
+  "description": "How do you think the Seahawks will do this year? Try your hand at picking the games.",
+  "url": "http://projects.seattletimes.com/2016/sports/seahawks-season-predictor/",
   "slug": "",
   "tags": [],
   "image": "assets/social.jpg",
   "sheets": ["1vrn76yUva2dDgfs0bEvRKmDJDYISVDLVVa5S0X94N2Y"],
-  "production": false,
-  "embedded": true
+  "production": true,
+  "embedded": false
 }
